@@ -25,23 +25,23 @@ A fast-paced cooking game where players work together to prepare meals under tim
 ## Gameplay
 ### Player Interactions: 
 
-Counter Interaction & Order Mechanism
+Counter Interaction & Order Mechanism:
 * Customer Interaction: Customers walk up to the counter and place their orders. Players interact with the customers by clicking on them to receive and verify the order. Customers will state their order, and the player will confirm.
 * Order Taking: Players write down the customer’s order using a notepad system. They can either click items from a menu or type in the request to ensure accuracy.
 
-Food Preparation & Cooking
+Food Prep:
 * Task-Based Cooking: Players complete cooking tasks like picking up the cub, grinding the coffee beans, add milk, syrup, or ice. Each task is connected to a specific appliance where the person will move to the station and interact with the machine.
 * Appliance Upgrades: As players progress, they can purchase upgrades for their appliances, improving either speed (how quickly food is prepared) or quality (how visually appealing drinks are).
 * Time-Related Upgrades: Appliances like coffee machines can be upgraded to dispense the coffee faster
 * Quality Upgrades: Appliances like espresso machines can be upgraded to improve the visual presentation of food and drinks (e.g., latte art).
 
-Different ranks of customers such as: 
+Different Ranks of Customers:
 * Regular Customers: Familiar faces who tend to order the same meals and expect consistent quality.
 * Guest Customers: e.g., food critics who require quality heavily, customers who require speed over quality, etc. These are high-paying customers.
 
-Progression & Cafe Growth
-* New Recipes: Unlocking new, more complex recipes as the cafe expands.
-* cafe Upgrades: Players can use their earnings to buy new appliances, decor, and kitchen tools to enhance both functionality and appearance.
+Progression & Cafe Growth:
+* New recipes: Unlocking new, more complex recipes as the cafe expands.
+* Cafe upgrades: Players can use their earnings to buy new appliances, decor, and kitchen tools to enhance both functionality and appearance.
 
 ### Expected UI
 * A semi-realistic 3D cafe environment that allows players to move around the closed space. 
@@ -59,7 +59,8 @@ Movement:
 ## Development Plan
 
 ### Project Checkpoint 1-2: Basic Mechanics and Scripting (Ch 5-9)
-1. Implement Basic Player controls (e.g., player movement and interacting with the environment)
-2. Implement the basic order-taking so players interact with customers, counter, and machines/kitchen) 
-3. Set up cooking tasks e.g., making the coffee
+1. Player proximity to the appliances
+2. Basic player interactions with their environment (e.g., player movement and interacting with the environment)
+3. Spawning of Customers to the counter
+4. Set up cooking tasks e.g., making coffee
  
