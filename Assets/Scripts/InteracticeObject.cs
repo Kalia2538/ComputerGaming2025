@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
-    public GameObject uiPrompt; // Assign a UI element in the Inspector
+    public GameObject uiPrompt; //assigning a UI element in inspector
 
     private void OnTriggerEnter(Collider other)
     {
@@ -10,7 +10,7 @@ public class InteractiveObject : MonoBehaviour
         {
             Debug.Log("Player entered trigger");
             uiPrompt.SetActive(true);
-            // Optionally notify the player’s interaction script that this object is available
+            //notifying the player’s interaction script that this object is available
         }
     }
 
@@ -26,6 +26,6 @@ public class InteractiveObject : MonoBehaviour
     public void Interact()
     {
         Debug.Log("Interacted with " + gameObject.name);
-        // Place your interaction logic here (e.g., dispensing a drink)
+        // interaction logic here (e.g., dispensing a drink)
     }
 }

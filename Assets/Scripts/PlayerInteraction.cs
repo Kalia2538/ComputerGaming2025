@@ -19,10 +19,4 @@ public class PlayerInteraction : MonoBehaviour
             nearbyInteractive.Interact();
         }
     }
-
-    // Optional: Clear reference when leaving trigger
-    public void ClearInteractive()
-    {
-        nearbyInteractive = null;
-    }
 }
