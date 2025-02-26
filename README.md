@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/349738a7-5ac2-4065-9b50-a6d88502f041)# PlaceHolder- Grounds for Catastrophe
+# PlaceHolder- Grounds for Catastrophe
 
 ## Team Members
 - [Kalia2538](https://github.com/Kalia2538)
