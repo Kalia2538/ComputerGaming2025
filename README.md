@@ -7,7 +7,7 @@
 
 ## Game Summary
 
-A relaxing cooking game where up to two players run a cafe together. Players take orders from customers, write them down, and prepare meals in a kitchen. The goal is to complete each recipe with speed and quality to keep customers happy, allowing the player to upgrade appliances and unlock new recipes. 
+A relaxing cooking game where up to two players run a cafe together. Players recieve orders from customers and prepare meals in a kitchen. The goal is to complete each recipe with speed and quality to keep customers happy, allowing the player to upgrade appliances and unlock new recipes. 
 
 ## Genres
 
@@ -23,6 +23,14 @@ A cozy cooking game where players complete orders and grow their restaurant. The
 
 A fast-paced cooking game where players work together to prepare meals under time pressure. The core mechanics of the game include this cooperative aspect-- however, our game but will focus on calmer, more strategic teamwork with a lighter sense of urgency. The stylistic choices will also follow with this game dynamic to adhere to the 3D game style.
 
+### Papa's Mocharia
+
+<img src="https://i.redd.it/bt8m8s4bijk61.jpg" alt="Papa's Mocharia Customer/Order Delivery" width="500"/>
+
+
+### Good Coffee Great Coffee
+
+<img src="https://play-lh.googleusercontent.com/5Mqit1U5yYRDIerlm_VFRy6BXZjSjVSFwXy_89rFZfX0wZLEW4AkINt14LM9w9iMTA=w526-h296-rw" alt="Good Coffee Great Coffee Espresso Machine" width="500"/>
 ## Gameplay
 ### Player Interactions: 
 
