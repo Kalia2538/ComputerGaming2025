@@ -104,3 +104,20 @@ Visual effects and Scene Management
 
 ### Project Checkpoint 1-2
 
+This deliverable consists of three main components:
+1. Player movement and interaction system
+* The player can move around the cafe environment using either WASD or arrow keys
+
+2. Basic cafe and kitchen environment
+* The dining area consists of tables, chairs, a service counter, and a kitchen area
+* The counter will serve as the interaction point where customers place orders
+* Players can interact with a Keurig machine
+
+3. Customer spawning and basic order request system
+* Customers can dynamically enter and exit the area
+* Customers generate order requests
+
+<img width="500" alt="Cafe Scene" src="https://github.com/user-attachments/assets/3194be0e-d145-4629-b18a-2a7baf293721" />
+<img width="500" alt="prep_station_scene" src="https://github.com/user-attachments/assets/a40fed7d-c422-4cf1-9333-1029a839e9f8" />
+
+
