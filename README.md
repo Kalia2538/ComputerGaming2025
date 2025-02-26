@@ -19,6 +19,10 @@ Cooking Simulation, Co-op, Casual, Time Management
 
 A cozy cooking game where players complete orders and grow their restaurant. The core mechanics of the game include task-based gameplay and a simple progression system, as well as fun storylines and side tasks the player can choose to engage with. The a focus on serving customers and upgrading the pizza shop are influences to our game design.
 
+
+<img src = "https://www.nintendo-insider.com/wp-content/uploads/2020/09/good_pizza_great_pizza_review_screenshot_1.jpg" alt="Good Pizza Great Pizza Order w/ Customer" width="500"/>
+
+
 ### Overcooked
 
 A fast-paced cooking game where players work together to prepare meals under time pressure. The core mechanics of the game include this cooperative aspect-- however, our game but will focus on calmer, more strategic teamwork with a lighter sense of urgency. The stylistic choices will also follow with this game dynamic to adhere to the 3D game style. Our main inspiration from Overcooked is the 3rd-position perspective of the kitchen and restaurant layout. 
@@ -47,7 +51,7 @@ Counter Interaction & Order Mechanism:
 * Order Taking: Players write down the customer’s order using a notepad system. They can either click items from a menu or type in the request to ensure accuracy.
 
 Food Prep:
-* Task-Based Cooking: Players complete cooking tasks like picking up the cub, grinding the coffee beans, add milk, syrup, or ice. Each task is connected to a specific appliance where the person will move to the station and interact with the machine.
+* Task-Based Cooking: Players complete cooking tasks like picking up the cup, grinding the coffee beans, add milk, syrup, or ice. Each task is connected to a specific appliance where the person will move to the station and interact with the machine.
 * Appliance Upgrades: As players progress, they can purchase upgrades for their appliances, improving either speed (how quickly food is prepared) or quality (how visually appealing drinks are).
 * Time-Related Upgrades: Appliances like coffee machines can be upgraded to dispense the coffee faster
 * Quality Upgrades: Appliances like espresso machines can be upgraded to improve the visual presentation of food and drinks (e.g., latte art).
@@ -76,10 +80,10 @@ Movement:
 ## Development Plan
 
 ### Project Checkpoint 1-2: Basic Mechanics and Scripting (Ch 5-9)
-1. Player proximity to the appliances
-2. Basic player interactions with their environment (e.g., player movement and interacting with the environment)
-3. Spawning of Customers to the counter
-4. Set up cooking tasks e.g., making coffee
+~~ 1. Player proximity to the appliances ~~
+~~ 2. Basic player interactions with their environment (e.g., player movement and interacting with the environment) ~~
+~~ 3. Spawning of Customers to the counter ~~
+~~ 4. Set up cooking tasks e.g., making coffee ~~
 
 ### Additions
 * Implemented a basic Keurig-style machine for making hot coffee in different cup sizes.
