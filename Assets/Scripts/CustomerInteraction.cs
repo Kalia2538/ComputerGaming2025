@@ -4,54 +4,106 @@ using UnityEngine;
 
 public class CustomerInteraction : MonoBehaviour
 {
-    // locations where the customer will move from
-    public Vector3 orderPoint;
-    public Vector3 endPoint;
-    public Vector3 startPoint;
+    // locations for ordering
+    public GameObject orderPoint;    
+    public GameObject startPoint;
+    public GameObject orderLoc; // for the paper order
 
-    // customer vars
-    public GameObject customer;
-    public float speed;
+    // instantiated prefabs
+    private GameObject orderObj;
+    private GameObject customer;
 
+    //prefabs
+    public GameObject customerPrefab;
     public GameObject order;
-    public Vector3 orderPos;
+
+    public float speed;
+    private Rigidbody custRigidBody;
+
+    private bool inRoutine = false;
+    
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // instantiate customer and rigid body
+        customer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
+        custRigidBody = customer.GetComponent<Rigidbody>(); 
+        // start ordering process
         StartCoroutine(OrderProcess());
     }
 
 
     IEnumerator EnterScreen()
     {
-        customer.transform.position = Vector3.MoveTowards(startPoint,
-            orderPoint, speed * Time.deltaTime);
+        // customer moves towards specified location
+        while (Vector3.Distance(customer.transform.position, orderPoint.transform.position) > 0.1f)
+        {
+
+            Vector3 direction = (orderPoint.transform.position - customer.transform.position).normalized;
+            custRigidBody.velocity = direction * speed;
+            
+            yield return null;
+
+        }
+        // stops customer movement
+        custRigidBody.velocity = Vector3.zero;
+        // wait for click
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
     }
 
     IEnumerator TakingOrder()
     {
-        Instantiate(order);
+        // order "pop-up"
+        orderObj = Instantiate(order, orderLoc.transform.position, Quaternion.identity);
+
+        // wait time so that click from before doesn't collide with this one
+        yield return new WaitForSeconds(0.5f);
+        // wait for click
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
     }
 
+
+    
     IEnumerator ExitingScreen()
     {
-        customer.transform.position = Vector3.MoveTowards(orderPoint,
-            endPoint, speed * Time.deltaTime);
+
+        Destroy(orderObj);
+        // customer moving away from the counter
+        while (Vector3.Distance(customer.transform.position, startPoint.transform.position) > 0.1f)
+        {
+            Vector3 direction = (startPoint.transform.position - customer.transform.position).normalized;
+            custRigidBody.velocity = direction * speed;
+            yield return null;
+        }
+
+        custRigidBody.velocity = Vector3.zero;
         yield return null;
     }
 
     IEnumerator OrderProcess()
     {
-        Instantiate(customer);
-        yield return EnterScreen();
-        yield return TakingOrder();
-        yield return ExitingScreen();
-        Destroy(customer);
+        if (!inRoutine) { 
+            inRoutine = true;            
+            yield return EnterScreen();
+            
+            yield return TakingOrder();
+            
+            yield return ExitingScreen();
+            Destroy(customer);
+            
+            customer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!inRoutine)
+        {
+            StartCoroutine(OrderProcess());
+        }
     }
 }
