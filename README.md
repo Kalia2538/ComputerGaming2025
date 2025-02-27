@@ -7,7 +7,7 @@
 
 ## Game Summary
 
-A relaxing cooking game where up to two players run a cafe together. Players take orders from customers, write them down, and prepare meals in a kitchen. The goal is to complete each recipe with speed and quality to keep customers happy, allowing the player to upgrade appliances and unlock new recipes. 
+A relaxing cooking game where up to two players run a cafe together. Players recieve orders from customers and prepare meals in a kitchen. The goal is to complete each recipe with speed and quality to keep customers happy, allowing the player to upgrade appliances and unlock new recipes. 
 
 ## Genres
 
@@ -17,13 +17,33 @@ Cooking Simulation, Co-op, Casual, Time Management
 
 ### Good Pizza, Great Pizza
 
-A cozy cooking game where players complete orders and grow their restaurant. The core mechanics of the game include task-based gameplay and a simple progression system, as well as fun storylines and side tasks the player can choose to engage with. There is a focus on serving customers and upgrading the pizza shop.
+A cozy cooking game where players complete orders and grow their restaurant. The core mechanics of the game include task-based gameplay and a simple progression system, as well as fun storylines and side tasks the player can choose to engage with. The a focus on serving customers and upgrading the pizza shop are influences to our game design.
+
+
+<img src = "https://www.nintendo-insider.com/wp-content/uploads/2020/09/good_pizza_great_pizza_review_screenshot_1.jpg" alt="Good Pizza Great Pizza Order w/ Customer" width="500"/>
+
 
 ### Overcooked
 
-A fast-paced cooking game where players work together to prepare meals under time pressure. The core mechanics of the game include this cooperative aspect-- however, our game but will focus on calmer, more strategic teamwork with a lighter sense of urgency. The stylistic choices will also follow with this game dynamic to adhere to the 3D game style.
+A fast-paced cooking game where players work together to prepare meals under time pressure. The core mechanics of the game include this cooperative aspect-- however, our game but will focus on calmer, more strategic teamwork with a lighter sense of urgency. The stylistic choices will also follow with this game dynamic to adhere to the 3D game style. Our main inspiration from Overcooked is the 3rd-position perspective of the kitchen and restaurant layout. 
+
+<img src = "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/11/plateup.jpeg" alt="Overcooked Layout" width="500"/>
+
+### Papa's Mocharia
+
+A game centered around preparing customized coffee orders to customers. The inspiration here is the way that the player must accurately fulfill the customer's order, and will recieve points based on how accurate the order is. 
+
+<img src="https://i.redd.it/bt8m8s4bijk61.jpg" alt="Papa's Mocharia Customer/Order Delivery" width="500"/>
+
+
+### Good Coffee Great Coffee
+
+A game that focuses on brewing and serving coffee with various machine interactions. Our inspiration comes from its detailed approach to preparing drinks and having upgrades as the game progresses to improve efficiency of drink-making.
+
+<img src="https://play-lh.googleusercontent.com/5Mqit1U5yYRDIerlm_VFRy6BXZjSjVSFwXy_89rFZfX0wZLEW4AkINt14LM9w9iMTA=w526-h296-rw" alt="Good Coffee Great Coffee Espresso Machine" width="500"/>
 
 ## Gameplay
+
 ### Player Interactions: 
 
 Counter Interaction & Order Mechanism:
@@ -31,7 +51,7 @@ Counter Interaction & Order Mechanism:
 * Order Taking: Players write down the customer’s order using a notepad system. They can either click items from a menu or type in the request to ensure accuracy.
 
 Food Prep:
-* Task-Based Cooking: Players complete cooking tasks like picking up the cub, grinding the coffee beans, add milk, syrup, or ice. Each task is connected to a specific appliance where the person will move to the station and interact with the machine.
+* Task-Based Cooking: Players complete cooking tasks like picking up the cup, grinding the coffee beans, add milk, syrup, or ice. Each task is connected to a specific appliance where the person will move to the station and interact with the machine.
 * Appliance Upgrades: As players progress, they can purchase upgrades for their appliances, improving either speed (how quickly food is prepared) or quality (how visually appealing drinks are).
 * Time-Related Upgrades: Appliances like coffee machines can be upgraded to dispense the coffee faster
 * Quality Upgrades: Appliances like espresso machines can be upgraded to improve the visual presentation of food and drinks (e.g., latte art).
@@ -45,13 +65,13 @@ Progression & Cafe Growth:
 * Cafe upgrades: Players can use their earnings to buy new appliances, decor, and kitchen tools to enhance both functionality and appearance.
 
 ### Expected UI
-* A semi-realistic 3D cafe environment that allows players to move around the closed space. 
-* A door leads the player to the kitchen, from the counter, and vice versa. 
+* A semi-realistic 3D cafe environment that allows players to move around the closed space. The cafe environment will [] with the camera positioned above and angled downwards. 
+* A door leads the player to the kitchen, from the counter, and vice versa. When the player enters the door to the kitchen, the scene will switch to a first-person POV 
 * Proximity can trigger a subtle visual cue, like an outline or glow around the object, to make interactions intuitive.
 
 ### Game Controls
 Movement:
-* Mouse or use of keys (e.g, WASD or Arrow Keys): Move the character around the cafe and kitchen. The player will use these to navigate through the environment.
+* Mouse or use of keys (e.g, WASD or Arrow Keys): Move the character around the cafe and kitchen. The player will use these to navigate through the cafe environment.
 * Proximity-Based Interactions when a player approaches an interaction object: so when the player moves near certain objects or stations (e.g., a drink counter, milk fridge), the game detects their proximity to the item.
   * The player would then press Space (or another button) to activate the station's function, such as dispensing a drink from the counter.
   * When approaching an object, a prompt is displayed like "Click to Dispense Drink" to let the player know which action can be taken.
@@ -60,8 +80,49 @@ Movement:
 ## Development Plan
 
 ### Project Checkpoint 1-2: Basic Mechanics and Scripting (Ch 5-9)
-1. Player proximity to the appliances
-2. Basic player interactions with their environment (e.g., player movement and interacting with the environment)
-3. Spawning of Customers to the counter
-4. Set up cooking tasks e.g., making coffee
- 
+~~ 1. Player proximity to the appliances ~~
+~~ 2. Basic player interactions with their environment (e.g., player movement and interacting with the environment) ~~
+~~ 3. Spawning of Customers to the counter ~~
+~~ 4. Set up cooking tasks e.g., making coffee ~~
+
+### Additions
+* Implemented a basic Keurig-style machine for making hot coffee in different cup sizes.
+* Clicking the cup now correctly places it under the coffee machine.
+
+### Project Part 2: 3D Scenes and Models (Ch 3+4, 10)
+
+Complete the cafe and kitchen layout with interactive furniture and appliances. The materials should be complete, and decent lighting should be added.
+
+Environment and Layout
+* Create cafe and kitchen with probuilder 
+* Overall layout as before– something manageable by user/player
+Assets + basic functionality 
+* Importing and adding 3D models
+* Making sure the colliders for these models work properly 
+* Set up interacting with appliances, like making the liquid dispense and grabbing cups
+Visual effects and Scene Management 
+* Scene transition from dining area to kitchen area
+* Lighting and shaders are implemented
+
+## Development
+
+### Project Checkpoint 1-2
+
+This deliverable consists of three main components:
+1. Player movement and interaction system
+* The player can move around the cafe environment using either WASD or arrow keys
+
+2. Basic cafe and kitchen environment
+* The dining area consists of tables, chairs, a service counter, and a kitchen area
+* The counter will serve as the interaction point where customers place orders
+* Players can interact with a Keurig machine--click the cup size to place under the machine, and click buttons to dispense coffee
+
+3. Customer spawning and basic order request system
+* Customers can dynamically enter and exit the area
+* Customers generate order requests
+
+<img width="500" alt="Cafe Scene" src="https://github.com/user-attachments/assets/3194be0e-d145-4629-b18a-2a7baf293721" />
+<img width="500" alt="Kitchen Scene" src="https://github.com/user-attachments/assets/a4e5fecd-1eb4-428f-91ff-b86bc45c34a4" />
+
+
+
