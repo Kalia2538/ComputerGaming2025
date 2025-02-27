@@ -80,7 +80,7 @@ Movement:
 ## Development Plan
 
 ### Project Checkpoint 1-2: Basic Mechanics and Scripting (Ch 5-9)
-~~ 1. Player proximity to the appliances ~~
+~Tilde 1. Player proximity to the appliances ~~
 ~~ 2. Basic player interactions with their environment (e.g., player movement and interacting with the environment) ~~
 ~~ 3. Spawning of Customers to the counter ~~
 ~~ 4. Set up cooking tasks e.g., making coffee ~~
