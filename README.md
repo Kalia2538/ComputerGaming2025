@@ -65,7 +65,7 @@ Progression & Cafe Growth:
 * Cafe upgrades: Players can use their earnings to buy new appliances, decor, and kitchen tools to enhance both functionality and appearance.
 
 ### Expected UI
-* A semi-realistic 3D cafe environment that allows players to move around the closed space. The cafe environment will [] with the camera positioned above and angled downwards. 
+* A semi-realistic 3D cafe environment that allows players to move around the closed space. The cafe environment will appear with the camera positioned above and angled downwards. 
 * A door leads the player to the kitchen, from the counter, and vice versa. When the player enters the door to the kitchen, the scene will switch to a first-person POV 
 * Proximity can trigger a subtle visual cue, like an outline or glow around the object, to make interactions intuitive.
 
@@ -96,10 +96,14 @@ Complete the cafe and kitchen layout with interactive furniture and appliances. 
 Environment and Layout
 * Create cafe and kitchen with probuilder 
 * Overall layout as before– something manageable by user/player
+
+
 Assets + basic functionality 
 * Importing and adding 3D models
 * Making sure the colliders for these models work properly 
 * Set up interacting with appliances, like making the liquid dispense and grabbing cups
+
+  
 Visual effects and Scene Management 
 * Scene transition from dining area to kitchen area
 * Lighting and shaders are implemented
