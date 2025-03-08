@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactive
+  - Fluid
   layers:
   - Default
   - TransparentFX
