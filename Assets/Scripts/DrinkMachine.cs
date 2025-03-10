@@ -6,17 +6,17 @@ public class DrinkMachine : MonoBehaviour {
     private static GameObject drink = null;
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && drink == null) {
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit)) {
-                if (hit.collider.gameObject == gameObject) {
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject) {
+                if (drink == null) {
                     drink = Instantiate(prefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                } else {
+                    Debug.Log("Drink already served.");
                 }
             }
-        } else if (drink != null) {
-            Debug.Log("Drink already served.");
         }
     }
 }
