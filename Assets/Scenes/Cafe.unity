@@ -1577,8 +1577,8 @@ MonoBehaviour:
   startPoint: {fileID: 978003842}
   orderLoc: {fileID: 2080024768}
   customerPrefab: {fileID: 5744429862720098079, guid: 274b0b8eb87a18447b1aa2fcf3bada06, type: 3}
-  speed: 3
   order: {fileID: 9079036347553037068, guid: 947afb08310a6cc49b496ad3c3d18d21, type: 3}
+  speed: 3
 --- !u!4 &978003844
 Transform:
   m_ObjectHideFlags: 0
