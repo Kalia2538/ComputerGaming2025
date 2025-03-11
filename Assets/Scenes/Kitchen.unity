@@ -407,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 4003559412461182762, guid: 24a58afc9849d4f05b2d71d3f9cd0756, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 4001330516761307282, guid: ef60782e76caa411f8203ad441585d1f, type: 3}
+      objectReference: {fileID: 2882182383916574809, guid: 8b476f84bd62f49139a1bc3a79e34b1c, type: 3}
     - target: {fileID: 4003559412461182762, guid: 24a58afc9849d4f05b2d71d3f9cd0756, type: 3}
       propertyPath: foodPrefab
       value: 
