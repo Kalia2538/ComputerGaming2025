@@ -1,4 +1,4 @@
-# PlaceHolder- Grounds for Catastrophe
+# PlaceHolder - Grounds for Catastrophe
 
 ## Team Members
 - [Kalia2538](https://github.com/Kalia2538)
@@ -65,7 +65,7 @@ Progression & Cafe Growth:
 * Cafe upgrades: Players can use their earnings to buy new appliances, decor, and kitchen tools to enhance both functionality and appearance.
 
 ### Expected UI
-* A semi-realistic 3D cafe environment that allows players to move around the closed space. The cafe environment will [] with the camera positioned above and angled downwards. 
+* A semi-realistic 3D cafe environment that allows players to move around the closed space. The cafe environment will appear with the camera positioned above and angled downwards. 
 * A door leads the player to the kitchen, from the counter, and vice versa. When the player enters the door to the kitchen, the scene will switch to a first-person POV 
 * Proximity can trigger a subtle visual cue, like an outline or glow around the object, to make interactions intuitive.
 
@@ -94,15 +94,37 @@ Movement:
 Complete the cafe and kitchen layout with interactive furniture and appliances. The materials should be complete, and decent lighting should be added.
 
 Environment and Layout
-* Create cafe and kitchen with probuilder 
-* Overall layout as before– something manageable by user/player
+~~* Create cafe and kitchen with probuilder ~~
+~~* Overall layout as before– something manageable by user/player ~~
+
+
 Assets + basic functionality 
-* Importing and adding 3D models
+~~* Importing and adding 3D models~~
 * Making sure the colliders for these models work properly 
 * Set up interacting with appliances, like making the liquid dispense and grabbing cups
+
+  
 Visual effects and Scene Management 
 * Scene transition from dining area to kitchen area
-* Lighting and shaders are implemented
+~~* Lighting and shaders are implemented~~
+
+### Additions
+* created prefabs for customers and player
+
+### Justificaitons
+* We did not do the scene transitioning (outside the scope of the assigned chapters)
+* We did not set up interacting with appliances (outside of the scope of the assigned chapters)
+* We did not test the colliders (outside of the scope of the assigned chapters)
+
+### Project Part 3: Visual Effects (Ch 11, 12, & 13)
+* Simulation of liquid/fluid effects for pouring coffee
+* Steam and smoke effects when brewing coffee
+* Apply shados and lighting to cafe and kitchen scenes
+* Use light probes for accurate lighting in cafe and kitchen scenes
+* Use high dynamic range (HDR) to cafe and kitchen scenes
+* Scene transition and realistic lighting changes when transitioning between scenes
+
+
 
 ## Development
 
@@ -124,5 +146,49 @@ This deliverable consists of three main components:
 <img width="500" alt="Cafe Scene" src="https://github.com/user-attachments/assets/3194be0e-d145-4629-b18a-2a7baf293721" />
 <img width="500" alt="Kitchen Scene" src="https://github.com/user-attachments/assets/a4e5fecd-1eb4-428f-91ff-b86bc45c34a4" />
 
+### Project Part 2: 3D Scenes and Models 
+#### Cafe
+
+![Cafe-Topview] (Readme Pics/Cafe_img.jpg)
+
+Our cafe has ample seating, with wooden tables, stools, chairs, couches and sofas. The green and cream two-tone walls and windows gives the cafe a vibrant atmosphere. 
+![Cafe Sitting Area] (Readme Pics/Cafe_v2 Sitting areas.png)
+The counter area has black and white tiling. We also added a register that is used to collect payment from the customers.
+![Cafe Sitting Area] (Readme Pics/Cafe_v2 Sitting areas.png)
+
+#### Kitchen
+![Kitchen Area] (Readme Pics/kitchen_layout.png)
+
+We designed our kitchen area with red and white tiling, along with white painted bricks for the walls. Our kitchen has an espresso machine, a coffee pot and a kettle for making drinks. We also have an oven and a bakery display case for making baked goods.
+
+#### Characters (NEED TO TAKE PHOTOS)
+
+We chose characters that match with the style of our cafe. We chose characters that have a cartoonish look and a wide range of diversity!
+
+* Customer/Player
+* Kitchen Layout
+* Cafe Layout
+
+![Cafe Sitting Area] (Readme Pics/Cafe_v2 Sitting areas.png)
 
 
+![Kitchen Area] (Readme Pics/kitchen_layout.png)
+
+#### Links to Assets Used
+Assets for the kitchen:
+[https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914] (https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914)
+
+Cash register: 
+[https://www.cgtrader.com/free-3d-models/various/various-models/funny-cash-register] (https://www.cgtrader.com/free-3d-models/various/various-models/funny-cash-register)
+
+Restaurant tables: 
+[https://kaylousberg.itch.io/restaurant-bits] (https://kaylousberg.itch.io/restaurant-bits)
+
+Other table and couch styles: 
+[https://kaylousberg.itch.io/furniture-bits] (https://kaylousberg.itch.io/furniture-bits)
+
+Floor: 
+[https://kaylousberg.itch.io/prototype-bits] (https://kaylousberg.itch.io/prototype-bits)
+
+Characters:
+[https://kenney.nl/assets/mini-characters-1] (https://kenney.nl/assets/mini-characters-1)
