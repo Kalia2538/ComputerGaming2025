@@ -149,30 +149,29 @@ This deliverable consists of three main components:
 ### Project Part 2: 3D Scenes and Models 
 #### Cafe
 
-![Cafe-Topview] (Readme Pics/Cafe_img.jpg)
+![Cafe-Topview] (Readme_pics/Cafe_img.jpg)
 
 Our cafe has ample seating, with wooden tables, stools, chairs, couches and sofas. The green and cream two-tone walls and windows gives the cafe a vibrant atmosphere. 
 ![Cafe Sitting Area] (Readme Pics/Cafe_v2 Sitting areas.png)
 The counter area has black and white tiling. We also added a register that is used to collect payment from the customers.
-![Cafe Sitting Area] (Readme Pics/Cafe_v2 Sitting areas.png)
+![Cafe Sitting Area] (Readme_pics/Cafe_v2 Sitting areas.png)
 
 #### Kitchen
-![Kitchen Area] (Readme Pics/kitchen_layout.png)
+![Kitchen Area] (Readme_pics/kitchen_layout.png)
 
 We designed our kitchen area with red and white tiling, along with white painted bricks for the walls. Our kitchen has an espresso machine, a coffee pot and a kettle for making drinks. We also have an oven and a bakery display case for making baked goods. The user can click on one of the drink machines and one of the bakery items to spawn a drink and plated food item on the counter.
 
-#### Characters (NEED TO TAKE PHOTOS)
+#### Characters
 
-We chose characters that match with the style of our cafe. We chose characters that have a cartoonish look and a wide range of diversity!
+We chose characters that match with the style of our cafe. We chose characters that have a cartoonish look and a wide range of diversity! Below are some pictures with our characters inside some of our scenes:
 
-* Customer/Player
-* Kitchen Layout
-* Cafe Layout
+![Character 1] (Readme_pics/c1.jpg)
+![Character 2] (Readme_pics/c5.jpg)
+![Customer/Player at the Register](Readme_pics/cafe_w_people_closer view.jpg)
+![Top view of cafe with people inside] (Readme_pics/cafe_with_people.jpg)
+![Angry Customer] (Readme_pics/character_2.jpg)
 
-![Cafe Sitting Area] (Readme Pics/Cafe_v2 Sitting areas.png)
 
-
-![Kitchen Area] (Readme Pics/kitchen_layout.png)
 
 #### Links to Assets Used
 Assets for the kitchen:
@@ -192,3 +191,8 @@ Floor:
 
 Characters:
 [https://kenney.nl/assets/mini-characters-1] (https://kenney.nl/assets/mini-characters-1)
+
+### How to Play
+Our game is not in the most playable format (we aren't at the animations chapter and haven't learned to do particles/water flow), but here are the mechanics that you can do as of now:
+* You can move the player around using WASD/Mouse input - (you have to use this function on the player capsule since our character assets have animations linked to them)
+* You can use the customer spawning (linked to a regular capsule, for the same reason as above) by clicking the screen when the customer gets to the counter to leave the counter.
