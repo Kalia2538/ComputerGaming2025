@@ -149,28 +149,39 @@ This deliverable consists of three main components:
 ### Project Part 2: 3D Scenes and Models 
 #### Cafe
 
-![Cafe-Topview] (Readme_pics/Cafe_img.jpg)
+
 
 Our cafe has ample seating, with wooden tables, stools, chairs, couches and sofas. The green and cream two-tone walls and windows gives the cafe a vibrant atmosphere. 
-![Cafe Sitting Area] (Readme Pics/Cafe_v2 Sitting areas.png)
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_img.jpg" alt="Cafe-Topview" width="500"/>
+
+
 The counter area has black and white tiling. We also added a register that is used to collect payment from the customers.
-![Cafe Sitting Area] (Readme_pics/Cafe_v2 Sitting areas.png)
+
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_Sitting_Area.png" alt="Cafe Sitting Area" width="500"/>
 
 #### Kitchen
-![Kitchen Area] (Readme_pics/kitchen_layout.png)
-https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/kitchen_layout.png
 
 We designed our kitchen area with red and white tiling, along with white painted bricks for the walls. Our kitchen has an espresso machine, a coffee pot and a kettle for making drinks. We also have an oven and a bakery display case for making baked goods. The user can click on one of the drink machines and one of the bakery items to spawn a drink and plated food item on the counter.
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/kitchen_layout.png" alt="Kitchen Layout" width="500"/>
+
+
 
 #### Characters
 
 We chose characters that match with the style of our cafe. We chose characters that have a cartoonish look and a wide range of diversity! Below are some pictures with our characters inside some of our scenes:
 
-![Character 1] (Readme_pics/c1.jpg)
-![Character 2] (Readme_pics/c5.jpg)
-![Customer/Player at the Register](Readme_pics/cafe_w_people_closer view.jpg)
-![Top view of cafe with people inside] (Readme_pics/cafe_with_people.jpg)
-![Angry Customer] (Readme_pics/character_2.jpg)
+
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/c1.jpg" alt="Character 1" width="500"/>
+
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/c5.jpg" alt="Character 2" width="500"/>
+
+
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/cafe_w_people_closer%20view.jpg" alt="Customer/Player at the Register" width="500"/>
+
+
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/cafe_with_people.jpg" alt="Cafe with People Inside" width="500"/>
+
+<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/character_2.jpg" alt="Angry Character" width="500"/>
 
 
 
@@ -197,3 +208,6 @@ Characters:
 Our game is not in the most playable format (we aren't at the animations chapter and haven't learned to do particles/water flow), but here are the mechanics that you can do as of now:
 * You can move the player around using WASD/Mouse input - (you have to use this function on the player capsule since our character assets have animations linked to them)
 * You can use the customer spawning (linked to a regular capsule, for the same reason as above) by clicking the screen when the customer gets to the counter to leave the counter.
+* In the kitchen scene you can click to dispense a cup or plate a food item.
+
+Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
