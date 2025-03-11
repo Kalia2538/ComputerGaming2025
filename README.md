@@ -159,7 +159,7 @@ The counter area has black and white tiling. We also added a register that is us
 #### Kitchen
 ![Kitchen Area] (Readme Pics/kitchen_layout.png)
 
-We designed our kitchen area with red and white tiling, along with white painted bricks for the walls. Our kitchen has an espresso machine, a coffee pot and a kettle for making drinks. We also have an oven and a bakery display case for making baked goods.
+We designed our kitchen area with red and white tiling, along with white painted bricks for the walls. Our kitchen has an espresso machine, a coffee pot and a kettle for making drinks. We also have an oven and a bakery display case for making baked goods. The user can click on one of the drink machines and one of the bakery items to spawn a drink and plated food item on the counter.
 
 #### Characters (NEED TO TAKE PHOTOS)
 
