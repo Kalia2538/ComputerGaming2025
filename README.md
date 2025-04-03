@@ -183,7 +183,7 @@ We chose characters that match with the style of our cafe. We chose characters t
 ~~* Apply shadows and lighting to cafe and kitchen scenes~~
 * Use light probes for accurate lighting in cafe and kitchen scenes
 * Use high dynamic range (HDR) to cafe and kitchen scenes
-* ~~Scene transition~~ and realistic lighting changes when transitioning between scenes
+~~* Scene transition~~ and realistic lighting changes when transitioning between scenes
 
 ### Additions
 * Player movement has been improved, using arrow keys
