@@ -117,13 +117,21 @@ Visual effects and Scene Management
 * We did not test the colliders (outside of the scope of the assigned chapters)
 
 ### Project Part 3: Visual Effects (Ch 11, 12, & 13)
-* Simulation of liquid/fluid effects for pouring coffee
-* Steam and smoke effects when brewing coffee
-* Apply shados and lighting to cafe and kitchen scenes
+~~* Simulation of liquid/fluid effects for pouring coffee~~
+~~* Steam and smoke effects when brewing coffee~~
+~~* Apply shadows and lighting to cafe and kitchen scenes~~
 * Use light probes for accurate lighting in cafe and kitchen scenes
 * Use high dynamic range (HDR) to cafe and kitchen scenes
-* Scene transition and realistic lighting changes when transitioning between scenes
+* ~~Scene transition~~ and realistic lighting changes when transitioning between scenes
 
+### Additions
+* Player movement has been improved, using arrow keys
+* The player can take the customer’s order by clicking UI buttons, and write down the order on a “notepad” UI input element
+
+### Justifications
+* We did not use light probes for lighting, because point lighting was sufficient for making the cafe well-lit
+* We did not use HDR, because standard lighting and shading techniques were sufficient for the visual style of our game
+* We have some scene transition (from cafe to kitchen), but we did not use lighting changes for transitions because it is outside the scope of the covered chapters
 
 
 ## Development
@@ -211,3 +219,8 @@ Our game is not in the most playable format (we aren't at the animations chapter
 * In the kitchen scene you can click to dispense a cup or plate a food item.
 
 Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
+
+### Project Part 2: 3D Scenes and Models 
+* Point lighting and shadows have been added to the cafe
+* We have experimented with various post-processing effects
+* We have implemented various visual effects including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
