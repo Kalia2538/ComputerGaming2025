@@ -80,10 +80,10 @@ Movement:
 ## Development Plan
 
 ### Project Checkpoint 1-2: Basic Mechanics and Scripting (Ch 5-9)
-~~ 1. Player proximity to the appliances ~~
-~~ 2. Basic player interactions with their environment (e.g., player movement and interacting with the environment) ~~
-~~ 3. Spawning of Customers to the counter ~~
-~~ 4. Set up cooking tasks e.g., making coffee ~~
+~~1. Player proximity to the appliances~~
+~~2. Basic player interactions with their environment (e.g., player movement and interacting with the environment)~~
+~~3. Spawning of Customers to the counter~~
+~~4. Set up cooking tasks e.g., making coffee~~
 
 ### Additions
 * Implemented a basic Keurig-style machine for making hot coffee in different cup sizes.
@@ -94,8 +94,8 @@ Movement:
 Complete the cafe and kitchen layout with interactive furniture and appliances. The materials should be complete, and decent lighting should be added.
 
 Environment and Layout
-~~* Create cafe and kitchen with probuilder ~~
-~~* Overall layout as before– something manageable by user/player ~~
+~~* Create cafe and kitchen with probuilder~~
+~~* Overall layout as before– something manageable by user/player~~
 
 
 Assets + basic functionality 
