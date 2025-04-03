@@ -116,31 +116,8 @@ Visual effects and Scene Management
 * We did not set up interacting with appliances (outside of the scope of the assigned chapters)
 * We did not test the colliders (outside of the scope of the assigned chapters)
 
-### Project Part 3: Visual Effects (Ch 11, 12, & 13)
-~~* Simulation of liquid/fluid effects for pouring coffee~~
-~~* Steam and smoke effects when brewing coffee~~
-~~* Apply shadows and lighting to cafe and kitchen scenes~~
-* Use light probes for accurate lighting in cafe and kitchen scenes
-* Use high dynamic range (HDR) to cafe and kitchen scenes
-* ~~Scene transition~~ and realistic lighting changes when transitioning between scenes
 
-### Additions
-* Player movement has been improved, using arrow keys
-* The player can take the customer’s order by clicking UI buttons, and write down the order on a “notepad” UI input element
 
-### Justifications
-* We did not use light probes for lighting, because point lighting was sufficient for making the cafe well-lit
-* We did not use HDR, because standard lighting and shading techniques were sufficient for the visual style of our game
-* We have some scene transition (from cafe to kitchen), but we did not use lighting changes for transitions because it is outside the scope of the covered chapters
-
-### Project Checkpoint 3-4: Sound, UI, and Animation
-* Background music for the cafe
-* Editing the volume of the music when inside of the kitchen
-* Adding sounds for kitchen appliances and timers
-* Adding UI elements for  keeping track of orders, customers, time, etc.
-* Create walking and sitting animations
-* Animate the doors
-* Animations for kitchen appliances
 
 ## Development
 
@@ -200,6 +177,37 @@ We chose characters that match with the style of our cafe. We chose characters t
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/character_2.jpg" alt="Angry Character" width="500"/>
 
 
+### Project Part 3: Visual Effects (Ch 11, 12, & 13)
+~~* Simulation of liquid/fluid effects for pouring coffee~~
+~~* Steam and smoke effects when brewing coffee~~
+~~* Apply shadows and lighting to cafe and kitchen scenes~~
+* Use light probes for accurate lighting in cafe and kitchen scenes
+* Use high dynamic range (HDR) to cafe and kitchen scenes
+* ~~Scene transition~~ and realistic lighting changes when transitioning between scenes
+
+### Additions
+* Player movement has been improved, using arrow keys
+* The player can take the customer’s order by clicking UI buttons, and write down the order on a “notepad” UI input element
+* We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile
+* We have implemented various visual effects, including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
+
+
+### Justifications
+* We did not use light probes for lighting, because point lighting was sufficient for making the cafe well-lit
+* We did not use HDR, because standard lighting and shading techniques were sufficient for the visual style of our game
+* We have some scene transition (from cafe to kitchen), but we did not use lighting changes for transitions because it is outside the scope of the covered chapters
+
+
+### Checkpoint 3-4: Music, UI and Animations
+* Background music for the cafe
+* Editing the volume of the music when inside of the kitchen
+* Adding sounds for kitchen appliances and timers
+* Adding UI elements for  keeping track of orders, customers, time, etc.
+* Create walking and sitting animations
+* Animate the doors
+* Animations for kitchen appliances
+
+
 
 #### Links to Assets Used
 Assets for the kitchen:
@@ -221,25 +229,9 @@ Characters:
 [https://kenney.nl/assets/mini-characters-1] (https://kenney.nl/assets/mini-characters-1)
 
 ### How to Play
-Our game is not in the most playable format (we aren't at the animations chapter and haven't learned to do particles/water flow), but here are the mechanics that you can do as of now:
-* You can move the player around using WASD/Mouse input - (you have to use this function on the player capsule since our character assets have animations linked to them)
-* You can use the customer spawning (linked to a regular capsule, for the same reason as above) by clicking the screen when the customer gets to the counter to leave the counter.
+Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
+* You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
+* You can use the customer spawning (linked to a regular capsule) by clicking the screen when the customer gets to the counter to leave the counter.
 * In the kitchen scene you can click to dispense a cup or plate a food item.
 
 Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
-
-### Project Part 3: Visual Effects
-* Lighting and shadows have been added to the cafe
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/lighting_cafe3.png" alt="Lighting 3" width="500"/>
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/lighting_cafe2.png" alt="Lighting 2" width="500"/>
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/lighting_cafe1.png" alt="Lighting 1" width="500"/>
-
-* We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/morning_pp_effect.png" alt="Morning" width="500"/>
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/night_mode_pp_effect.png" alt="Night" width="500"/>
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/warm_cafe_pp_effect.png" alt="Warm cafe" width="500"/>
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/rainy_day_pp_effect.png" alt="Rainy" width="500"/>
-
-* We have implemented some visual effects, including steam for making coffee, and sparkle effects in the kitchen and during customer interaction
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/steam_visual_effect.png" alt="Steam" width="500"/>
-<img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/sparkle_effect1.png" alt="Sparkles" width="500"/>
