@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public class DrinkMachine : MonoBehaviour {
-    public GameObject prefab;
-    public GameObject spawnPoint;
-    private static GameObject drink = null;
+    public GameObject cupPrefab;
+    public Transform cupSpawnPoint; 
+    private static GameObject spawnedDrink = null;
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
@@ -11,12 +11,17 @@ public class DrinkMachine : MonoBehaviour {
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject) {
-                if (drink == null) {
-                    drink = Instantiate(prefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                if (spawnedDrink == null) {
+                    spawnedDrink = Instantiate(cupPrefab, cupSpawnPoint.transform.position, cupSpawnPoint.transform.rotation);
+                    Debug.Log("Drink spawned under espresso machine.");
                 } else {
                     Debug.Log("Drink already served.");
                 }
             }
         }
+    }
+
+        public static GameObject GetSpawnedCup() {
+        return spawnedDrink;
     }
 }
