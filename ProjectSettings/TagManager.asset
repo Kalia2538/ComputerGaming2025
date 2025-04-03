@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactive
+  - Fluid
+  - Undefined
+  - Cup
   layers:
   - Default
   - TransparentFX
@@ -12,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - NonClickable
+  - Cup
+  - PP
   - 
   - 
   - 

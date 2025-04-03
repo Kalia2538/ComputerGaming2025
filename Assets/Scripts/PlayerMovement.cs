@@ -5,39 +5,41 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    [SerializeField] private float speedForce = 1000f; //movement speed multiplier based for force
-    [SerializeField] private float rotationForce = 100f;  //rotation speed multiplier based for force
+    [SerializeField] private float speedForce = 1000f; // Movement speed multiplier
 
-    private Vector2 movementInput;       //stores current movement input
-    private Vector2 lookInput;           //stores the current look input
+    private Vector2 movementInput;       // Stores the current movement input
     private Rigidbody rb;
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
     }
     private void Awake()
     {
-        //hides and locsk the cursor
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        rb = GetComponent<Rigidbody>();
+        // // Hide and lock the cursor for a better experience
+        // Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
     }
 
-    //called automatically when the "Move" action is performed
-    public void OnMove(InputValue value) { movementInput = value.Get<Vector2>(); }
+    // This method is called automatically when the "Move" action is performed
+    public void OnMove(InputValue value) { 
+        movementInput = value.Get<Vector2>();
+        Debug.Log("Move Input: " + movementInput);
 
-    //called automatically when the "Look" action is performed
-    public void OnLook(InputValue value) { lookInput = value.Get<Vector2>(); }
+    }
+
 
     private void FixedUpdate()
     {
-        //calculates movement vector and move the player
-        Vector3 force = new Vector3(movementInput.x, 0, movementInput.y) * speedForce * Time.deltaTime;
-        rb.AddRelativeForce(force);
+        // Calculate movement vector and move the player
+        Vector3 direction = new Vector3(movementInput.x, 0, movementInput.y).normalized;
+        //Debug.Log("Calculated Direction: " + direction);
+        Vector3 localDirection = transform.forward * direction.y + transform.right * direction.x;
+        Vector3 targetPos = rb.position + localDirection * speedForce * Time.fixedDeltaTime;
+        rb.MovePosition(targetPos);
 
-        //applies rotation based on horizontal mouse movement
-        float torque = lookInput.x * rotationForce * Time.deltaTime;
-        rb.AddRelativeTorque(0, torque, 0);
+        
     }
 }
