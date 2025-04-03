@@ -188,7 +188,9 @@ We chose characters that match with the style of our cafe. We chose characters t
 ### Additions
 * Player movement has been improved, using arrow keys
 * The player can take the customer’s order by clicking UI buttons, and write down the order on a “notepad” UI input element
-* We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile
+* We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile. To test this, in the kitchen scene, press "m", which will switch between the different views.
+  * In our next iteration, we will make these profiles more robust, translating to the cafe scene as well.
+  * We also hope to make the background more detailed so the user is not just placed "in a void" but in some scenery context. We hope these profiles will coincide with the background as well. 
 * We have implemented various visual effects, including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
 
 
@@ -206,7 +208,6 @@ We chose characters that match with the style of our cafe. We chose characters t
 * Create walking and sitting animations
 * Animate the doors
 * Animations for kitchen appliances
-
 
 
 #### Links to Assets Used
@@ -248,6 +249,9 @@ Characters:
 Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
 * You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
 * You can use the customer spawning (linked to a regular capsule) by clicking the screen when the customer gets to the counter to leave the counter.
-* In the kitchen scene you can click to dispense a cup or plate a food item.
+* In the current kitchen scene, users can make an espresso. In the next iteration, this feature will be expanded to include additional options such as tea, drip (stovetop) coffee, and various food items.
+  * To make an espresso, the user clicks once on the top of the espresso machine to spawn an empty cup. Next, clicking the red circle on the machine dispenses the liquid. Once the process is complete, steam rises from the cup, and the mug visibly fills with coffee.
+  * The user can then press and hold the mug's handle to drag it across the counter. When the mug is hovered over the designated white area of the counter, it will automatically snap into place.
 
-Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
+
+Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to bring the user back from the kitchen scene to th cafe scene.
