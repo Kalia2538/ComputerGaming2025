@@ -133,6 +133,14 @@ Visual effects and Scene Management
 * We did not use HDR, because standard lighting and shading techniques were sufficient for the visual style of our game
 * We have some scene transition (from cafe to kitchen), but we did not use lighting changes for transitions because it is outside the scope of the covered chapters
 
+### Project Checkpoint 3-4: Sound, UI, and Animation
+* Background music for the cafe
+* Editing the volume of the music when inside of the kitchen
+* Adding sounds for kitchen appliances and timers
+* Adding UI elements for  keeping track of orders, customers, time, etc.
+* Create walking and sitting animations
+* Animate the doors
+* Animations for kitchen appliances
 
 ## Development
 
