@@ -220,7 +220,7 @@ Our game is not in the most playable format (we aren't at the animations chapter
 
 Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
 
-### Project Part 2: 3D Scenes and Models 
+### Project Part 3: Visual Effects
 * Lighting and shadows have been added to the cafe
 * We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile
-* We have implemented various visual effects including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
+* We have implemented various visual effects, including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
