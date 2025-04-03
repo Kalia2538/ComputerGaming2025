@@ -228,6 +228,22 @@ Floor:
 Characters:
 [https://kenney.nl/assets/mini-characters-1] (https://kenney.nl/assets/mini-characters-1)
 
+### Project Part 3: Visual Effects
+ * Lighting and shadows have been added to the cafe
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/lighting_cafe3.png" alt="Lighting 3" width="500"/>
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/lighting_cafe2.png" alt="Lighting 2" width="500"/>
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/lighting_cafe1.png" alt="Lighting 1" width="500"/>
+ 
+ * We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/morning_pp_effect.png" alt="Morning" width="500"/>
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/night_mode_pp_effect.png" alt="Night" width="500"/>
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/warm_cafe_pp_effect.png" alt="Warm cafe" width="500"/>
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/rainy_day_pp_effect.png" alt="Rainy" width="500"/>
+ 
+ * We have implemented some visual effects, including steam for making coffee, and sparkle effects in the kitchen and during customer interaction
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/steam_visual_effect.png" alt="Steam" width="500"/>
+ <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/sparkle_effect1.png" alt="Sparkles" width="500"/>
+
 ### How to Play
 Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
 * You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
