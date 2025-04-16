@@ -5,18 +5,11 @@ public class DraggableCup : MonoBehaviour {
     private bool isDragging = false;
     private Camera cam;
 
-    public Material glowMaterial;
-    private Material originalMaterial;
-    private Renderer cupRenderer;
-
     private int clickableLayerMask;
 
     void Start() {
         cam = Camera.main;
         clickableLayerMask = ~LayerMask.GetMask("NonClickable");
-
-        cupRenderer = GetComponent<Renderer>();
-        originalMaterial = cupRenderer.material;
     }
 
 
@@ -42,18 +35,6 @@ public class DraggableCup : MonoBehaviour {
     void OnMouseUp() {
         isDragging = false;
     }
-
-    void OnMouseEnter() {
-    if (glowMaterial != null && cupRenderer != null) {
-        cupRenderer.material = glowMaterial;
-    }
-}
-
-void OnMouseExit() {
-    if (originalMaterial != null && cupRenderer != null) {
-        cupRenderer.material = originalMaterial;
-    }
-}
 
 
     Vector3 GetMouseWorldPosition() {
