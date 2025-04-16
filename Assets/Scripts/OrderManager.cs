@@ -13,6 +13,8 @@ public class OrderManager : MonoBehaviour {
     public Button serveButton;
     public TextMeshProUGUI scoreText;
     public GameObject sparkleEffect;
+    public AudioSource cashRegisterSound;
+
 
     private string customerDrink;
     private string customerFood;
@@ -53,6 +55,10 @@ public class OrderManager : MonoBehaviour {
         customerOrder.SetActive(false);
         okButton.gameObject.SetActive(false);
         goToKitchenButton.gameObject.SetActive(true);
+
+        if (cashRegisterSound != null) {
+            cashRegisterSound.Play();
+        }
 
         // play sparkle after confirming order
         sparkleEffect.SetActive(true);
