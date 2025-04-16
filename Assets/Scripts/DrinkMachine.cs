@@ -13,7 +13,7 @@ public class DrinkMachine : MonoBehaviour {
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject) {
                 if (spawnedDrink == null) {
                     spawnedDrink = Instantiate(cupPrefab, cupSpawnPoint.transform.position, cupSpawnPoint.transform.rotation);
-                    Debug.Log("Drink spawned under espresso machine.");
+                    Debug.Log("Drink spawned.");
                 } else {
                     Debug.Log("Drink already served.");
                 }
