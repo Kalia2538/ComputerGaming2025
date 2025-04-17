@@ -1,5 +1,5 @@
 /**
-* Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
+* Author: Hana Ismaiel
 * Date Created: 04/16/2025
 * Date Last Updated: 04/16/2025
 * Summary: Handles kitchen scene logic and return to cafe transition

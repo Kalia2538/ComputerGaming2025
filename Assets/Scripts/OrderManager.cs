@@ -25,6 +25,7 @@ public class OrderManager : MonoBehaviour  {
 
     [Header("Audio")]
     public AudioSource cashRegisterSound;
+    public AudioSource buttonClickSound;
 
     private string customerDrink;
     private string customerFood;
@@ -36,11 +37,11 @@ public class OrderManager : MonoBehaviour  {
         scoreText.text = "Score: " + GameManager.totalScore;
     }
 
-    void InitializeButtonListeners() {
-        takeOrderButton.onClick.AddListener(ShowOrder);
-        okButton.onClick.AddListener(ConfirmOrder);
-        goToKitchenButton.onClick.AddListener(GoToKitchen);
-        serveButton.onClick.AddListener(ServeOrder);
+    void InitializeButtonListeners()  {
+        takeOrderButton.onClick.AddListener(() => { PlayButtonSound(); ShowOrder(); });
+        okButton.onClick.AddListener(() => { PlayButtonSound(); ConfirmOrder(); });
+        goToKitchenButton.onClick.AddListener(() => { PlayButtonSound(); GoToKitchen(); });
+        serveButton.onClick.AddListener(() => { PlayButtonSound(); ServeOrder(); });
     }
 
     void ResetUIState() {
@@ -48,6 +49,12 @@ public class OrderManager : MonoBehaviour  {
         okButton.gameObject.SetActive(false);
         goToKitchenButton.gameObject.SetActive(false);
         serveButton.gameObject.SetActive(false);
+    }
+
+    void PlayButtonSound() {
+        if (buttonClickSound != null) {
+            buttonClickSound.Play();
+        }
     }
 
     void ShowOrder()  {
@@ -86,7 +93,9 @@ public class OrderManager : MonoBehaviour  {
     }
 
     void PlayOrderConfirmationEffects() {
-        if (cashRegisterSound != null) cashRegisterSound.Play();
+        if (cashRegisterSound != null) {
+            cashRegisterSound.Play();
+        }
         sparkleEffect.SetActive(true);
         sparkleEffect.GetComponent<ParticleSystem>().Play();
         Invoke("HideSparkleEffect", 1.5f);
