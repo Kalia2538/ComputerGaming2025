@@ -141,15 +141,23 @@ Visual effects and Scene Management
 
 ### Checkpoint 3-4: Music, UI and Animations
 ~~* Background music for the cafe~~
+
 * Editing the volume of the music when inside of the kitchen
+  
 * Adding sounds for kitchen appliances and timers
+
 ~~* Adding UI elements for  keeping track of orders, customers, time, etc.~~
+
 * Create walking and sitting animations
+
 ~~* Animate the doors~~
-* Animations for kitchen appliances
+
+~~* Animations for kitchen appliances~~
 
 ### Additions
-* 
+* Other sound effects have been added in the cafe (UI button clicks, cash register)
+* The game mechanics have been improved, including scene switching to and from the cafe
+* The notepad persists between scenes
 
 ### Justifications
 * 
@@ -271,6 +279,19 @@ Characters:
 
 ### Project Checkpoint 3-4: Sound, UI, and Animation
 * 
+
+#### Links to Assets Used
+Cash register sound effect:
+[https://pixabay.com/sound-effects/cash-register-purchase-87313/] (https://pixabay.com/sound-effects/cash-register-purchase-87313/)
+
+GUI components in the cafe:
+[https://assetstore.unity.com/packages/2d/gui/sweet-land-gui-208285] (https://assetstore.unity.com/packages/2d/gui/sweet-land-gui-208285)
+
+Speech bubble:
+[https://assetstore.unity.com/packages/2d/environments/2d-atlas-speech-bubbles-alphabet-numbers-88398#content] (https://assetstore.unity.com/packages/2d/environments/2d-atlas-speech-bubbles-alphabet-numbers-88398#content)
+
+Button click sound effects:
+[https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644] (https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644)
 
 ### How to Play
 Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
