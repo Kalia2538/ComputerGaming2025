@@ -76,55 +76,51 @@ Movement:
   * The player would then press Space (or another button) to activate the station's function, such as dispensing a drink from the counter.
   * When approaching an object, a prompt is displayed like "Click to Dispense Drink" to let the player know which action can be taken.
 
-
 ## Development Plan
 
 ### Project Checkpoint 1-2: Basic Mechanics and Scripting (Ch 5-9)
-~~1. Player proximity to the appliances~~
-~~2. Basic player interactions with their environment (e.g., player movement and interacting with the environment)~~
-~~3. Spawning of Customers to the counter~~
-~~4. Set up cooking tasks e.g., making coffee~~
-
-### Additions
+* ~~Player proximity to the appliances~~
+* ~~Basic player interactions with their environment (e.g., player movement and interacting with the environment)~~
+* ~~Spawning of Customers to the counter~~
+* ~~Set up cooking tasks e.g., making coffee~~
+#### Additions
 * Implemented a basic Keurig-style machine for making hot coffee in different cup sizes.
 * Clicking the cup now correctly places it under the coffee machine.
 
 ### Project Part 2: 3D Scenes and Models (Ch 3+4, 10)
-
 Complete the cafe and kitchen layout with interactive furniture and appliances. The materials should be complete, and decent lighting should be added.
 
 Environment and Layout
-~~* Create cafe and kitchen with probuilder~~
-~~* Overall layout as before– something manageable by user/player~~
-
+* ~~Create cafe and kitchen with probuilder~~
+* ~~Overall layout as before– something manageable by user/player~~
 
 Assets + basic functionality 
-~~* Importing and adding 3D models~~
+* ~~Importing and adding 3D models~~
 * Making sure the colliders for these models work properly 
 * Set up interacting with appliances, like making the liquid dispense and grabbing cups
-
   
 Visual effects and Scene Management 
 * Scene transition from dining area to kitchen area
-~~* Lighting and shaders are implemented~~
+* ~~Lighting and shaders are implemented~~
 
-### Additions
+#### Additions
 * created prefabs for customers and player
 
-### Justificaitons
+#### Justificaitons
 * We did not do the scene transitioning (outside the scope of the assigned chapters)
 * We did not set up interacting with appliances (outside of the scope of the assigned chapters)
 * We did not test the colliders (outside of the scope of the assigned chapters)
 
-### Project Part 3: Visual Effects (Ch 11, 12, & 13)
-~~* Simulation of liquid/fluid effects for pouring coffee~~
-~~* Steam and smoke effects when brewing coffee~~
-~~* Apply shadows and lighting to cafe and kitchen scenes~~
-* Use light probes for accurate lighting in cafe and kitchen scenes
-* Use high dynamic range (HDR) to cafe and kitchen scenes
-~~* Scene transition~~ and realistic lighting changes when transitioning between scenes
 
-### Additions
+### Project Part 3: Visual Effects (Ch 11, 12, & 13)
+* ~~Simulation of liquid/fluid effects for pouring coffee~~  
+* ~~Steam and smoke effects when brewing coffee~~  
+* ~~Apply shadows and lighting to cafe and kitchen scenes~~  
+* Use light probes for accurate lighting in cafe and kitchen scenes  
+* Use high dynamic range (HDR) to cafe and kitchen scenes  
+* ~~Scene transition~~ and realistic lighting changes when transitioning between scenes
+
+#### Additions
 * Player movement has been improved, using arrow keys
 * The player can take the customer’s order by clicking UI buttons, and write down the order on a “notepad” UI input element
 * We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile. To test this, in the kitchen scene, press "m", which will switch between the different views.
@@ -132,38 +128,36 @@ Visual effects and Scene Management
   * We also hope to make the background more detailed so the user is not just placed "in a void" but in some scenery context. We hope these profiles will coincide with the background as well. 
 * We have implemented various visual effects, including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
 
-
-### Justifications
+#### Justifications
 * We did not use light probes for lighting, because point lighting was sufficient for making the cafe well-lit
 * We did not use HDR, because standard lighting and shading techniques were sufficient for the visual style of our game
 * We have some scene transition (from cafe to kitchen), but we did not use lighting changes for transitions because it is outside the scope of the covered chapters
 
 
-### Checkpoint 3-4: Music, UI and Animations
-~~* Background music for the cafe~~
-
-~~* Editing the volume of the music when inside of the kitchen~~
-  
-~~* Adding sounds for kitchen appliances~~ and timers
-
-~~* Adding UI elements for  keeping track of orders, customers, time, etc.~~
-
+### Project Checkpoint 3-4: Music, UI and Animations
+* ~~Background music for the cafe~~
+* ~~Editing the volume of the music when inside of the kitchen~~
+* ~~Adding sounds for kitchen appliances and timers~~
+* ~~Adding UI elements for keeping track of orders,~~ customers, time, etc.
 * Create walking and sitting animations
+* ~~Animate the doors~~
+* ~~Animations for kitchen appliances~~
 
-~~* Animate the doors~~
-
-~~* Animations for kitchen appliances~~
-
-### Additions
-* Other sound effects have been added in the cafe (UI button clicks, cash register)
+#### Additions
+* Added cash register soundeffects
+* Added sound effects for UI elements
+* Added speech bubbles for customer orders
+* Improved UI design for buttons, notepad, text, etc.
 * The game mechanics have been improved, including scene switching to and from the cafe
 * The notepad persists between scenes
 * The camera scroll bar is working in the kitchen
 * Enhanced menu options in the kitchen: you can spawn a drink and a bakery item
 
-### Justifications
-* We tried to work on character animations, but were unable to complete this task. Our current characters did not come rigged, and since our characters don’t have knees/elbows, many auto-riggers did not work. We tried finding other characters with a similar style that were rigged, but not much came up. After trying for a while, we are considering using different character models
+
+#### Justifications
+* We had trouble with doing the character/player animations. Our models did not come rigged, and using an auto-rigger wasn't possible due to the structure of our characters (no knees or elbows). We really liked the style of our current characters, so we tried to look for other solutions, but we did not have any success. We are considering picking new models for our characters.
 * We did not use implement a timer in this iteration because we were focused on higher-priority mechanics (scene switching, customer ordering)
+
 
 ### Project Part 4: Finishing Touches (Ch 18 & 19)
 
@@ -189,9 +183,7 @@ In our final iteration, we plan to implement performance optimization and build 
 - Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions.
 
 ## Development
-
 ### Project Checkpoint 1-2
-
 This deliverable consists of three main components:
 1. Player movement and interaction system
 * The player can move around the cafe environment using either WASD or arrow keys
@@ -211,27 +203,18 @@ This deliverable consists of three main components:
 ### Project Part 2: 3D Scenes and Models 
 #### Cafe
 
-
-
 Our cafe has ample seating, with wooden tables, stools, chairs, couches and sofas. The green and cream two-tone walls and windows gives the cafe a vibrant atmosphere. 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_img.jpg" alt="Cafe-Topview" width="500"/>
 
-
 The counter area has black and white tiling. We also added a register that is used to collect payment from the customers.
-
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_Sitting_Area.png" alt="Cafe Sitting Area" width="500"/>
 
 #### Kitchen
-
 We designed our kitchen area with red and white tiling, along with white painted bricks for the walls. Our kitchen has an espresso machine, a coffee pot and a kettle for making drinks. We also have an oven and a bakery display case for making baked goods. The user can click on one of the drink machines and one of the bakery items to spawn a drink and plated food item on the counter.
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/kitchen_layout.png" alt="Kitchen Layout" width="500"/>
 
-
-
 #### Characters
-
 We chose characters that match with the style of our cafe. We chose characters that have a cartoonish look and a wide range of diversity! Below are some pictures with our characters inside some of our scenes:
-
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/c1.jpg" alt="Character 1" width="500"/>
 
@@ -239,7 +222,6 @@ We chose characters that match with the style of our cafe. We chose characters t
 
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/cafe_w_people_closer%20view.jpg" alt="Customer/Player at the Register" width="500"/>
-
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/cafe_with_people.jpg" alt="Cafe with People Inside" width="500"/>
 
@@ -280,18 +262,12 @@ Characters:
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/steam_visual_effect.png" alt="Steam" width="500"/>
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/sparkle_effect1.png" alt="Sparkles" width="500"/>
 
-### Project Checkpoint 3-4: Sound, UI, and Animation
-* Added background music to cafe and the kitchen
-* Added sound effects in the cafe
- * Cash register sound when a customer places an order
- * UI sound effect for button clicks
-* Added sound effects in the kitchen
- * Coffee/liquid pouring noises when a drink is poured
-* Added animations to mocha pot and tea pot in the kitchen
-* Polished the UI using unity store assets
- * Speech bubble to represent customer order
- * Improved design of buttons, notepad, and text 
-* Added an open and closing animation for the door in the cafe whenever the scene is loaded
+### Project Checkpoint 3-4 (UI, Sounds and Animations)
+For this checkpoint, worked on refining our UI elements, incorporating music and sounds for our kitchen/cafe, and adding animations for our door in the cafe.
+
+Here is the audio file for the music that we have in our cafe.
+[Cafe Music](Assets/CFG BackgroundMusic/ Bossa Antigua.mp3)
+* Note: when the scene changes from the cafe to the kitchen, we added a low-pass filter to indicate the location change.
 
 #### Links to Assets Used
 Cash register sound effect:
@@ -306,13 +282,28 @@ Speech bubble:
 Button click sound effects:
 [https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644] (https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644)
 
+
+
 ### How to Play
 Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
 * You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
 * You can use the customer spawning (linked to a regular capsule) by clicking the screen when the customer gets to the counter to leave the counter.
-* In the current kitchen scene, users can make an espresso. In the next iteration, this feature will be expanded to include additional options such as tea, drip (stovetop) coffee, and various food items.
+* In the current kitchen scene, users can make an espresso, tea, and stovetop coffee. 
   * To make an espresso, the user clicks once on the top of the espresso machine to spawn an empty cup. Next, clicking the red circle on the machine dispenses the liquid. Once the process is complete, steam rises from the cup, and the mug visibly fills with coffee.
   * The user can then press and hold the mug's handle to drag it across the counter. When the mug is hovered over the designated white area of the counter, it will automatically snap into place.
+- The `camera slider` has also been enhanced:
+  - You can now use the **Left and Right arrow keys** to scroll the camera across the cafe.
+  - Pointer input on the slider has been **disabled**, preventing click/drag interaction.
+
 
 
 Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
+
+Further:
+
+In response to the notes:
+
+* We now have a working **scene transition system** that allows the player to go between the `kitchen` and `cafe` using dedicated buttons.
+*  We've implemented a **notepad system with persistent text**, which saves order details and redisplays them in the kitchen after switching scenes.
+* The **core gameplay loop** (customer walking, seating, multi-order handling, etc.) is still in development, and will be the **main focus of the next submission** now that our foundational systems are in place.
+*  We're planning to add more **scenic elements and UI enhancements** based on **Chapters 18 and 19** of the textbook.
