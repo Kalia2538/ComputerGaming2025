@@ -116,8 +116,66 @@ Visual effects and Scene Management
 * We did not set up interacting with appliances (outside of the scope of the assigned chapters)
 * We did not test the colliders (outside of the scope of the assigned chapters)
 
+### Project Part 3: Visual Effects (Ch 11, 12, & 13)
+~~* Simulation of liquid/fluid effects for pouring coffee~~
+~~* Steam and smoke effects when brewing coffee~~
+~~* Apply shadows and lighting to cafe and kitchen scenes~~
+* Use light probes for accurate lighting in cafe and kitchen scenes
+* Use high dynamic range (HDR) to cafe and kitchen scenes
+~~* Scene transition~~ and realistic lighting changes when transitioning between scenes
+
+### Additions
+* Player movement has been improved, using arrow keys
+* The player can take the customer’s order by clicking UI buttons, and write down the order on a “notepad” UI input element
+* We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile. To test this, in the kitchen scene, press "m", which will switch between the different views.
+  * In our next iteration, we will make these profiles more robust, translating to the cafe scene as well.
+  * We also hope to make the background more detailed so the user is not just placed "in a void" but in some scenery context. We hope these profiles will coincide with the background as well. 
+* We have implemented various visual effects, including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
 
 
+### Justifications
+* We did not use light probes for lighting, because point lighting was sufficient for making the cafe well-lit
+* We did not use HDR, because standard lighting and shading techniques were sufficient for the visual style of our game
+* We have some scene transition (from cafe to kitchen), but we did not use lighting changes for transitions because it is outside the scope of the covered chapters
+
+
+### Checkpoint 3-4: Music, UI and Animations
+~~* Background music for the cafe~~
+* Editing the volume of the music when inside of the kitchen
+* Adding sounds for kitchen appliances and timers
+~~* Adding UI elements for  keeping track of orders, customers, time, etc.~~
+* Create walking and sitting animations
+~~* Animate the doors~~
+* Animations for kitchen appliances
+
+### Additions
+* 
+
+### Justifications
+* 
+
+### Project Part 4: Finishing Touches (Ch 18 & 19)
+
+In our final iteration, we plan to implement performance optimization and build polishing as mentioned in HCChapters 18 and 19.
+
+#### Planned Optimization (Ch 18)
+- Use Unity's Frame Debugger to analyze draw calls and identify performance bottlenecks
+- Use the Profiler to determine whether the game is CPU-bound or GPU-bound
+- Apply batching for static GameObjects that share materials to reduce draw calls
+- Begin testing occlusion culling for walls and static props to improve rendering performance
+- Review and limit `Debug.Log` statements to prevent runtime performance issues, especially during pouring interactions
+
+#### Planned Build Preparation (Ch 19)
+- Adjust build settings: resolution, fullscreen mode, splash screen
+- Enable script debugging and use the Profiler to monitor the built game
+- Add a main menu scene to serve as the initial entry point
+- Add a pause screen.
+- Test the executable on multiple systems and check for consistency between build and Editor
+
+#### Additional Planned Features
+- Complete and test full customer order flow (arrival → order → kitchen prep → serve)
+- Display the written order note in the kitchen when switching scenes
+- Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions.
 
 ## Development
 
@@ -176,40 +234,6 @@ We chose characters that match with the style of our cafe. We chose characters t
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/character_2.jpg" alt="Angry Character" width="500"/>
 
-
-### Project Part 3: Visual Effects (Ch 11, 12, & 13)
-~~* Simulation of liquid/fluid effects for pouring coffee~~
-~~* Steam and smoke effects when brewing coffee~~
-~~* Apply shadows and lighting to cafe and kitchen scenes~~
-* Use light probes for accurate lighting in cafe and kitchen scenes
-* Use high dynamic range (HDR) to cafe and kitchen scenes
-~~* Scene transition~~ and realistic lighting changes when transitioning between scenes
-
-### Additions
-* Player movement has been improved, using arrow keys
-* The player can take the customer’s order by clicking UI buttons, and write down the order on a “notepad” UI input element
-* We have experimented with various post-processing effects in the kitchen scene, including Morning Light, Night Mode, Rainy Day, and Warm Cafe Profile. To test this, in the kitchen scene, press "m", which will switch between the different views.
-  * In our next iteration, we will make these profiles more robust, translating to the cafe scene as well.
-  * We also hope to make the background more detailed so the user is not just placed "in a void" but in some scenery context. We hope these profiles will coincide with the background as well. 
-* We have implemented various visual effects, including steam and smoke for making coffee, and sparkle effects in the kitchen and during customer interaction
-
-
-### Justifications
-* We did not use light probes for lighting, because point lighting was sufficient for making the cafe well-lit
-* We did not use HDR, because standard lighting and shading techniques were sufficient for the visual style of our game
-* We have some scene transition (from cafe to kitchen), but we did not use lighting changes for transitions because it is outside the scope of the covered chapters
-
-
-### Checkpoint 3-4: Music, UI and Animations
-* Background music for the cafe
-* Editing the volume of the music when inside of the kitchen
-* Adding sounds for kitchen appliances and timers
-* Adding UI elements for  keeping track of orders, customers, time, etc.
-* Create walking and sitting animations
-* Animate the doors
-* Animations for kitchen appliances
-
-
 #### Links to Assets Used
 Assets for the kitchen:
 [https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914] (https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914)
@@ -255,26 +279,3 @@ Our game is not in the most playable format (we aren't at the animations chapter
 
 
 Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
-
-### Project Part 4: Finishing Touches (Ch 18 & 19)
-
-In our final iteration, we plan to implement performance optimization and build polishing as mentioned in HCChapters 18 and 19.
-
-#### Planned Optimization (Ch 18)
-- Use Unity's Frame Debugger to analyze draw calls and identify performance bottlenecks
-- Use the Profiler to determine whether the game is CPU-bound or GPU-bound
-- Apply batching for static GameObjects that share materials to reduce draw calls
-- Begin testing occlusion culling for walls and static props to improve rendering performance
-- Review and limit `Debug.Log` statements to prevent runtime performance issues, especially during pouring interactions
-
-#### Planned Build Preparation (Ch 19)
-- Adjust build settings: resolution, fullscreen mode, splash screen
-- Enable script debugging and use the Profiler to monitor the built game
-- Add a main menu scene to serve as the initial entry point
-- Add a pause screen.
-- Test the executable on multiple systems and check for consistency between build and Editor
-
-#### Additional Planned Features
-- Complete and test full customer order flow (arrival → order → kitchen prep → serve)
-- Display the written order note in the kitchen when switching scenes
-- Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions.
