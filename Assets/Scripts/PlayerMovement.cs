@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/**
+    Author: Elysa Hines & Kalia Brown
+    Date Created: 3/1/2025
+    Date Last Updated: 4/16/2025
+    Summary: implements the player's movement within the cafe
+ */
+
 public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] private float speedForce = 1000f; // Movement speed multiplier

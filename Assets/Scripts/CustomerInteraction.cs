@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+    Author: Kalia Brown
+    Date Created: 3/1/2025
+    Date Last Updated: 4/16/2025
+    Summary: Placeholder code to simulate movement of customer in and
+        out of the cafe 
+ */
+
+
+
+
 public class CustomerInteraction : MonoBehaviour
 {
     // locations for ordering
