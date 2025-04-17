@@ -33,7 +33,6 @@ public class DrinkMachine : MonoBehaviour {
     }
 
     public static GameObject GetSpawnedCup() {
-    public static GameObject GetSpawnedCup() {
         return spawnedDrink;
     }
 }
