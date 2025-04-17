@@ -269,6 +269,9 @@ Characters:
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/steam_visual_effect.png" alt="Steam" width="500"/>
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/sparkle_effect1.png" alt="Sparkles" width="500"/>
 
+### Project Checkpoint 3-4: Sound, UI, and Animation
+* 
+
 ### How to Play
 Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
 * You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
