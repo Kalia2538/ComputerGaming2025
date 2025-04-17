@@ -137,20 +137,26 @@ Visual effects and Scene Management
 ### Project Checkpoint 3-4: Music, UI and Animations
 * ~~Background music for the cafe~~
 * ~~Editing the volume of the music when inside of the kitchen~~
-* Adding sounds for kitchen appliances and timers
+* ~~Adding sounds for kitchen appliances and timers~~
 * ~~Adding UI elements for keeping track of orders,~~ customers, time, etc.
 * Create walking and sitting animations
 * ~~Animate the doors~~
-* Animations for kitchen appliances
+* ~~Animations for kitchen appliances~~
 
 #### Additions
 * Added cash register soundeffects
 * Added sound effects for UI elements
 * Added speech bubbles for customer orders
 * Improved UI design for buttons, notepad, text, etc.
+* The game mechanics have been improved, including scene switching to and from the cafe
+* The notepad persists between scenes
+* The camera scroll bar is working in the kitchen
+* Enhanced menu options in the kitchen: you can spawn a drink and a bakery item
+
 
 #### Justifications
 * We had trouble with doing the character/player animations. Our models did not come rigged, and using an auto-rigger wasn't possible due to the structure of our characters (no knees or elbows). We really liked the style of our current characters, so we tried to look for other solutions, but we did not have any success. We are considering picking new models for our characters.
+* We did not use implement a timer in this iteration because we were focused on higher-priority mechanics (scene switching, customer ordering)
 
 
 ### Project Part 4: Finishing Touches (Ch 18 & 19)
@@ -221,6 +227,25 @@ We chose characters that match with the style of our cafe. We chose characters t
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/character_2.jpg" alt="Angry Character" width="500"/>
 
+#### Links to Assets Used
+Assets for the kitchen:
+[https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914] (https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914)
+
+Cash register: 
+[https://www.cgtrader.com/free-3d-models/various/various-models/funny-cash-register] (https://www.cgtrader.com/free-3d-models/various/various-models/funny-cash-register)
+
+Restaurant tables: 
+[https://kaylousberg.itch.io/restaurant-bits] (https://kaylousberg.itch.io/restaurant-bits)
+
+Other table and couch styles: 
+[https://kaylousberg.itch.io/furniture-bits] (https://kaylousberg.itch.io/furniture-bits)
+
+Floor: 
+[https://kaylousberg.itch.io/prototype-bits] (https://kaylousberg.itch.io/prototype-bits)
+
+Characters:
+[https://kenney.nl/assets/mini-characters-1] (https://kenney.nl/assets/mini-characters-1)
+
 ### Project Part 3: Visual Effects
  * Lighting and shadows have been added to the cafe
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/lighting_cafe3.png" alt="Lighting 3" width="500"/>
@@ -245,23 +270,18 @@ Here is the audio file for the music that we have in our cafe.
 * Note: when the scene changes from the cafe to the kitchen, we added a low-pass filter to indicate the location change.
 
 #### Links to Assets Used
-Assets for the kitchen:
-[https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914] (https://assetstore.unity.com/packages/3d/props/coffeeshop-starter-pack-160914)
+Cash register sound effect:
+[https://pixabay.com/sound-effects/cash-register-purchase-87313/] (https://pixabay.com/sound-effects/cash-register-purchase-87313/)
 
-Cash register: 
-[https://www.cgtrader.com/free-3d-models/various/various-models/funny-cash-register] (https://www.cgtrader.com/free-3d-models/various/various-models/funny-cash-register)
+GUI components in the cafe:
+[https://assetstore.unity.com/packages/2d/gui/sweet-land-gui-208285] (https://assetstore.unity.com/packages/2d/gui/sweet-land-gui-208285)
 
-Restaurant tables: 
-[https://kaylousberg.itch.io/restaurant-bits] (https://kaylousberg.itch.io/restaurant-bits)
+Speech bubble:
+[https://assetstore.unity.com/packages/2d/environments/2d-atlas-speech-bubbles-alphabet-numbers-88398#content] (https://assetstore.unity.com/packages/2d/environments/2d-atlas-speech-bubbles-alphabet-numbers-88398#content)
 
-Other table and couch styles: 
-[https://kaylousberg.itch.io/furniture-bits] (https://kaylousberg.itch.io/furniture-bits)
+Button click sound effects:
+[https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644] (https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644)
 
-Floor: 
-[https://kaylousberg.itch.io/prototype-bits] (https://kaylousberg.itch.io/prototype-bits)
-
-Characters:
-[https://kenney.nl/assets/mini-characters-1] (https://kenney.nl/assets/mini-characters-1)
 
 
 ### How to Play
