@@ -266,7 +266,7 @@ Characters:
 For this checkpoint, worked on refining our UI elements, incorporating music and sounds for our kitchen/cafe, and adding animations for our door in the cafe.
 
 Here is the audio file for the music that we have in our cafe.
-[Cafe Music](Assets/CFG BackgroundMusic/ Bossa Antigua.mp3)
+[Cafe Music](Assets/CFG%BackgroundMusic/%Bossa%Antigua.mp3)
 * Note: when the scene changes from the cafe to the kitchen, we added a low-pass filter to indicate the location change.
 
 #### Links to Assets Used
