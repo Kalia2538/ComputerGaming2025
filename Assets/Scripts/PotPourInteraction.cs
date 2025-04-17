@@ -1,16 +1,29 @@
+/**
+Elysa Hines  
+Date Created: 04/14/25  
+Date Last Updated: 04/16/25
+Summary: Handles pot pickup and pouring interaction with animation, sound, and particle effects. Fills a target cup when finished.
+*/
+
 using UnityEngine;
 
 public class PotPourInteraction : MonoBehaviour
 {
+    [Header("Animation")]
     public Animator animator;
+
+    [Header("Pickup Sound")]
     public AudioSource pickupSource;
     public AudioClip pickupClip;
 
+    [Header("Pouring Sound")]
     public AudioSource pouringSource;
     public AudioClip pouringClip;
 
+    [Header("Effects")]
     public ParticleSystem endParticles;
 
+    [Header("Target Settings")]
     public GameObject cupObject;
     public float brewDuration = 3f;
 
@@ -27,6 +40,7 @@ public class PotPourInteraction : MonoBehaviour
 
         animator.SetTrigger("StartPour");
 
+        // Small delay before audio starts to sync with animation
         Invoke(nameof(StartPouring), 0.3f);
         Invoke(nameof(EndPouring), brewDuration);
     }
@@ -60,6 +74,7 @@ public class PotPourInteraction : MonoBehaviour
             }
             else
             {
+                // Failsafe to catch hierarchy issues
                 Debug.LogWarning("Coffee child not found in cup hierarchy.");
             }
         }
@@ -67,6 +82,7 @@ public class PotPourInteraction : MonoBehaviour
         isPouring = false;
     }
 
+    // Works to find the the "coffee" name to make visible after brewing
     Transform FindChildRecursive(Transform parent, string name)
     {
         foreach (Transform child in parent)

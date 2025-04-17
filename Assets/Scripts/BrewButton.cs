@@ -1,14 +1,24 @@
+/**
+Elysa Hines  
+Date Created: 03/30/25  
+Date Last Updated: 04/16/25 
+Summary: Handles the brewing process for coffee, including particle effects, audio playback, and cup filling logic.
+*/
+
 using UnityEngine;
 using System.Collections;
 
 public class BrewButton : MonoBehaviour
 {
+    [Header("Visual Effects")]
     public ParticleSystem espressoStream;
     public ParticleSystem coffeeSteam;
 
+    [Header("Audio Components")]
     public AudioSource streamAudioSource;
     public AudioClip streamAudioClip;
 
+    [Header("Brew Settings")]
     public float brewDuration = 2f;
 
     void OnMouseDown()
@@ -21,7 +31,8 @@ public class BrewButton : MonoBehaviour
         }
         else
         {
-            Debug.Log("No cup to fill!");
+            // Debug warning if player presses brew without placing cup
+            Debug.Log("No cup to fill!"); 
         }
     }
 
@@ -51,10 +62,12 @@ public class BrewButton : MonoBehaviour
         if (steam != null)
         {
             steam.gameObject.SetActive(true);
-            Debug.Log("Steam showing!");
+            // Confirms steam VFX is found and triggered
+            Debug.Log("Steam showing!"); 
         }
         else
         {
+            // Helps identify if prefab hierarchy is incorrect
             Debug.LogWarning("Steam not found in cup!");
         }
 
@@ -63,10 +76,11 @@ public class BrewButton : MonoBehaviour
 
         if (streamAudioSource != null)
             streamAudioSource.Stop();
-
+         // Confirms brewing ended
         Debug.Log("Coffee brewed!");
     }
 
+    // Works to find the the "coffee in cup" name to make visible after brewing
     Transform FindChildRecursive(Transform parent, string name)
     {
         foreach (Transform child in parent)
@@ -78,4 +92,3 @@ public class BrewButton : MonoBehaviour
         return null;
     }
 }
-

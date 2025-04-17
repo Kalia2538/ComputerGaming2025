@@ -1,3 +1,10 @@
+/**
+Elysa Hines  
+Date Created: 03/30/25  
+Date Last Updated: 04/16/25
+Summary: Allows the player to drag and move the cup GameObject using the mouse, with proper offset handling and layer filtering.
+*/
+
 using UnityEngine;
 
 public class DraggableCup : MonoBehaviour {
@@ -9,9 +16,10 @@ public class DraggableCup : MonoBehaviour {
 
     void Start() {
         cam = Camera.main;
-        clickableLayerMask = ~LayerMask.GetMask("NonClickable");
+        // Ignore objects on the 'NonClickable' layer, such as the espresso machine to 
+        // prevent overlap in clicks
+        clickableLayerMask = ~LayerMask.GetMask("NonClickable"); 
     }
-
 
     void OnMouseDown() {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -21,6 +29,7 @@ public class DraggableCup : MonoBehaviour {
             if (hit.collider.gameObject == gameObject) {
                 isDragging = true;
                 offset = transform.position - GetMouseWorldPosition();
+                 // Confirm player has clicked and started dragging
                 Debug.Log("Started dragging cup!");
             }
         }
@@ -35,7 +44,6 @@ public class DraggableCup : MonoBehaviour {
     void OnMouseUp() {
         isDragging = false;
     }
-
 
     Vector3 GetMouseWorldPosition() {
         Vector3 mousePoint = Input.mousePosition;
