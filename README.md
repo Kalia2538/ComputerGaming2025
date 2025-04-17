@@ -262,12 +262,28 @@ Characters:
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/steam_visual_effect.png" alt="Steam" width="500"/>
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/sparkle_effect1.png" alt="Sparkles" width="500"/>
 
-### Project Checkpoint 3-4 (UI, Sounds and Animations)
-For this checkpoint, worked on refining our UI elements, incorporating music and sounds for our kitchen/cafe, and adding animations for our door in the cafe.
+### Project Checkpoint 3-4: Sound, UI, and Animation
+* Added background music to cafe and the kitchen
+* Added sound effects in the cafe
+   * Cash register sound when a customer places an order
+   * UI sound effect for button clicks
+* Added sound effects in the kitchen
+   * Coffee/liquid pouring noises when a drink is poured
+* Added animations to mocha pot and tea pot in the kitchen
 
-Here is the audio file for the music that we have in our cafe.
-[Cafe Music](Assets/CFG BackgroundMusic/ Bossa Antigua.mp3)
-* Note: when the scene changes from the cafe to the kitchen, we added a low-pass filter to indicate the location change.
+
+https://github.com/user-attachments/assets/19c9092e-26f3-44ae-95db-42fa9d58a927
+
+
+* Polished the UI using unity store assets
+   * Speech bubble to represent customer order
+   * Improved design of buttons, notepad, and text
+
+<img width="500" alt="Screenshot 2025-04-16 at 10 52 39 PM" src="https://github.com/user-attachments/assets/d6c11306-edc7-4c85-870f-b284d48ab5b8" />
+
+* Added an open and closing animation for the door in the cafe whenever the scene is loaded
+
+https://github.com/user-attachments/assets/1ce22d76-4524-457f-8b2d-eff88173f02d
 
 #### Links to Assets Used
 Cash register sound effect:
