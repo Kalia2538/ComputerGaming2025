@@ -1,6 +1,12 @@
+/**
+* Author: Hana Ismaiel
+* Date Created: 03/20/2025
+* Date Last Updated: 04/16/2025
+* Summary: Manages cup dispensing mechanics with click interaction
+*/
+
 using UnityEngine;
 
-// Class to manage dispensing coffee into a cup
 public class Dispense : MonoBehaviour {
     public string cupSize; // Either "Small", "Medium", or "Large"
     public CupSpawner cupSpawner;

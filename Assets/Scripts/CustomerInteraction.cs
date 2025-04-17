@@ -10,9 +10,6 @@ using UnityEngine;
         out of the cafe 
  */
 
-
-
-
 public class CustomerInteraction : MonoBehaviour
 {
     // locations for ordering

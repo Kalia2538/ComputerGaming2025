@@ -1,5 +1,5 @@
 /**
-Elysa Hines  
+Author: Elysa Hines  
 Date Created: 04/04/25  
 Date Last Updated: 04/16/25 
 Summary: Controls horizontal scrolling of the camera via a disabled slider that can be adjusted with arrow keys.

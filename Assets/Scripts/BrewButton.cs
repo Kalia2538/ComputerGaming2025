@@ -1,5 +1,5 @@
 /**
-Elysa Hines  
+Author: Elysa Hines  
 Date Created: 03/30/25  
 Date Last Updated: 04/16/25 
 Summary: Handles the brewing process for coffee, including particle effects, audio playback, and cup filling logic.

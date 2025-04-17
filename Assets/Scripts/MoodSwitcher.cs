@@ -1,4 +1,5 @@
 /**
+Author: Elysa Hines
 Date Created: 04/02/25  
 Date Last Updated: 04/16/25 
 Summary: Cycles through a list of PostProcessing profiles when the user presses the "M" key.

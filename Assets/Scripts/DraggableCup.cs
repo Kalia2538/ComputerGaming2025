@@ -1,5 +1,5 @@
 /**
-Elysa Hines  
+Author: Elysa Hines  
 Date Created: 03/30/25  
 Date Last Updated: 04/16/25
 Summary: Allows the player to drag and move the cup GameObject using the mouse, with proper offset handling and layer filtering.
