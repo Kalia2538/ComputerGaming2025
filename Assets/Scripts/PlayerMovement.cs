@@ -36,7 +36,7 @@ public class PlayerMovementScript : MonoBehaviour
         // Calculate movement vector and move the player
         Vector3 direction = new Vector3(movementInput.x, 0, movementInput.y).normalized;
         //Debug.Log("Calculated Direction: " + direction);
-        Vector3 localDirection = transform.forward * direction.y + transform.right * direction.x;
+        Vector3 localDirection = transform.forward * direction.z + transform.right * direction.x;
         Vector3 targetPos = rb.position + localDirection * speedForce * Time.fixedDeltaTime;
         rb.MovePosition(targetPos);
 
