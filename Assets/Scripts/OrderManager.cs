@@ -1,63 +1,104 @@
+/**
+* Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
+* Date Created: 04/16/2025
+* Date Last Updated: 04/16/2025
+* Summary: Manages cafe order flow and customer interactions
+*/
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-// class to manage the UI in the cafe scene, taking and serving customer orders
-public class OrderManager : MonoBehaviour {
+public class OrderManager : MonoBehaviour  {
+    [Header("UI Elements")]
     public TextMeshProUGUI orderText;
+    public TextMeshProUGUI scoreText;
     public GameObject customerOrder;
+    public GameObject sparkleEffect;
+
+    [Header("Buttons")]
     public Button takeOrderButton;
     public Button okButton;
     public Button goToKitchenButton;
     public Button serveButton;
-    public TextMeshProUGUI scoreText;
-    public GameObject sparkleEffect;
+
+    [Header("Audio")]
+    public AudioSource cashRegisterSound;
+    public AudioSource buttonClickSound;
 
     private string customerDrink;
     private string customerFood;
     private float orderStartTime;
-    private bool orderActive = false;
 
-    void Start() {
-        takeOrderButton.onClick.AddListener(ShowOrder);
-        okButton.onClick.AddListener(ConfirmOrder);
-        goToKitchenButton.onClick.AddListener(GoToKitchen);
-        serveButton.onClick.AddListener(ServeOrder);
-        
+    void Start()  {
+        InitializeButtonListeners();
+        ResetUIState();
+        scoreText.text = "Score: " + GameManager.totalScore;
+    }
+
+    void InitializeButtonListeners()  {
+        takeOrderButton.onClick.AddListener(() => { PlayButtonSound(); ShowOrder(); });
+        okButton.onClick.AddListener(() => { PlayButtonSound(); ConfirmOrder(); });
+        goToKitchenButton.onClick.AddListener(() => { PlayButtonSound(); GoToKitchen(); });
+        serveButton.onClick.AddListener(() => { PlayButtonSound(); ServeOrder(); });
+    }
+
+    void ResetUIState() {
         takeOrderButton.gameObject.SetActive(true);
         okButton.gameObject.SetActive(false);
         goToKitchenButton.gameObject.SetActive(false);
         serveButton.gameObject.SetActive(false);
     }
 
-    // display the customer's order
-    void ShowOrder() {
+    void PlayButtonSound() {
+        if (buttonClickSound != null) {
+            buttonClickSound.Play();
+        }
+    }
+
+    void ShowOrder()  {
+        GenerateNewOrder();
+        UpdateOrderDisplay();
+        StoreOrderDetails();
+    }
+
+    void GenerateNewOrder() {
         customerDrink = GenerateDrink();
         customerFood = GenerateFood();
-        orderText.text = "Can I get a " + customerDrink + " and a " + customerFood + "? :D";
+        orderStartTime = Time.time;
+    }
 
+    void UpdateOrderDisplay() {
+        orderText.text = $"Can I get a {customerDrink} and a {customerFood}?";
         customerOrder.SetActive(true);
         takeOrderButton.gameObject.SetActive(false);
         okButton.gameObject.SetActive(true);
+    }
 
-        orderStartTime = Time.time;
-        orderActive = true;
-
-        // store the expected drink and food based on customer's order
+    void StoreOrderDetails() {
         GameManager.expectedDrink = customerDrink;
         GameManager.expectedFood = customerFood;
     }
 
-    void ConfirmOrder() {
+    void ConfirmOrder()  {
+        TransitionToKitchenReadyState();
+        PlayOrderConfirmationEffects();
+    }
+
+    void TransitionToKitchenReadyState() {
         customerOrder.SetActive(false);
         okButton.gameObject.SetActive(false);
         goToKitchenButton.gameObject.SetActive(true);
+    }
 
-        // play sparkle after confirming order
+    void PlayOrderConfirmationEffects() {
+        if (cashRegisterSound != null) {
+            cashRegisterSound.Play();
+        }
         sparkleEffect.SetActive(true);
         sparkleEffect.GetComponent<ParticleSystem>().Play();
-        Invoke("HideSparkleEffect", 1.5f); // stop sparkle after a delay
+        Invoke("HideSparkleEffect", 1.5f);
     }
 
     void GoToKitchen() {
@@ -66,59 +107,36 @@ public class OrderManager : MonoBehaviour {
         GameManager.timeStarted = Time.time;
     }
 
-    void ServeOrder() {
-        if (!GameManager.orderPrepared) {
-            return;
-        }
-
-        int scoreChange = 0;
-        if (GameManager.servedDrink == null || GameManager.servedFood == null) {
-            scoreChange -= 100;
-        } else {
-            bool correctDrink = GameManager.servedDrink.ToLower() == GameManager.expectedDrink.ToLower();
-            bool correctFood = GameManager.servedFood.ToLower() == GameManager.expectedFood.ToLower();
-            float timeTaken = GameManager.timeTaken;
-            scoreChange = CalculateScore(correctDrink, correctFood, timeTaken);
-        }
-
-        GameManager.UpdateScore(scoreChange);
-        scoreText.text = "Score: " + GameManager.totalScore;
-        
+    void ServeOrder()  {
+        UpdateScoreDisplay();
         Invoke("StartNewOrder", 2f);
     }
 
-    void HideSparkleEffect() {
+    void UpdateScoreDisplay() {
+        scoreText.text = "Score: " + GameManager.totalScore;
+    }
+
+    void HideSparkleEffect()  {
         sparkleEffect.SetActive(false);
     }
 
-    // calculate the points to add to the player score
-    int CalculateScore(bool correctDrink, bool correctFood, float timeTaken) {
-        int score = 0;
-        if (correctDrink) {
-            score += 50;
-        }
-        if (correctFood) {
-            score += 50;
-        }
-        int timeBonus = Mathf.Clamp(150 - Mathf.FloorToInt(timeTaken * 10), 0, 150); // bonus for taking a shorter time
+    int CalculateScore(bool correctDrink, bool correctFood, float timeTaken)  {
+        int score = (correctDrink ? 50 : 0) + (correctFood ? 50 : 0);
+        int timeBonus = Mathf.Clamp(150 - Mathf.FloorToInt(timeTaken * 10), 0, 150);
         return score + timeBonus;
     }
 
-    // randomly generate a drink
-    string GenerateDrink() {
+    string GenerateDrink()  {
         string[] drinks = { "cup of coffee", "cup of tea", "shot of espresso" };
         return drinks[Random.Range(0, drinks.Length)];
     }
 
-    // randomly generate a food 
-    string GenerateFood() {
+    string GenerateFood()  {
         string[] foods = { "croissant", "cupcake", "donut", "macaron" };
         return foods[Random.Range(0, foods.Length)];
     }
 
-    // restart the game loop to start a new order
-    void StartNewOrder() {
-        orderActive = false;
+    void StartNewOrder()  {
         GameManager.orderPrepared = false;
         takeOrderButton.gameObject.SetActive(true);
         serveButton.gameObject.SetActive(false);
