@@ -142,9 +142,9 @@ Visual effects and Scene Management
 ### Checkpoint 3-4: Music, UI and Animations
 ~~* Background music for the cafe~~
 
-* Editing the volume of the music when inside of the kitchen
+~~* Editing the volume of the music when inside of the kitchen~~
   
-* Adding sounds for kitchen appliances and timers
+~~* Adding sounds for kitchen appliances~~ and timers
 
 ~~* Adding UI elements for  keeping track of orders, customers, time, etc.~~
 
@@ -158,9 +158,12 @@ Visual effects and Scene Management
 * Other sound effects have been added in the cafe (UI button clicks, cash register)
 * The game mechanics have been improved, including scene switching to and from the cafe
 * The notepad persists between scenes
+* The camera scroll bar is working in the kitchen
+* Enhanced menu options in the kitchen: you can spawn a drink and a bakery item
 
 ### Justifications
-* 
+* We tried to work on character animations, but were unable to complete this task. Our current characters did not come rigged, and since our characters don’t have knees/elbows, many auto-riggers did not work. We tried finding other characters with a similar style that were rigged, but not much came up. After trying for a while, we are considering using different character models
+* We did not use implement a timer in this iteration because we were focused on higher-priority mechanics (scene switching, customer ordering)
 
 ### Project Part 4: Finishing Touches (Ch 18 & 19)
 
@@ -278,7 +281,17 @@ Characters:
  <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/checkpoint3_readme_updates/Readme_pics/sparkle_effect1.png" alt="Sparkles" width="500"/>
 
 ### Project Checkpoint 3-4: Sound, UI, and Animation
-* 
+* Added background music to cafe and the kitchen
+* Added sound effects in the cafe
+ * Cash register sound when a customer places an order
+ * UI sound effect for button clicks
+* Added sound effects in the kitchen
+ * Coffee/liquid pouring noises when a drink is poured
+* Added animations to mocha pot and tea pot in the kitchen
+* Polished the UI using unity store assets
+ * Speech bubble to represent customer order
+ * Improved design of buttons, notepad, and text 
+* Added an open and closing animation for the door in the cafe whenever the scene is loaded
 
 #### Links to Assets Used
 Cash register sound effect:
