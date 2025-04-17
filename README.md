@@ -283,15 +283,25 @@ Characters:
 ### Project Checkpoint 3-4: Sound, UI, and Animation
 * Added background music to cafe and the kitchen
 * Added sound effects in the cafe
- * Cash register sound when a customer places an order
- * UI sound effect for button clicks
+   * Cash register sound when a customer places an order
+   * UI sound effect for button clicks
 * Added sound effects in the kitchen
- * Coffee/liquid pouring noises when a drink is poured
+   * Coffee/liquid pouring noises when a drink is poured
 * Added animations to mocha pot and tea pot in the kitchen
+
+
+https://github.com/user-attachments/assets/19c9092e-26f3-44ae-95db-42fa9d58a927
+
+
 * Polished the UI using unity store assets
- * Speech bubble to represent customer order
- * Improved design of buttons, notepad, and text 
+   * Speech bubble to represent customer order
+   * Improved design of buttons, notepad, and text
+
+<img width="500" alt="Screenshot 2025-04-16 at 10 52 39 PM" src="https://github.com/user-attachments/assets/d6c11306-edc7-4c85-870f-b284d48ab5b8" />
+
 * Added an open and closing animation for the door in the cafe whenever the scene is loaded
+
+https://github.com/user-attachments/assets/1ce22d76-4524-457f-8b2d-eff88173f02d
 
 #### Links to Assets Used
 Cash register sound effect:
