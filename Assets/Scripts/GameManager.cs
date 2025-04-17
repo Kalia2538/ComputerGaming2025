@@ -1,28 +1,39 @@
+/**
+* Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
+* Date Created: 04/16/2025
+* Date Last Updated: 04/16/2025
+* Summary: Central game state manager for tracking orders and scores
+*/
+
 using UnityEngine;
 
-// class to keep track of the game state variables
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour  {
     public static GameManager Instance;
 
-    public static string expectedDrink; // drink that the customer ordered
-    public static string expectedFood; // food that the customer ordered
-    public static string servedDrink; // drink that the player prepared
-    public static string servedFood; // food that the player prepared
-    public static float timeStarted; // time that order was recieved
-    public static float timeTaken; // total time taken to make and serve the order
+    [Header("Order Tracking")]
+    public static string expectedDrink;
+    public static string expectedFood;
+    public static string servedDrink;
+    public static string servedFood;
+
+    [Header("Timing")]
+    public static float timeStarted;
+    public static float timeTaken;
+
+    [Header("Game State")]
     public static bool orderPrepared = false;
     public static int totalScore = 0;
 
-    void Awake() {
-        if (Instance == null) {
+    void Awake()  {
+        if (Instance == null)  {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        } else {
+        } else  {
             Destroy(gameObject);
         }
     }
-
-    // set variables once order is completed
+    
+    // Records completed order details and preparation time
     public static void OrderCompleted(string drink, string food) {
         servedDrink = drink;
         servedFood = food;
@@ -30,9 +41,19 @@ public class GameManager : MonoBehaviour {
         orderPrepared = true;
     }
 
-    // update player's score
+    // Modifies player score, which is the maximum between 0 and the current score + the points earned from completing an order
     public static void UpdateScore(int scoreChange) {
-        totalScore += scoreChange;
+        totalScore = Mathf.Max(0, totalScore + scoreChange);
+    }
+
+    // Resets all order-related state
+    public static void ResetOrder() {
+        expectedDrink = "";
+        expectedFood = "";
+        servedDrink = null;
+        servedFood = null;
+        orderPrepared = false;
+        timeStarted = 0;
+        timeTaken = 0;
     }
 }
-

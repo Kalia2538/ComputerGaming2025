@@ -1,6 +1,12 @@
+/**
+* Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
+* Date Created: 04/16/2025
+* Date Last Updated: 04/16/2025
+* Summary: Manages cup spawning mechanics with click interaction
+*/
+
 using UnityEngine;
 
-// Class to spawn a cup when the player clicks on it
 public class CupSpawner : MonoBehaviour {
     public GameObject prefab;
     public GameObject spawnPoint;

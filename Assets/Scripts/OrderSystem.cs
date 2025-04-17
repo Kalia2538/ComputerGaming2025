@@ -1,3 +1,10 @@
+/**
+* Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
+* Date Created: 04/16/2025
+* Date Last Updated: 04/16/2025
+* Summary: Handles drink spawning for espresso machine interactions
+*/
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
