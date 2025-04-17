@@ -8,8 +8,10 @@
 using UnityEngine;
 
 public class DrinkMachine : MonoBehaviour {
+    [Header("Spawn Settings")]
     public GameObject cupPrefab;
     public Transform cupSpawnPoint; 
+
     private static GameObject spawnedDrink = null;
 
     void Update() {
@@ -20,14 +22,17 @@ public class DrinkMachine : MonoBehaviour {
                 if (spawnedDrink == null) {
                     // Instantiates new drink at specified spawn point
                     spawnedDrink = Instantiate(cupPrefab, cupSpawnPoint.transform.position, cupSpawnPoint.transform.rotation);
-                    Debug.Log("Drink spawned under espresso machine.");
+                    // Confirms new drink was successfully instantiated
+                    Debug.Log("Drink spawned.");
                 } else {
-                    Debug.Log("Drink already served.");
+                    // Prevents duplicate spawns and alerts dev
+                    Debug.Log("Drink already served."); 
                 }
             }
         }
     }
 
+    public static GameObject GetSpawnedCup() {
     public static GameObject GetSpawnedCup() {
         return spawnedDrink;
     }
