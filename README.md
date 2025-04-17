@@ -211,3 +211,26 @@ Our game is not in the most playable format (we aren't at the animations chapter
 * In the kitchen scene you can click to dispense a cup or plate a food item.
 
 Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
+
+### Project Part 4: Finishing Touches (Ch 18 & 19)
+
+In our final iteration, we plan to implement performance optimization and build polishing as mentioned in HCChapters 18 and 19.
+
+#### Planned Optimization (Ch 18)
+- Use Unity's Frame Debugger to analyze draw calls and identify performance bottlenecks
+- Use the Profiler to determine whether the game is CPU-bound or GPU-bound
+- Apply batching for static GameObjects that share materials to reduce draw calls
+- Begin testing occlusion culling for walls and static props to improve rendering performance
+- Review and limit `Debug.Log` statements to prevent runtime performance issues, especially during pouring interactions
+
+#### Planned Build Preparation (Ch 19)
+- Adjust build settings: resolution, fullscreen mode, splash screen
+- Enable script debugging and use the Profiler to monitor the built game
+- Add a main menu scene to serve as the initial entry point
+- Add a pause screen.
+- Test the executable on multiple systems and check for consistency between build and Editor
+
+#### Additional Planned Features
+- Complete and test full customer order flow (arrival → order → kitchen prep → serve)
+- Display the written order note in the kitchen when switching scenes
+- Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions.
