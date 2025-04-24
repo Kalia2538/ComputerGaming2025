@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102bbbddcd2697d4fa2b72d7527409cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 2100000, guid: 2da458180cbbb1b4ead78e57904c5c81, type: 2}
 --- !u!54 &3241880901387648732
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7660416034581059440
 Transform:
   m_ObjectHideFlags: 0
@@ -5067,7 +5066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102bbbddcd2697d4fa2b72d7527409cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 0}
 --- !u!1 &2808745318876644740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1717583032123942, guid: 2dd019f1380a8464da36c528baec5b4c, type: 3}
@@ -5085,7 +5083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102bbbddcd2697d4fa2b72d7527409cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 0}
 --- !u!1 &2809043533918854744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1982331677628922, guid: 2dd019f1380a8464da36c528baec5b4c, type: 3}
@@ -5103,4 +5100,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102bbbddcd2697d4fa2b72d7527409cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 0}
