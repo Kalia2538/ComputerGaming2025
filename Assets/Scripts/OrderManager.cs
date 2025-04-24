@@ -1,7 +1,7 @@
 /**
 * Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
 * Date Created: 04/16/2025
-* Date Last Updated: 04/16/2025
+* Date Last Updated: 04/23/2025
 * Summary: Manages cafe order flow and customer interactions
 */
 
@@ -31,11 +31,16 @@ public class OrderManager : MonoBehaviour  {
     private string customerFood;
     private float orderStartTime;
 
-    void Start()  {
-        InitializeButtonListeners();
-        ResetUIState();
-        scoreText.text = "Score: " + GameManager.totalScore;
+void Start() {
+    InitializeButtonListeners();
+    ResetUIState();
+    scoreText.text = "Score: " + GameManager.totalScore;
+
+    // If the player came back from the kitchen with an order ready
+    if (GameManager.orderPrepared || !string.IsNullOrEmpty(ItemManager.GetPreparedDrink()) || !string.IsNullOrEmpty(ItemManager.GetPreparedFood())) {
+        serveButton.gameObject.SetActive(true);
     }
+}
 
     void InitializeButtonListeners()  {
         takeOrderButton.onClick.AddListener(() => { PlayButtonSound(); ShowOrder(); });
@@ -106,11 +111,43 @@ public class OrderManager : MonoBehaviour  {
         SceneManager.LoadScene("Kitchen");
         GameManager.timeStarted = Time.time;
     }
+void ServeOrder()
+{
+    // Grab what the player actually made
+    string preparedDrink = ItemManager.GetPreparedDrink();
+    string preparedFood = ItemManager.GetPreparedFood();
 
-    void ServeOrder()  {
-        UpdateScoreDisplay();
-        Invoke("StartNewOrder", 2f);
-    }
+    // Grab what was expected
+    string expectedDrink = GameManager.expectedDrink;
+    string expectedFood = GameManager.expectedFood;
+
+    // Compare
+    bool drinkCorrect = preparedDrink.Equals(expectedDrink, System.StringComparison.OrdinalIgnoreCase);
+    bool foodCorrect = preparedFood.Equals(expectedFood, System.StringComparison.OrdinalIgnoreCase);
+
+    float timeTaken = Time.time - GameManager.timeStarted;
+    int score = CalculateScore(drinkCorrect, foodCorrect, timeTaken);
+
+    GameManager.UpdateScore(score);
+    UpdateScoreDisplay();
+
+    Debug.Log($"Order served! Drink correct? {drinkCorrect}, Food correct? {foodCorrect}, Time: {timeTaken}s, Score: {score}");
+
+    // Reset everything
+    ItemManager.Reset();
+    GameManager.ResetOrder();
+
+    // UI Feedback
+    serveButton.gameObject.SetActive(false);
+    Invoke("StartNewOrder", 2f);
+
+    // You could also show emotion icons here, like a smile or frown based on correctness
+    if (!drinkCorrect || !foodCorrect)
+        Debug.LogWarning("Customer wasn't happy...");
+    else
+        Debug.Log("Customer is satisfied!");
+}
+
 
     void UpdateScoreDisplay() {
         scoreText.text = "Score: " + GameManager.totalScore;

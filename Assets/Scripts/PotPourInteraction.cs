@@ -1,7 +1,7 @@
 /**
 Elysa Hines  
 Date Created: 04/14/25  
-Date Last Updated: 04/16/25
+Date Last Updated: 04/22/25
 Summary: Handles pot pickup and pouring interaction with animation, sound, and particle effects. Fills a target cup when finished.
 */
 
@@ -9,6 +9,9 @@ using UnityEngine;
 
 public class PotPourInteraction : MonoBehaviour
 {
+    [Header("Drink Type")]
+    public string drinkType = "tea"; 
+
     [Header("Animation")]
     public Animator animator;
 
@@ -80,6 +83,16 @@ public class PotPourInteraction : MonoBehaviour
         }
 
         isPouring = false;
+        if (!string.IsNullOrEmpty(drinkType))
+        {
+            ItemManager.SetPreparedDrink(drinkType.ToLower());
+        }
+        else
+        {
+            Debug.LogWarning("Drink type not set for this pour interaction!");
+        }
+
+
     }
 
     // Works to find the the "coffee" name to make visible after brewing
@@ -97,3 +110,4 @@ public class PotPourInteraction : MonoBehaviour
         return null;
     }
 }
+

@@ -1,7 +1,7 @@
 /**
 Author: Elysa Hines  
 Date Created: 03/30/25  
-Date Last Updated: 04/16/25 
+Date Last Updated: 04/22/25 
 Summary: Handles the brewing process for coffee, including particle effects, audio playback, and cup filling logic.
 */
 
@@ -78,6 +78,8 @@ public class BrewButton : MonoBehaviour
             streamAudioSource.Stop();
          // Confirms brewing ended
         Debug.Log("Coffee brewed!");
+        ItemManager.SetPreparedDrink("shot of espresso");
+
     }
 
     // Works to find the the "coffee in cup" name to make visible after brewing

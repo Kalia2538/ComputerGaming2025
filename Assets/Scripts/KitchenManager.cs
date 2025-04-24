@@ -18,9 +18,9 @@ public class KitchenManager : MonoBehaviour  {
     }
 
     // Transition back to cafe and update score
-    void ReturnToCafe()  {
-        GameManager.UpdateScore(50); // Temporary flat score reward
-        GameManager.ResetOrder();
-        SceneManager.LoadScene("cafe_v2_with_characters");
-    }
+void ReturnToCafe() {
+    // Don't reset order or score here — the serve step will handle that!
+    SceneManager.LoadScene("cafe_v2_with_characters");
+}
+
 }

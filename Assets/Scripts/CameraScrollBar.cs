@@ -47,7 +47,7 @@ public class CameraScrollBar : MonoBehaviour {
 
     public void OnScroll(float value) {
         // Helpful for tuning min/max range in-editor
-        Debug.Log("Slider value: " + value);
+        //Debug.Log("Slider value: " + value);
 
         if (targetCamera == null) return;
 
