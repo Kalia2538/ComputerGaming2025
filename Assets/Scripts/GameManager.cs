@@ -22,7 +22,13 @@ public class GameManager : MonoBehaviour  {
 
     [Header("Game State")]
     public static bool orderPrepared = false;
+    public static bool orderServed = false;
     public static int totalScore = 0;
+    public static bool perfectOrder = false;
+    public static int currentDay = 1;
+    public static int customersServedToday = 0;
+    public const int CUSTOMERS_PER_DAY = 8;
+    
 
     void Awake()  {
         if (Instance == null)  {
@@ -34,26 +40,43 @@ public class GameManager : MonoBehaviour  {
     }
     
     // Records completed order details and preparation time
-    public static void OrderCompleted(string drink, string food) {
+    public static void CompleteOrder(string drink, string food) {
         servedDrink = drink;
         servedFood = food;
         timeTaken = Time.time - timeStarted;
         orderPrepared = true;
+        orderServed = false;
     }
 
-    // Modifies player score, which is the maximum between 0 and the current score + the points earned from completing an order
-    public static void UpdateScore(int scoreChange) {
-        totalScore = Mathf.Max(0, totalScore + scoreChange);
+    // Modifies player score, calculate based on accuracy of order
+    public static void CalculateAndAddScore() {
+        int score = 0;
+        if (servedDrink != null && servedDrink == expectedDrink) score += 50;
+        if (servedFood != null && servedFood == expectedFood) score += 50;
+        if (score == 100) perfectOrder = true;
+        totalScore += score;
     }
 
     // Resets all order-related state
-    public static void ResetOrder() {
+    public static void Reset() {
         expectedDrink = "";
         expectedFood = "";
         servedDrink = null;
         servedFood = null;
         orderPrepared = false;
+        orderServed = false;
+        perfectOrder = false;
         timeStarted = 0;
         timeTaken = 0;
+    }
+
+    public static void StartNewDay() {
+        currentDay++;
+        customersServedToday = 0;
+        Reset();
+    }
+
+    public static bool ShouldEndDay() {
+        return customersServedToday >= CUSTOMERS_PER_DAY;
     }
 }

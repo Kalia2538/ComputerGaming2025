@@ -1,7 +1,7 @@
 /**
 * Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
 * Date Created: 04/16/2025
-* Date Last Updated: 04/23/2025
+* Date Last Updated: 04/16/2025
 * Summary: Manages cafe order flow and customer interactions
 */
 
@@ -15,7 +15,9 @@ public class OrderManager : MonoBehaviour  {
     public TextMeshProUGUI orderText;
     public TextMeshProUGUI scoreText;
     public GameObject customerOrder;
-    public GameObject sparkleEffect;
+    public GameObject orderConfirmationEffect;
+    public GameObject heartEffect;
+    public GameObject badOrderEffect;
 
     [Header("Buttons")]
     public Button takeOrderButton;
@@ -26,21 +28,23 @@ public class OrderManager : MonoBehaviour  {
     [Header("Audio")]
     public AudioSource cashRegisterSound;
     public AudioSource buttonClickSound;
+    public AudioSource successSound;
+    public AudioSource failureSound;
 
     private string customerDrink;
     private string customerFood;
     private float orderStartTime;
 
-void Start() {
-    InitializeButtonListeners();
-    ResetUIState();
-    scoreText.text = "Score: " + GameManager.totalScore;
+    void Start()  {
+        InitializeButtonListeners();
+        ResetUIState();
+        UpdateScoreDisplay();
 
-    // If the player came back from the kitchen with an order ready
-    if (GameManager.orderPrepared || !string.IsNullOrEmpty(ItemManager.GetPreparedDrink()) || !string.IsNullOrEmpty(ItemManager.GetPreparedFood())) {
-        serveButton.gameObject.SetActive(true);
+        if (GameManager.orderPrepared && !GameManager.orderServed) {
+            takeOrderButton.gameObject.SetActive(false);
+            serveButton.gameObject.SetActive(true);
+        }
     }
-}
 
     void InitializeButtonListeners()  {
         takeOrderButton.onClick.AddListener(() => { PlayButtonSound(); ShowOrder(); });
@@ -101,9 +105,39 @@ void Start() {
         if (cashRegisterSound != null) {
             cashRegisterSound.Play();
         }
-        sparkleEffect.SetActive(true);
-        sparkleEffect.GetComponent<ParticleSystem>().Play();
-        Invoke("HideSparkleEffect", 1.5f);
+        if (orderConfirmationEffect != null) {
+            orderConfirmationEffect.SetActive(true);
+            // Play all particle systems in children
+            var particleSystems = orderConfirmationEffect.GetComponentsInChildren<ParticleSystem>();
+            foreach (var ps in particleSystems) {
+                ps.Play();
+            }
+        }
+        Invoke("HideOrderConfirmationEffects", 1.5f);
+    }
+
+    void HideOrderConfirmationEffects()  {
+        if (orderConfirmationEffect != null) {
+            orderConfirmationEffect.SetActive(false);
+        }
+    }
+
+    void ShowReactionEffect(GameObject effect, AudioSource sound) {
+        effect.SetActive(true);
+        if (sound != null) {
+            sound.Play();
+        };
+        var particleSystems = effect.GetComponentsInChildren<ParticleSystem>();
+        foreach (var ps in particleSystems) {
+            ps.Play();
+        }
+        Invoke("HideReactionEffect", 1.7f);
+    }
+
+    void HideReactionEffect() {
+        heartEffect.SetActive(false);
+        badOrderEffect.SetActive(false);
+        StartNewOrder();
     }
 
     void GoToKitchen() {
@@ -111,50 +145,30 @@ void Start() {
         SceneManager.LoadScene("Kitchen");
         GameManager.timeStarted = Time.time;
     }
-void ServeOrder()
-{
-    // Grab what the player actually made
-    string preparedDrink = ItemManager.GetPreparedDrink();
-    string preparedFood = ItemManager.GetPreparedFood();
 
-    // Grab what was expected
-    string expectedDrink = GameManager.expectedDrink;
-    string expectedFood = GameManager.expectedFood;
+    void ServeOrder()  {
+        serveButton.gameObject.SetActive(false);
+        GameManager.orderServed = true;
+        GameManager.customersServedToday += 1;
+        GameManager.CalculateAndAddScore();
+        UpdateScoreDisplay();
 
-    // Compare
-    bool drinkCorrect = preparedDrink.Equals(expectedDrink, System.StringComparison.OrdinalIgnoreCase);
-    bool foodCorrect = preparedFood.Equals(expectedFood, System.StringComparison.OrdinalIgnoreCase);
+        // Show appropriate reaction effect depending on order accuracy
+        if (GameManager.perfectOrder) {
+            ShowReactionEffect(heartEffect, successSound);
+        } else {
+            ShowReactionEffect(badOrderEffect, failureSound);
+        }
+        Debug.Log(GameManager.customersServedToday);
 
-    float timeTaken = Time.time - GameManager.timeStarted;
-    int score = CalculateScore(drinkCorrect, foodCorrect, timeTaken);
-
-    GameManager.UpdateScore(score);
-    UpdateScoreDisplay();
-
-    Debug.Log($"Order served! Drink correct? {drinkCorrect}, Food correct? {foodCorrect}, Time: {timeTaken}s, Score: {score}");
-
-    // Reset everything
-    ItemManager.Reset();
-    GameManager.ResetOrder();
-
-    // UI Feedback
-    serveButton.gameObject.SetActive(false);
-    Invoke("StartNewOrder", 2f);
-
-    // You could also show emotion icons here, like a smile or frown based on correctness
-    if (!drinkCorrect || !foodCorrect)
-        Debug.LogWarning("Customer wasn't happy...");
-    else
-        Debug.Log("Customer is satisfied!");
-}
-
+        if (GameManager.ShouldEndDay()) {
+            GameManager.StartNewDay();
+            SceneManager.LoadScene("DayTransition");
+        }
+    }
 
     void UpdateScoreDisplay() {
         scoreText.text = "Score: " + GameManager.totalScore;
-    }
-
-    void HideSparkleEffect()  {
-        sparkleEffect.SetActive(false);
     }
 
     int CalculateScore(bool correctDrink, bool correctFood, float timeTaken)  {
@@ -174,8 +188,7 @@ void ServeOrder()
     }
 
     void StartNewOrder()  {
-        GameManager.orderPrepared = false;
+        GameManager.Reset();
         takeOrderButton.gameObject.SetActive(true);
-        serveButton.gameObject.SetActive(false);
     }
 }

@@ -1,7 +1,7 @@
 /**
 * Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
 * Date Created: 04/16/2025
-* Date Last Updated: 04/16/2025
+* Date Last Updated: 04/23/2025
 * Summary: Handles drink spawning for espresso machine interactions
 */
 
@@ -35,4 +35,24 @@ public class DrinkMachine : MonoBehaviour {
     public static GameObject GetSpawnedCup() {
         return spawnedDrink;
     }
+
+    public static string GetDrinkName() {
+        if (spawnedDrink == null) return "none";
+        
+        string prefabName = spawnedDrink.name.ToLower();
+        
+        if (prefabName.Contains("coffee")) return "cup of coffee";
+        if (prefabName.Contains("tea")) return "cup of tea";
+        if (prefabName.Contains("espresso")) return "shot of espresso";
+        
+        return "none";
+    }
+
+    public static void ClearDrink() {
+        if (spawnedDrink != null) {
+            Destroy(spawnedDrink);
+            spawnedDrink = null;
+        }
+    }
+
 }
