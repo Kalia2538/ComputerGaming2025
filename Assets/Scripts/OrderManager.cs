@@ -15,7 +15,9 @@ public class OrderManager : MonoBehaviour  {
     public TextMeshProUGUI orderText;
     public TextMeshProUGUI scoreText;
     public GameObject customerOrder;
-    public GameObject sparkleEffect;
+    public GameObject orderConfirmationEffect;
+    public GameObject heartEffect;
+    public GameObject badOrderEffect;
 
     [Header("Buttons")]
     public Button takeOrderButton;
@@ -26,6 +28,8 @@ public class OrderManager : MonoBehaviour  {
     [Header("Audio")]
     public AudioSource cashRegisterSound;
     public AudioSource buttonClickSound;
+    public AudioSource successSound;
+    public AudioSource failureSound;
 
     private string customerDrink;
     private string customerFood;
@@ -34,7 +38,12 @@ public class OrderManager : MonoBehaviour  {
     void Start()  {
         InitializeButtonListeners();
         ResetUIState();
-        scoreText.text = "Score: " + GameManager.totalScore;
+        UpdateScoreDisplay();
+
+        if (GameManager.orderPrepared && !GameManager.orderServed) {
+            takeOrderButton.gameObject.SetActive(false);
+            serveButton.gameObject.SetActive(true);
+        }
     }
 
     void InitializeButtonListeners()  {
@@ -96,9 +105,39 @@ public class OrderManager : MonoBehaviour  {
         if (cashRegisterSound != null) {
             cashRegisterSound.Play();
         }
-        sparkleEffect.SetActive(true);
-        sparkleEffect.GetComponent<ParticleSystem>().Play();
-        Invoke("HideSparkleEffect", 1.5f);
+        if (orderConfirmationEffect != null) {
+            orderConfirmationEffect.SetActive(true);
+            // Play all particle systems in children
+            var particleSystems = orderConfirmationEffect.GetComponentsInChildren<ParticleSystem>();
+            foreach (var ps in particleSystems) {
+                ps.Play();
+            }
+        }
+        Invoke("HideOrderConfirmationEffects", 1.5f);
+    }
+
+    void HideOrderConfirmationEffects()  {
+        if (orderConfirmationEffect != null) {
+            orderConfirmationEffect.SetActive(false);
+        }
+    }
+
+    void ShowReactionEffect(GameObject effect, AudioSource sound) {
+        effect.SetActive(true);
+        if (sound != null) {
+            sound.Play();
+        };
+        var particleSystems = effect.GetComponentsInChildren<ParticleSystem>();
+        foreach (var ps in particleSystems) {
+            ps.Play();
+        }
+        Invoke("HideReactionEffect", 1.7f);
+    }
+
+    void HideReactionEffect() {
+        heartEffect.SetActive(false);
+        badOrderEffect.SetActive(false);
+        StartNewOrder();
     }
 
     void GoToKitchen() {
@@ -108,16 +147,28 @@ public class OrderManager : MonoBehaviour  {
     }
 
     void ServeOrder()  {
+        serveButton.gameObject.SetActive(false);
+        GameManager.orderServed = true;
+        GameManager.customersServedToday += 1;
+        GameManager.CalculateAndAddScore();
         UpdateScoreDisplay();
-        Invoke("StartNewOrder", 2f);
+
+        // Show appropriate reaction effect depending on order accuracy
+        if (GameManager.perfectOrder) {
+            ShowReactionEffect(heartEffect, successSound);
+        } else {
+            ShowReactionEffect(badOrderEffect, failureSound);
+        }
+        Debug.Log(GameManager.customersServedToday);
+
+        if (GameManager.ShouldEndDay()) {
+            GameManager.StartNewDay();
+            SceneManager.LoadScene("DayTransition");
+        }
     }
 
     void UpdateScoreDisplay() {
         scoreText.text = "Score: " + GameManager.totalScore;
-    }
-
-    void HideSparkleEffect()  {
-        sparkleEffect.SetActive(false);
     }
 
     int CalculateScore(bool correctDrink, bool correctFood, float timeTaken)  {
@@ -137,8 +188,7 @@ public class OrderManager : MonoBehaviour  {
     }
 
     void StartNewOrder()  {
-        GameManager.orderPrepared = false;
+        GameManager.Reset();
         takeOrderButton.gameObject.SetActive(true);
-        serveButton.gameObject.SetActive(false);
     }
 }
