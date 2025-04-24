@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/DayTransition.unity
+    guid: f7f633616f0bd454594e5d3de787f006
+  - enabled: 1
     path: Assets/Scenes/cafe_v2_with_characters.unity
     guid: 3c69ec13a59489a48b1b5a817cf3441f
   - enabled: 1
@@ -14,5 +17,4 @@ EditorBuildSettings:
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 47e3fdb6dedab7e408a6e069bdf9f263, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 488bc0a933745d848b4113036fd5b9f3, type: 3}
-  m_UseUCBPForAssetBundles: 0
   m_UseUCBPForAssetBundles: 0
