@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doneButton: {fileID: 1252256503}
+  buttonClickSound: {fileID: 1940779558}
 --- !u!4 &140861679
 Transform:
   m_ObjectHideFlags: 0
