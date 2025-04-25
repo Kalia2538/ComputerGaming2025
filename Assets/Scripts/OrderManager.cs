@@ -140,32 +140,37 @@ public class OrderManager : MonoBehaviour  {
         StartNewOrder();
     }
 
-    void GoToKitchen() {
-        goToKitchenButton.gameObject.SetActive(false);
-        SceneManager.LoadScene("Kitchen");
-        GameManager.timeStarted = Time.time;
+void GoToKitchen()
+{
+    goToKitchenButton.gameObject.SetActive(false);
+    FindFirstObjectByType<SceneController>().GoToKitchen();
+    GameManager.timeStarted = Time.time;
+}
+
+void ServeOrder()
+{
+    serveButton.gameObject.SetActive(false);
+    GameManager.orderServed = true;
+    GameManager.customersServedToday += 1;
+    GameManager.CalculateAndAddScore();
+    UpdateScoreDisplay();
+
+    if (GameManager.perfectOrder)
+    {
+        ShowReactionEffect(heartEffect, successSound);
+    }
+    else
+    {
+        ShowReactionEffect(badOrderEffect, failureSound);
     }
 
-    void ServeOrder()  {
-        serveButton.gameObject.SetActive(false);
-        GameManager.orderServed = true;
-        GameManager.customersServedToday += 1;
-        GameManager.CalculateAndAddScore();
-        UpdateScoreDisplay();
-
-        // Show appropriate reaction effect depending on order accuracy
-        if (GameManager.perfectOrder) {
-            ShowReactionEffect(heartEffect, successSound);
-        } else {
-            ShowReactionEffect(badOrderEffect, failureSound);
-        }
-        Debug.Log(GameManager.customersServedToday);
-
-        if (GameManager.ShouldEndDay()) {
-            GameManager.StartNewDay();
-            SceneManager.LoadScene("DayTransition");
-        }
+    if (GameManager.ShouldEndDay())
+    {
+        GameManager.StartNewDay();
+        FindFirstObjectByType<SceneController>().GoToDayTransition();
     }
+}
+
 
     void UpdateScoreDisplay() {
         scoreText.text = "Score: " + GameManager.totalScore;

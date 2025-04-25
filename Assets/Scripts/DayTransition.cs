@@ -8,9 +8,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class DayTransition : MonoBehaviour 
+public class DayTransition : MonoBehaviour
 {
     [Header("UI Elements")]
     public TextMeshProUGUI dayText;
@@ -20,11 +19,10 @@ public class DayTransition : MonoBehaviour
 
     private static bool isFirstPlay = true;
 
-    void Start() 
+    void Start()
     {
         dayText.text = $"Day {GameManager.currentDay}";
-        
-        // Show appropriate buttons
+
         if (isFirstPlay)
         {
             startButton.gameObject.SetActive(true);
@@ -38,7 +36,6 @@ public class DayTransition : MonoBehaviour
             resetButton.gameObject.SetActive(true);
         }
 
-        // Set up button listeners
         startButton.onClick.AddListener(StartGame);
         continueButton.onClick.AddListener(ContinueGame);
         resetButton.onClick.AddListener(ResetGame);
@@ -48,18 +45,18 @@ public class DayTransition : MonoBehaviour
     {
         isFirstPlay = false;
         GameManager.ResetAllProgress();
-        SceneManager.LoadScene("cafe_v2_with_characters");
+        FindFirstObjectByType<SceneController>().GoToCafe();
     }
 
     void ContinueGame()
     {
-        SceneManager.LoadScene("cafe_v2_with_characters");
+        FindFirstObjectByType<SceneController>().GoToCafe();
     }
 
     void ResetGame()
     {
         GameManager.ResetAllProgress();
         isFirstPlay = true;
-        SceneManager.LoadScene("DayTransition");
+        FindFirstObjectByType<SceneController>().GoToDayTransition();
     }
 }
