@@ -358,10 +358,10 @@ Failed order sound effect:
 [https://pixabay.com/sound-effects/cartoon-fail-trumpet-278822/] (https://pixabay.com/sound-effects/cartoon-fail-trumpet-278822/)
 
 ### How to Play
-Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
 * You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
-* You can use the customer spawning (linked to a regular capsule) by clicking the screen when the customer gets to the counter to leave the counter.
-* In the current kitchen scene, users can make an espresso, tea, and stovetop coffee. 
+* You can use the customer spawning by clicking the screen when the customer gets to the counter to leave the counter.
+* Click through the UI buttons to handle taking and serving orders, and navigating between the cafe and kitchen scenes.
+* In the current kitchen scene, users can make an espresso, tea, and stovetop coffee. You can also spawn bakery items by clicking them.
   * To make an espresso, the user clicks once on the top of the espresso machine to spawn an empty cup. Next, clicking the red circle on the machine dispenses the liquid. Once the process is complete, steam rises from the cup, and the mug visibly fills with coffee.
   * The user can then press and hold the mug's handle to drag it across the counter. When the mug is hovered over the designated white area of the counter, it will automatically snap into place.
 - The `camera slider` has also been enhanced:
@@ -377,6 +377,7 @@ Further:
 In response to the notes:
 
 * We now have a working **scene transition system** that allows the player to go between the `kitchen` and `cafe` using dedicated buttons.
+* We have main/start and pause menus with buttons to control the game flow.
 *  We've implemented a **notepad system with persistent text**, which saves order details and redisplays them in the kitchen after switching scenes.
 * The **core gameplay loop** (customer walking, seating, multi-order handling, etc.) is still in development, and will be the **main focus of the next submission** now that our foundational systems are in place.
 *  We're planning to add more **scenic elements and UI enhancements** based on **Chapters 18 and 19** of the textbook.
