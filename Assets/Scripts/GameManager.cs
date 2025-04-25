@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour  {
     public static bool perfectOrder = false;
     public static int currentDay = 1;
     public static int customersServedToday = 0;
-    public const int CUSTOMERS_PER_DAY = 8;
+    public const int CUSTOMERS_PER_DAY = 2;
     
 
     void Awake()  {
@@ -78,5 +78,17 @@ public class GameManager : MonoBehaviour  {
 
     public static bool ShouldEndDay() {
         return customersServedToday >= CUSTOMERS_PER_DAY;
+    }
+
+    public static void ResetAllProgress() {
+        currentDay = 1;
+        totalScore = 0;
+        customersServedToday = 0;
+        Reset();
+    }
+
+    public static void ResetCurrentDay() {
+        customersServedToday = 0;
+        Reset();
     }
 }
