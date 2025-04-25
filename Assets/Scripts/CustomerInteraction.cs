@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controller;
 
 /**
     Author: Kalia Brown
@@ -38,32 +39,34 @@ public class CustomerInteraction : MonoBehaviour
     {
         // instantiate customer and rigid body
         customer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
-        custRigidBody = customer.GetComponent<Rigidbody>(); 
+        CharacterMover mover = customer.GetComponent<CharacterMover>(); 
         // start ordering process
-        StartCoroutine(OrderProcess());
+        StartCoroutine(OrderProcess(mover));
     }
 
 
-    IEnumerator EnterScreen()
+    IEnumerator EnterScreen(CharacterMover mover)
     {
         // customer moves towards specified location
         while (Vector3.Distance(customer.transform.position, orderPoint.transform.position) > 0.1f)
         {
 
             Vector3 direction = (orderPoint.transform.position - customer.transform.position).normalized;
-            custRigidBody.velocity = direction * speed;
+            Vector3 localDir = customer.transform.InverseTransformDirection(direction);
+            Vector2 movementInput = new Vector2(localDir.x, localDir.z);
+            mover.SetInput(movementInput, orderPoint.transform.position, false, false);
             
             yield return null;
 
         }
         // stops customer movement
-        custRigidBody.velocity = Vector3.zero;
+        mover.SetInput(Vector2.zero, mover.transform.position, false, false);
         // wait for click
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
     }
 
-    IEnumerator TakingOrder()
+    IEnumerator TakingOrder(CharacterMover mover)
     {
         // order "pop-up"
         orderObj = Instantiate(order, orderLoc.transform.position, Quaternion.identity);
@@ -76,7 +79,7 @@ public class CustomerInteraction : MonoBehaviour
 
 
     
-    IEnumerator ExitingScreen()
+    IEnumerator ExitingScreen(CharacterMover mover)
     {
 
         Destroy(orderObj);
@@ -92,26 +95,27 @@ public class CustomerInteraction : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator OrderProcess()
+    IEnumerator OrderProcess(CharacterMover mover)
     {
         if (!inRoutine) { 
             inRoutine = true;            
-            yield return EnterScreen();
+            yield return EnterScreen(mover);
             
-            yield return TakingOrder();
+            yield return TakingOrder(mover);
             
-            yield return ExitingScreen();
+            yield return ExitingScreen(mover);
             Destroy(customer);
             
             customer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
+            StartCoroutine(OrderProcess(mover));
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (!inRoutine)
-        {
-            StartCoroutine(OrderProcess());
-        }
-    }
+    //private void FixedUpdate()
+    //{
+    //    if (!inRoutine)
+    //    {
+    //        StartCoroutine(OrderProcess());
+    //    }
+    //}
 }
