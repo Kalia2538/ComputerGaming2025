@@ -14,6 +14,7 @@ using UnityEngine.SceneManagement;
 public class BackgroundMusic : MonoBehaviour
 {
     public AudioMixer backgroundMixer;
+    public static BackgroundMusic Instance;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,17 @@ public class BackgroundMusic : MonoBehaviour
     private void Awake()
     {
         // keeps the background music playing when we switch scenes
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
