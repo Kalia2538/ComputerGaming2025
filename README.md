@@ -357,6 +357,9 @@ Successful order sound effect:
 Failed order sound effect:
 [https://pixabay.com/sound-effects/cartoon-fail-trumpet-278822/] (https://pixabay.com/sound-effects/cartoon-fail-trumpet-278822/)
 
+New player/customer models:
+[https://assetstore.unity.com/packages/3d/characters/humanoids/creative-characters-free-animated-low-poly-3d-models-304841#version-original)
+
 ### How to Play
 * You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
 * You can use the customer spawning by clicking the screen when the customer gets to the counter to leave the counter.
