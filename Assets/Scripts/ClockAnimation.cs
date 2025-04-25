@@ -9,7 +9,6 @@ using UnityEngine;
 public class ClockAnimator : MonoBehaviour
 {
     private Animator animator;
-    private bool hasShaken = false;
 
     void Start() {
         animator = GetComponent<Animator>();

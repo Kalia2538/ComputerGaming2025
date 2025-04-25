@@ -79,4 +79,16 @@ public class GameManager : MonoBehaviour  {
     public static bool ShouldEndDay() {
         return customersServedToday >= CUSTOMERS_PER_DAY;
     }
+
+    public static void ResetAllProgress() {
+        currentDay = 1;
+        totalScore = 0;
+        customersServedToday = 0;
+        Reset();
+    }
+
+    public static void ResetCurrentDay() {
+        customersServedToday = 0;
+        Reset();
+    }
 }

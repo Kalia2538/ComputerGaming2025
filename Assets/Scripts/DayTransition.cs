@@ -1,29 +1,65 @@
 /**
 * Author: Hana Ismaiel, Kalia Brown, Elysa Hines
 * Date Created: 04/23/2025
-* Date Last Updated: 04/23/2025
+* Date Last Updated: 04/24/2025
 * Summary: Handles scene transition for each new day
 */
 
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
-public class DayTransition : MonoBehaviour {
+public class DayTransition : MonoBehaviour 
+{
+    [Header("UI Elements")]
     public TextMeshProUGUI dayText;
-    public float displayTime = 2f; // How long to show the screen
-    public string nextSceneName = "cafe_v2_with_characters";
+    public Button startButton;
+    public Button continueButton;
+    public Button resetButton;
 
-    void Start() {
+    private static bool isFirstPlay = true;
+
+    void Start() 
+    {
         dayText.text = $"Day {GameManager.currentDay}";
-        // Start the transition
-        StartCoroutine(TransitionToNextScene());
+        
+        // Show appropriate buttons
+        if (isFirstPlay)
+        {
+            startButton.gameObject.SetActive(true);
+            continueButton.gameObject.SetActive(false);
+            resetButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            startButton.gameObject.SetActive(false);
+            continueButton.gameObject.SetActive(true);
+            resetButton.gameObject.SetActive(true);
+        }
+
+        // Set up button listeners
+        startButton.onClick.AddListener(StartGame);
+        continueButton.onClick.AddListener(ContinueGame);
+        resetButton.onClick.AddListener(ResetGame);
     }
 
-    IEnumerator TransitionToNextScene() {
-        // Wait for the display time
-        yield return new WaitForSeconds(displayTime);
-        SceneManager.LoadScene(nextSceneName);
+    void StartGame()
+    {
+        isFirstPlay = false;
+        GameManager.ResetAllProgress();
+        SceneManager.LoadScene("cafe_v2_with_characters");
+    }
+
+    void ContinueGame()
+    {
+        SceneManager.LoadScene("cafe_v2_with_characters");
+    }
+
+    void ResetGame()
+    {
+        GameManager.ResetAllProgress();
+        isFirstPlay = true;
+        SceneManager.LoadScene("DayTransition");
     }
 }
