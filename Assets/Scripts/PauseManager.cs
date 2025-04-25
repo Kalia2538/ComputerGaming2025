@@ -61,7 +61,7 @@ public class PauseManager : MonoBehaviour {
     public void QuitToMainMenu() {
         Time.timeScale = 1f;
         AudioListener.pause = false;
-        SceneManager.LoadScene("MainMenu"); 
+        SceneManager.LoadScene("DayTransition"); 
     }
 
     void Awake() {

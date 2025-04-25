@@ -14235,6 +14235,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5394535454445822251, guid: f9dfe16e49306f54685e668d0d3eb719, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394535454445822251, guid: f9dfe16e49306f54685e668d0d3eb719, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 6788587031649598562, guid: f9dfe16e49306f54685e668d0d3eb719, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -14254,6 +14262,10 @@ PrefabInstance:
     - target: {fileID: 7520824387472891526, guid: f9dfe16e49306f54685e668d0d3eb719, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940719273376257104, guid: f9dfe16e49306f54685e668d0d3eb719, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
