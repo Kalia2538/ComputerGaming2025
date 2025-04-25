@@ -33,7 +33,7 @@ public class PlayerMovementScript : MonoBehaviour
     // This method is called automatically when the "Move" action is performed
     public void OnMove(InputValue value) { 
         movementInput = value.Get<Vector2>();
-        Debug.Log("Move Input: " + movementInput);
+        // Debug.Log("Move Input: " + movementInput);
 
     }
 

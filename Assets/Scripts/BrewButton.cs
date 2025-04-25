@@ -14,8 +14,8 @@ public class BrewButton : MonoBehaviour
     void Start()
     {
         brewController = FindAnyObjectByType<PrecisionBrewController>();
-        if (brewController == null)
-            Debug.LogError("PrecisionBrewController not found in scene!");
+        // if (brewController == null)
+        //     Debug.LogError("PrecisionBrewController not found in scene!");
     }
 
     void OnMouseDown()

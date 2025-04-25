@@ -27,6 +27,6 @@ public class Dispense : MonoBehaviour {
     }
 
     void DispenseLiquid(GameObject cup, string size) {
-        Debug.Log($"Dispensing coffee based on size {size}");
+        // Debug.Log($"Dispensing coffee based on size {size}");
     }
 }

@@ -48,7 +48,7 @@ public class OrderSystem : MonoBehaviour {
     }
 
     void GoToKitchen() {
-        Debug.Log("Going to kitchen...");
+        // Debug.Log("Going to kitchen...");
 
         // Here you can load a new scene or trigger kitchen mechanics
     }

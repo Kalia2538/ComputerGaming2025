@@ -29,9 +29,7 @@ public class FoodItem : MonoBehaviour {
                     // Register the food with the ItemManager
                     if (!string.IsNullOrEmpty(foodType))
                         ItemManager.SetPreparedFood(foodType.ToLower());
-                    else
-                        Debug.LogWarning("No food type set in FoodItem.cs!");
-                } else {
+                    } else {
                     Debug.Log("Food already served.");
                 }
             }

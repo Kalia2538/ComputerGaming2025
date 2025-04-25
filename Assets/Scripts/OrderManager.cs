@@ -159,7 +159,7 @@ public class OrderManager : MonoBehaviour  {
         } else {
             ShowReactionEffect(badOrderEffect, failureSound);
         }
-        Debug.Log(GameManager.customersServedToday);
+        //Debug.Log(GameManager.customersServedToday);
 
         if (GameManager.ShouldEndDay()) {
             GameManager.StartNewDay();

@@ -23,7 +23,7 @@ public class DrinkMachine : MonoBehaviour {
                     // Instantiates new drink at specified spawn point
                     spawnedDrink = Instantiate(cupPrefab, cupSpawnPoint.transform.position, cupSpawnPoint.transform.rotation);
                     // Confirms new drink was successfully instantiated
-                    Debug.Log("Drink spawned.");
+                    // Debug.Log("Drink spawned.");
                 } else {
                     // Prevents duplicate spawns and alerts dev
                     Debug.Log("Drink already served."); 

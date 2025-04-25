@@ -15,7 +15,7 @@ public class InteractiveObject : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("Player entered trigger");
+            // Debug.Log("Player entered trigger");
             uiPrompt.SetActive(true);
             //notifying the player’s interaction script that this object is available
         }
@@ -25,14 +25,14 @@ public class InteractiveObject : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("Player exited trigger");
+            // Debug.Log("Player exited trigger");
             uiPrompt.SetActive(false);
         }
     }
 
     public void Interact()
     {
-        Debug.Log("Interacted with " + gameObject.name);
+        // Debug.Log("Interacted with " + gameObject.name);
         // interaction logic here (e.g., dispensing a drink)
     }
 }

@@ -15,14 +15,14 @@ public static class ItemManager
     public static void SetPreparedDrink(string drinkType)
     {
         preparedDrink = drinkType;
-        Debug.Log("Prepared drink set to: " + drinkType);
+        // Debug.Log("Prepared drink set to: " + drinkType);
     }
 
     //when a food item is spawned/prepared
     public static void SetPreparedFood(string foodType)
     {
         preparedFood = foodType;
-        Debug.Log("Prepared food set to: " + foodType);
+        // Debug.Log("Prepared food set to: " + foodType);
     }
 
     public static string GetPreparedDrink()

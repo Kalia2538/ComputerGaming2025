@@ -14,12 +14,12 @@ public class ServeZone : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
 
          // Helps debug zone collisions
-        Debug.Log("Something entered the serve zone: " + other.name);
+        // Debug.Log("Something entered the serve zone: " + other.name);
 
         if (other.CompareTag("Cup")) {
 
             // Verifies correct object enters zone
-            Debug.Log("Cup entered serve zone!");
+            // Debug.Log("Cup entered serve zone!");
 
             if (snapPoint != null) {
                 other.transform.position = snapPoint.position;

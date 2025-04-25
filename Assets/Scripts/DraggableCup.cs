@@ -30,7 +30,7 @@ public class DraggableCup : MonoBehaviour {
                 isDragging = true;
                 offset = transform.position - GetMouseWorldPosition();
                  // Confirm player has clicked and started dragging
-                Debug.Log("Started dragging cup!");
+                // Debug.Log("Started dragging cup!");
             }
         }
     }

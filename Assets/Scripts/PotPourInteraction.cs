@@ -75,11 +75,11 @@ public class PotPourInteraction : MonoBehaviour
             {
                 coffee.gameObject.SetActive(true);
             }
-            else
-            {
-                // Failsafe to catch hierarchy issues
-                Debug.LogWarning("Coffee child not found in cup hierarchy.");
-            }
+            // else
+            // {
+            //     // Failsafe to catch hierarchy issues
+            //     Debug.LogWarning("Coffee child not found in cup hierarchy.");
+            // }
         }
 
         isPouring = false;
@@ -87,10 +87,10 @@ public class PotPourInteraction : MonoBehaviour
         {
             ItemManager.SetPreparedDrink(drinkType.ToLower());
         }
-        else
-        {
-            Debug.LogWarning("Drink type not set for this pour interaction!");
-        }
+        // else
+        // {
+        //     Debug.LogWarning("Drink type not set for this pour interaction!");
+        // }
 
 
     }
