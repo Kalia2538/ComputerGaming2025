@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 /**
-    Author: Kalia Brown
+    Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
     Date Created: 4/16/2025
     Date Last Updated: 4/16/2025
     Summary: changes the music snapshot based on the current scene
@@ -14,6 +14,8 @@ using UnityEngine.SceneManagement;
 public class BackgroundMusic : MonoBehaviour
 {
     public AudioMixer backgroundMixer;
+    public static BackgroundMusic Instance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,17 @@ public class BackgroundMusic : MonoBehaviour
     private void Awake()
     {
         // keeps the background music playing when we switch scenes
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
