@@ -173,14 +173,25 @@ In our final iteration, we plan to implement performance optimization and build 
 #### Planned Build Preparation (Ch 19)
 - Adjust build settings: resolution, fullscreen mode, splash screen
 - Enable script debugging and use the Profiler to monitor the built game
-- Add a main menu scene to serve as the initial entry point
-- Add a pause screen.
+~~- Add a main menu scene to serve as the initial entry point~~
+~~- Add a pause screen~~
 - Test the executable on multiple systems and check for consistency between build and Editor
 
 #### Additional Planned Features
-- Complete and test full customer order flow (arrival → order → kitchen prep → serve)
-- Display the written order note in the kitchen when switching scenes
-- Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions.
+~~- Complete and test full customer order flow (arrival → order → kitchen prep → serve)~~
+~~- Display the written order note in the kitchen when switching scenes~~
+- Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions
+
+#### Justifications
+While we initially planned to implement optimization and advanced build settings, we decided to prioritize our core game loop mechanics and UI polish in this final iteration. We focused on solidifying the customer order flow (order --> preparation --> serving) and visual feedback systems, as we believed that having a working game with engaging player feedback was more critical to address first. This focus on the mechanics ensures that our game is now fully playable.
+
+#### Additions
+* The main additions in this iteration were addressing feedback from the course staff, enhancing the UI with “juice” elements, and improving our game loop. These additions are discussed in more detail in the “Development” section, and include:
+   * Improved customer and player models
+   * Score system and customer reactions
+   * Start/pause menu
+   * Day tracking
+
 
 ## Development
 ### Project Checkpoint 1-2
@@ -298,7 +309,46 @@ Speech bubble:
 Button click sound effects:
 [https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644] (https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644)
 
+### Project Part 4: Finishing Touches
+* Improved player and customer models
+   * Customer walks up to the counter, and waits at the counter after placing an order
+    
+* Tracking of score and order rating
+   * Points for accuracy and timing of order (50 points per accurate item)
+   * We have set up a way to monitor the precision for brewing of espresso
 
+
+* Customer reactions with sound effects
+   * Heart + celebration sound effects for perfect order
+   * Exclamation mark + fail sound effects for inaccurate order
+   * Money icon + cash register sound when order is placed
+<img width="100" alt="Heart Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/heart_icon.png" />
+<img width="100" alt="Bad Order" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/bad_order_reaction.png" />
+<img width="100" alt="Money Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/money_icon.png" />
+
+* Day progression
+   * A transition scene appears at the start of each day, displaying the current day number
+   * Currently, a “day” in the game consists of serving 8 customers
+   * Clock object has a shake animation added when the day is halfway or more completed (≥4 customers served)
+<img width="500" alt="Start Menu" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/start_menu.png" />
+
+* Pause menu
+   * Includes music slider to adjust volume, and a button to return to the game
+   * Our pause menu and pause button have been created as prefabs and are set to be integrated with the cafe and kitchen scenes
+<img width="500" alt="Pause Menu" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/pause_menu.png" />
+
+#### Links to Assets Used
+Icons for customer reactions:
+[https://assetstore.unity.com/packages/3d/props/modular-low-poly-letters-and-icons-296956] (https://assetstore.unity.com/packages/3d/props/modular-low-poly-letters-and-icons-296956)
+
+Clock game object:
+[https://assetstore.unity.com/packages/3d/props/interior/clock-free-44164#content] (https://assetstore.unity.com/packages/3d/props/interior/clock-free-44164#content)
+
+Successful order sound effect:
+[https://pixabay.com/sound-effects/success-fanfare-trumpets-6185/] (https://pixabay.com/sound-effects/success-fanfare-trumpets-6185/)
+
+Failed order sound effect:
+[https://pixabay.com/sound-effects/cartoon-fail-trumpet-278822/] (https://pixabay.com/sound-effects/cartoon-fail-trumpet-278822/)
 
 ### How to Play
 Our game is not in the most playable format (we aren't at the animations chapter), but here are the mechanics that you can do as of now:
