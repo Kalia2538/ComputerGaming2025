@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fd54dbd3b3c1d4a9895e90f29ad1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundMixer: {fileID: 24100000, guid: cd0c3895677b10040a9d02c712493348, type: 2}
