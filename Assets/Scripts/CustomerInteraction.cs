@@ -39,6 +39,7 @@ public class CustomerInteraction : MonoBehaviour
     {
         // instantiate customer and rigid body
         customer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
+        DontDestroyOnLoad(customer);
         CharacterMover mover = customer.GetComponent<CharacterMover>(); 
         // start ordering process
         StartCoroutine(OrderProcess(mover));
@@ -83,6 +84,26 @@ public class CustomerInteraction : MonoBehaviour
     {
 
         Destroy(orderObj);
+        // customer moves towards specified location
+        while (Vector3.Distance(customer.transform.position, startPoint.transform.position) > 0.1f)
+        {
+
+            Vector3 direction = (startPoint.transform.position - customer.transform.position).normalized;
+            Vector3 localDirection = customer.transform.InverseTransformDirection(direction);
+            Vector2 movementInput = new Vector2(localDirection.x, localDirection.z);
+
+            mover.SetInput(movementInput, startPoint.transform.position, false, false);
+            yield return null;
+
+        }
+
+
+
+
+
+
+
+
         // customer moving away from the counter
         while (Vector3.Distance(customer.transform.position, startPoint.transform.position) > 0.1f)
         {
