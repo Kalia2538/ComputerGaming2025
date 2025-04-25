@@ -192,6 +192,12 @@ While we initially planned to implement optimization and advanced build settings
    * Start/pause menu
    * Day tracking
 
+### Final Project Submission
+For our final submission, we will continue to work on refining the game flow and improving the player experience.
+* Make sure customer movement matches the game state (e.g., customer lingers in cafe while order is being prepared, doesn't leave until order is served, have some way to indicate that the customer is walking away with their order)
+* Add more features for score system besides accuracy (e.g., additional points for espresso brewed the right amount)
+* Customer queue system: Customers can line up, and you can lose points the longer they wait
+* Level progression based on points (e.g., new drink types or food items unlocked past a certain point threshold)
 
 ## Development
 ### Project Checkpoint 1-2
@@ -312,7 +318,8 @@ Button click sound effects:
 ### Project Part 4: Finishing Touches
 * Improved player and customer models
    * Customer walks up to the counter, and waits at the counter after placing an order
-    
+<img width="300" alt="New Players" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/new_players.png" />
+ 
 * Tracking of score and order rating
    * Points for accuracy and timing of order (50 points per accurate item)
    * We have set up a way to monitor the precision for brewing of espresso
