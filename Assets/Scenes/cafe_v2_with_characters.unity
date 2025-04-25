@@ -25026,7 +25026,7 @@ PrefabInstance:
     - target: {fileID: 1316967059154828936, guid: 4b90e897a5698a243857f830f2805709, type: 3}
       propertyPath: backgroundMixer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 24100000, guid: cd0c3895677b10040a9d02c712493348, type: 2}
     - target: {fileID: 1884131127922841282, guid: 4b90e897a5698a243857f830f2805709, type: 3}
       propertyPath: m_Name
       value: Music
