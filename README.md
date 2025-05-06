@@ -499,8 +499,7 @@ Play the WebGL version of our game here:
 [**Grounds for Catastrophe on Itch.io**] (https://hana-ismaiel.itch.io/grounds-for-catastrophe)
 
 If you'd like to download and play the desktop version:
-- [Download for Windows (.zip)]()
-- [Download for Mac (.zip)](https://drive.google.com/file/d/1opKZShorAHA1q7WgWvQ7qXIl_geTGw_G/view?usp=sharing)
+- [Download (.zip)](https://drive.google.com/file/d/1opKZShorAHA1q7WgWvQ7qXIl_geTGw_G/view?usp=sharing)
 
 ### Future Work
 
