@@ -374,8 +374,8 @@ New player/customer models:
 - **Customer scene persistence and interactions** have been enhanced so that their state remains consistent when transitioning between scenes.
 - **Fixed the music restart issue** that was occurring due to the volume slider in the pause menu. We chose to remove the slider entirely, as it did not significantly improve the user experience.
 - Replaced Unity’s default **gray background** with a custom **city landscape** to create a more immersive and polished visual environment.
-<img width="100" alt="City Background" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/CityBackground.png" />
-<img width="100" alt="New Game Top View" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/GameTopView.png" />
+<img width="500" alt="City Background" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/CityBackground.png" />
+<img width="500" alt="New Game Top View" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/GameTopView.png" />
 
 #### Links to Assets Used
 City Background for the Cafe, elimantes the Unity Gray default background:
