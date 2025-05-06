@@ -1212,7 +1212,6 @@ GameObject:
   - component: {fileID: 1884707294100044705}
   - component: {fileID: 6720817938754209811}
   - component: {fileID: 3142834261826246525}
-  - component: {fileID: 6919682858368401126}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1324,8 +1323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75db5b538eef814b9775d744f05e3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WalkSpeed: 3
-  m_RunSpeed: 4
+  m_WalkSpeed: 5
+  m_RunSpeed: 10
   m_RotateSpeed: 90
   m_Space: 1
   m_JumpHeight: 5
@@ -1338,26 +1337,6 @@ MonoBehaviour:
     body: 0.3
     head: 0.7
     eyes: 1
---- !u!114 &6919682858368401126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189135889644176557}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c67ce836140b4479603ebcf944cddd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_JumpButton: Jump
-  m_RunKey: 304
-  m_Camera: {fileID: 0}
-  m_MouseX: Mouse X
-  m_MouseY: Mouse Y
-  m_MouseScroll: Mouse ScrollWheel
 --- !u!1 &3275477537733024787
 GameObject:
   m_ObjectHideFlags: 0
