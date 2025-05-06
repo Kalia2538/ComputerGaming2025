@@ -167,7 +167,7 @@ Visual effects and Scene Management
 
 
 ### Project Part 4: Finishing Touches (Ch 18 & 19)
-In our final iteration, we plan to implement performance optimization and build polishing as mentioned in HCChapters 18 and 19.
+In our final iteration, we plan to implement performance optimization and build polishing as mentioned in Chapters 18 and 19.
 
 #### Planned Optimization (Ch 18)
 - Use Unity's Frame Debugger to analyze draw calls and identify performance bottlenecks
