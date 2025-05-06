@@ -485,7 +485,10 @@ For those testing or debugging the project, here are a few helpful commands and 
 
 Watch a playthrough of our game, showcasing key gameplay elements such as order taking, kitchen mechanics, and scene transitions:
 
-[![Watch the demo]()]
+[![Watch the video, Part 1](https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/clock.jpg)](https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/GFC_DEMO_PART1.mp4)
+
+[![Watch the video, Part 2](https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/clock.jpg)](https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/GFC_DEMO_PART2.mp4)
+
 
 ---
 
