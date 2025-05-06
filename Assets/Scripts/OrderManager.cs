@@ -1,7 +1,7 @@
 /**
 * Authors: Hana Ismaiel, Kalia Brown, Elysa Hines
 * Date Created: 04/16/2025
-* Date Last Updated: 04/16/2025
+* Date Last Updated: 05/06/2025
 * Summary: Manages cafe order flow and customer interactions
 */
 
@@ -139,7 +139,6 @@ public class OrderManager : MonoBehaviour  {
     void HideReactionEffect() {
         heartEffect.SetActive(false);
         badOrderEffect.SetActive(false);
-        StartNewOrder();
     }
 
     void GoToKitchen() {
@@ -162,7 +161,6 @@ public class OrderManager : MonoBehaviour  {
         } else {
             ShowReactionEffect(badOrderEffect, failureSound);
         }
-
         // Start the customer exit sequence after a delay
         StartCoroutine(CompleteOrderSequence());
 
@@ -181,9 +179,11 @@ public class OrderManager : MonoBehaviour  {
         
         // Trigger customer exit
         CustomerInteraction customerInteraction = FindObjectOfType<CustomerInteraction>();
-        if (customerInteraction != null) {
+        if (customerInteraction != null)
+        {
             customerInteraction.TriggerCustomerExit();
         }
+        Invoke("StartNewOrder", 7f);
     }
 
     void UpdateScoreDisplay() {

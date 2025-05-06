@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour  {
     public static int currentDay = 1;
     public static int customersServedToday = 0;
     public const int CUSTOMERS_PER_DAY = 8;
+    public static GameObject customerGO;
 
     
 
