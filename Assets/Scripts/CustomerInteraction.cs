@@ -6,137 +6,129 @@ using Controller;
 /**
     Author: Kalia Brown
     Date Created: 3/1/2025
-    Date Last Updated: 4/16/2025
+    Date Last Updated: 5/6/2025
     Summary: Placeholder code to simulate movement of customer in and
         out of the cafe 
  */
 
-public class CustomerInteraction : MonoBehaviour
-{
-    // locations for ordering
+public class CustomerInteraction : MonoBehaviour {
+    [Header("Location points")]
     public GameObject orderPoint;    
     public GameObject startPoint;
-    public GameObject orderLoc; // for the paper order
 
-    // instantiated prefabs
-    private GameObject orderObj;
-    private GameObject customer;
-
-    //prefabs
+    [Header("Prefabs")]
     public GameObject customerPrefab;
-    public GameObject order;
 
-    public float speed;
-    private Rigidbody custRigidBody;
+    [Header("Movement")]
+    public float speed = 2f;
 
-    private bool inRoutine = false;
-    
+    private GameObject currentCustomer;
+    private CharacterMover customerMover;
+    private OrderManager orderManager;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        // instantiate customer and rigid body
-        customer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
-        DontDestroyOnLoad(customer);
-        CharacterMover mover = customer.GetComponent<CharacterMover>(); 
-        // start ordering process
-        StartCoroutine(OrderProcess(mover));
+        orderManager = FindObjectOfType<OrderManager>();
+        if (GameManager.customerGO != null)
+        {
+            currentCustomer = GameManager.customerGO;
+            customerMover = currentCustomer.GetComponent<CharacterMover>();
+        }
+        else if (GameManager.orderPrepared && !GameManager.orderServed)
+        {
+            SpawnCustomerAtOrderPoint();
+        }
+        else if (!GameManager.orderServed)
+        {
+            SpawnCustomerAtStart();
+        }
     }
 
 
-    IEnumerator EnterScreen(CharacterMover mover)
+    void SpawnCustomerAtStart()
     {
-        // customer moves towards specified location
-        while (Vector3.Distance(customer.transform.position, orderPoint.transform.position) > 0.1f)
+        if (currentCustomer != null)
         {
+            Destroy(currentCustomer);
+        }
+        
+        currentCustomer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
+        GameManager.customerGO = currentCustomer;
+        customerMover = currentCustomer.GetComponent<CharacterMover>();
+        StartCoroutine(EnterCustomer());
+    }
 
-            Vector3 direction = (orderPoint.transform.position - customer.transform.position).normalized;
-            Vector3 localDir = customer.transform.InverseTransformDirection(direction);
+    void SpawnCustomerAtOrderPoint()
+    {
+        if (currentCustomer != null) {
+            Destroy(currentCustomer);
+        }
+        
+        currentCustomer = Instantiate(customerPrefab, orderPoint.transform.position, Quaternion.identity);
+        GameManager.customerGO = currentCustomer;
+        customerMover = currentCustomer.GetComponent<CharacterMover>();
+    }
+
+    IEnumerator EnterCustomer()
+    {
+        if (orderManager != null && orderManager.takeOrderButton != null)
+        {
+            orderManager.takeOrderButton.gameObject.SetActive(false);
+        }
+
+        // Move to order location
+        while (currentCustomer != null && 
+               Vector3.Distance(currentCustomer.transform.position, orderPoint.transform.position) > 0.1f)
+        {
+            Vector3 direction = (orderPoint.transform.position - currentCustomer.transform.position).normalized;
+            Vector3 localDir = currentCustomer.transform.InverseTransformDirection(direction);
             Vector2 movementInput = new Vector2(localDir.x, localDir.z);
-            mover.SetInput(movementInput, orderPoint.transform.position, false, false);
-            
+            customerMover.SetInput(movementInput, orderPoint.transform.position, false, false);
             yield return null;
-
         }
-        // stops customer movement
-        mover.SetInput(Vector2.zero, mover.transform.position, false, false);
-        // wait for click
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-
+        
+        if (currentCustomer != null) {
+            customerMover.SetInput(Vector2.zero, orderPoint.transform.position, false, false);
+            if (orderManager != null && orderManager.takeOrderButton != null) {
+                orderManager.takeOrderButton.gameObject.SetActive(true);
+            }
+        }
     }
 
-    IEnumerator TakingOrder(CharacterMover mover)
-    {
-        // order "pop-up"
-        orderObj = Instantiate(order, orderLoc.transform.position, Quaternion.identity);
+    IEnumerator ExitCustomer() {
+        
+        currentCustomer = GameManager.customerGO;
+        customerMover = currentCustomer.GetComponent<CharacterMover>();
 
-        // wait time so that click from before doesn't collide with this one
-        yield return new WaitForSeconds(0.5f);
-        // wait for click
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-    }
+        // Prevent order taking while exiting
+        if (orderManager != null && orderManager.takeOrderButton != null) {
+            orderManager.takeOrderButton.gameObject.SetActive(false);
+        }
 
-
-    
-    IEnumerator ExitingScreen(CharacterMover mover)
-    {
-
-        Destroy(orderObj);
-        // customer moves towards specified location
-        while (Vector3.Distance(customer.transform.position, startPoint.transform.position) > 0.1f)
+        // Move back to start position
+        while (currentCustomer != null && 
+            Vector3.Distance(currentCustomer.transform.position, startPoint.transform.position) > 0.1f)
         {
-
-            Vector3 direction = (startPoint.transform.position - customer.transform.position).normalized;
-            Vector3 localDirection = customer.transform.InverseTransformDirection(direction);
-            Vector2 movementInput = new Vector2(localDirection.x, localDirection.z);
-
-            mover.SetInput(movementInput, startPoint.transform.position, false, false);
-            yield return null;
-
-        }
-
-
-
-
-
-
-
-
-        // customer moving away from the counter
-        while (Vector3.Distance(customer.transform.position, startPoint.transform.position) > 0.1f)
-        {
-            Vector3 direction = (startPoint.transform.position - customer.transform.position).normalized;
-            custRigidBody.velocity = direction * speed;
+            Vector3 direction = (startPoint.transform.position - currentCustomer.transform.position).normalized;
+            Vector3 localDir = currentCustomer.transform.InverseTransformDirection(direction);
+            Vector2 movementInput = new Vector2(localDir.x, localDir.z);
+            customerMover.SetInput(movementInput, startPoint.transform.position, false, false);
             yield return null;
         }
-
-        custRigidBody.velocity = Vector3.zero;
-        yield return null;
-    }
-
-    IEnumerator OrderProcess(CharacterMover mover)
-    {
-        if (!inRoutine) { 
-            inRoutine = true;            
-            yield return EnterScreen(mover);
+        
+        // Destroy customer immediately when they reach start point
+        if (currentCustomer != null) {
+            Destroy(currentCustomer);
+            currentCustomer = null;
             
-            yield return TakingOrder(mover);
-            
-            yield return ExitingScreen(mover);
-            Destroy(customer);
-            
-            customer = Instantiate(customerPrefab, startPoint.transform.position, Quaternion.identity);
-            StartCoroutine(OrderProcess(mover));
+            // Spawn new customer right after destruction
+            if (!GameManager.ShouldEndDay()) {
+                SpawnCustomerAtStart();
+            }
         }
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (!inRoutine)
-    //    {
-    //        StartCoroutine(OrderProcess());
-    //    }
-    //}
+    public void TriggerCustomerExit() {
+        StartCoroutine(ExitCustomer());
+    }
 }

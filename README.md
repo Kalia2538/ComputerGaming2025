@@ -1,13 +1,17 @@
-# PlaceHolder - Grounds for Catastrophe
+# Grounds for Catastrophe
+
+<img width="300" alt="CoverImg" src="https://github.com/user-attachments/assets/f8ce35c3-166f-4002-aa95-e3d85df061fb" />
+
 
 ## Team Members
+
 - [Kalia2538](https://github.com/Kalia2538)
 - [hana-ismaiel](https://github.com/hana-ismaiel)
 - [ely-hi](https://github.com/ely-hi)
 
 ## Game Summary
 
-A relaxing cooking game where up to two players run a cafe together. Players recieve orders from customers and prepare meals in a kitchen. The goal is to complete each recipe with speed and quality to keep customers happy, allowing the player to upgrade appliances and unlock new recipes. 
+A cozy, single-player game that allows you to step into the role of a barista. Players receive customer orders and prepare meals in a connected kitchen space. The goal is to fulfill each recipe with accuracy and care to keep customers happy and earn points. The overall experience focuses on relaxed, rewarding gameplay.
 
 ## Genres
 
@@ -17,7 +21,7 @@ Cooking Simulation, Co-op, Casual, Time Management
 
 ### Good Pizza, Great Pizza
 
-A cozy, single-player game that allows you to step into the role of a barista. Players receive customer orders and prepare meals in a connected kitchen space. The goal is to fulfill each recipe with accuracy and care to keep customers happy and earn points. The overall experience focuses on relaxed, rewarding gameplay.
+A cozy cooking game where players complete orders and grow their restaurant. The core mechanics of the game include task-based gameplay and a simple progression system, as well as fun storylines and side tasks the player can choose to engage with. The a focus on serving customers and upgrading the pizza shop are influences to our game design.
 
 
 <img src = "https://www.nintendo-insider.com/wp-content/uploads/2020/09/good_pizza_great_pizza_review_screenshot_1.jpg" alt="Good Pizza Great Pizza Order w/ Customer" width="500"/>
@@ -167,13 +171,13 @@ Visual effects and Scene Management
 
 
 ### Project Part 4: Finishing Touches (Ch 18 & 19)
-In our final iteration, we plan to implement performance optimization and build polishing as mentioned in HCChapters 18 and 19.
+In our final iteration, we plan to implement performance optimization and build polishing as mentioned in Chapters 18 and 19.
 
 #### Planned Optimization (Ch 18)
 - Use Unity's Frame Debugger to analyze draw calls and identify performance bottlenecks
 - Use the Profiler to determine whether the game is CPU-bound or GPU-bound
 -  ~~Apply batching for static GameObjects that share materials to reduce draw calls~~
-(which was attempted with the customer instantation when each scene are in 1 view. however, not present in current, where we use scene management.)
+(which was attempted with the customer instantiation when each scene are in 1 view. however, not present in current, where we use scene management.)
 - Begin testing occlusion culling for walls and static props to improve rendering performance
 - ~~Review and limit `Debug.Log` statements to prevent runtime performance issues, especially during pouring interactions~~
 
@@ -187,7 +191,7 @@ In our final iteration, we plan to implement performance optimization and build 
 #### Additional Planned Features
 ~~- Complete and test full customer order flow (arrival → order → kitchen prep → serve)~~
 ~~- Display the written order note in the kitchen when switching scenes~~
-- Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions
+- Finalize UI polish, including tooltips, prompts, feedback indicators, as well as final scenery additions
 
 #### Justifications
 While we initially planned to implement optimization and advanced build settings, we decided to prioritize our core game loop mechanics and UI polish in this final iteration. We focused on solidifying the customer order flow (order --> preparation --> serving) and visual feedback systems, as we believed that having a working game with engaging player feedback was more critical to address first. This focus on the mechanics ensures that our game is now fully playable.
@@ -201,7 +205,7 @@ While we initially planned to implement optimization and advanced build settings
 
 ### Final Project Submission
 For our final submission, we will continue to work on refining the game flow and improving the player experience.
-* Make sure customer movement matches the game state (e.g., customer lingers in cafe while order is being prepared, doesn't leave until order is served, have some way to indicate that the customer is walking away with their order)
+~~* Make sure customer movement matches the game state (e.g., customer lingers in cafe while order is being prepared, doesn't leave until order is served, have some way to indicate that the customer is walking away with their order)~~
 * Add more features for score system besides accuracy (e.g., additional points for espresso brewed the right amount)
 * Customer queue system: Customers can line up, and you can lose points the longer they wait
 * Level progression based on points (e.g., new drink types or food items unlocked past a certain point threshold)
@@ -228,9 +232,11 @@ This deliverable consists of three main components:
 #### Cafe
 
 Our cafe has ample seating, with wooden tables, stools, chairs, couches and sofas. The green and cream two-tone walls and windows gives the cafe a vibrant atmosphere. 
+
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_img.jpg" alt="Cafe-Topview" width="500"/>
 
 The counter area has black and white tiling. We also added a register that is used to collect payment from the customers.
+
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_Sitting_Area.png" alt="Cafe Sitting Area" width="500"/>
 
 #### Kitchen
@@ -243,7 +249,6 @@ We chose characters that match with the style of our cafe. We chose characters t
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/c1.jpg" alt="Character 1" width="500"/>
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/c5.jpg" alt="Character 2" width="500"/>
-
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/cafe_w_people_closer%20view.jpg" alt="Customer/Player at the Register" width="500"/>
 
@@ -298,7 +303,6 @@ Characters:
 
 https://github.com/user-attachments/assets/19c9092e-26f3-44ae-95db-42fa9d58a927
 
-
 * Polished the UI using unity store assets
    * Speech bubble to represent customer order
    * Improved design of buttons, notepad, and text
@@ -322,6 +326,13 @@ Speech bubble:
 Button click sound effects:
 [https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644] (https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644)
 
+Coffee and Tea sounds: 
+https://assetstore.unity.com/packages/audio/sound-fx/free-pop-sound-effects-pack-263821
+https://assetstore.unity.com/packages/audio/ambient/nature/free-water-stream-sounds-226371
+
+Cafe Music: 
+https://assetstore.unity.com/packages/audio/music/tabletop-jazz-cafe-free-music-224462
+
 ### Project Part 4: Finishing Touches
 * Improved player and customer models
    * Customer walks up to the counter, and waits at the counter after placing an order
@@ -335,9 +346,8 @@ Button click sound effects:
    * Heart + celebration sound effects for perfect order
    * Exclamation mark + fail sound effects for inaccurate order
    * Money icon + cash register sound when order is placed
-<img width="100" alt="Heart Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/heart_icon.png" />
-<img width="100" alt="Bad Order" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/bad_order_reaction.png" />
-<img width="100" alt="Money Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/money_icon.png" />
+
+<img width="100" alt="Heart Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/heart_icon.png" /> <img width="100" alt="Bad Order" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/bad_order_reaction.png" /> <img width="100" alt="Money Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/money_icon.png" />
 
 * Day progression
    * A transition scene appears at the start of each day, displaying the current day number
@@ -350,8 +360,11 @@ Button click sound effects:
    * Our pause menu and pause button have been created as prefabs and are set to be integrated with the cafe and kitchen scenes
 <img width="500" alt="Pause Menu" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/pause_menu.png" />
 
-* Charcater models
+* Character models
    * We chose to update our character models mid-project to allow for more dynamic interaction. Our new characters include walk cycles, facial expressions, and more animation flexibility. This enhances immersion and gives us greater creative freedom to express mood, emotion, and interaction in the scene—making the game world feel more alive.
+   * <img width="500" alt="Player" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/player_model.jpg" />
+   * <img width="500" alt="New Character" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/new_character.jpg" />
+   * <img width="500" alt="Customization" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/character_customization.jpg" />
 
 #### Links to Assets Used
 Icons for customer reactions:
@@ -373,7 +386,15 @@ New player/customer models:
 
 - **Customer scene persistence and interactions** have been enhanced so that their state remains consistent when transitioning between scenes.
 - **Fixed the music restart issue** that was occurring due to the volume slider in the pause menu. We chose to remove the slider entirely, as it did not significantly improve the user experience.
+
+     * <img width="500" alt="Pause" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/new_pause.jpg" />
+  
+
 - Replaced Unity’s default **gray background** with a custom **city landscape** to create a more immersive and polished visual environment.
+
+  * <img width="500" alt="CityBackground" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/CityBackground.png" />
+  * <img width="500" alt="GameTopView" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/GameTopView.png" />
+
 
 #### Links to Assets Used
 City Background for the Cafe, elimantes the Unity Gray default background:
@@ -471,7 +492,7 @@ Watch a playthrough of our game, showcasing key gameplay elements such as order 
 ### Download
 
 Play the WebGL version of our game here:  
-[**Grounds for Catastrophe on Itch.io**] ()
+[**Grounds for Catastrophe on Itch.io**] (https://hana-ismaiel.itch.io/grounds-for-catastrophe)
 
 If you'd like to download and play the desktop version:
 - [Download for Windows (.zip)]()
@@ -514,6 +535,7 @@ There are several features we hope to implement in future iterations:
 - Implemented:
   - **Advanced movement** for characters (walk-in, exit, idle)
   - **Customer spawning** and **basic order request system**
+  - **Partical System** for food items.
 - Added:
   - **Background music** for café
   - Dynamic volume change when transitioning to the kitchen
