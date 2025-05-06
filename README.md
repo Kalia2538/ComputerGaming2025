@@ -228,9 +228,11 @@ This deliverable consists of three main components:
 #### Cafe
 
 Our cafe has ample seating, with wooden tables, stools, chairs, couches and sofas. The green and cream two-tone walls and windows gives the cafe a vibrant atmosphere. 
+
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_img.jpg" alt="Cafe-Topview" width="500"/>
 
 The counter area has black and white tiling. We also added a register that is used to collect payment from the customers.
+
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Cafe_Sitting_Area.png" alt="Cafe Sitting Area" width="500"/>
 
 #### Kitchen
@@ -293,6 +295,7 @@ Characters:
 * Added sound effects in the kitchen
    * Coffee/liquid pouring noises when a drink is poured
 * Added animations to mocha pot and tea pot in the kitchen
+
 
 https://github.com/user-attachments/assets/19c9092e-26f3-44ae-95db-42fa9d58a927
 
