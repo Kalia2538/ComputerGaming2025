@@ -201,7 +201,7 @@ While we initially planned to implement optimization and advanced build settings
 
 ### Final Project Submission
 For our final submission, we will continue to work on refining the game flow and improving the player experience.
-* Make sure customer movement matches the game state (e.g., customer lingers in cafe while order is being prepared, doesn't leave until order is served, have some way to indicate that the customer is walking away with their order)
+~~* Make sure customer movement matches the game state (e.g., customer lingers in cafe while order is being prepared, doesn't leave until order is served, have some way to indicate that the customer is walking away with their order)~~
 * Add more features for score system besides accuracy (e.g., additional points for espresso brewed the right amount)
 * Customer queue system: Customers can line up, and you can lose points the longer they wait
 * Level progression based on points (e.g., new drink types or food items unlocked past a certain point threshold)
@@ -243,7 +243,6 @@ We chose characters that match with the style of our cafe. We chose characters t
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/c1.jpg" alt="Character 1" width="500"/>
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/c5.jpg" alt="Character 2" width="500"/>
-
 
 <img src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/cafe_w_people_closer%20view.jpg" alt="Customer/Player at the Register" width="500"/>
 
@@ -295,9 +294,7 @@ Characters:
    * Coffee/liquid pouring noises when a drink is poured
 * Added animations to mocha pot and tea pot in the kitchen
 
-
 https://github.com/user-attachments/assets/19c9092e-26f3-44ae-95db-42fa9d58a927
-
 
 * Polished the UI using unity store assets
    * Speech bubble to represent customer order
@@ -321,6 +318,13 @@ Speech bubble:
 
 Button click sound effects:
 [https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644] (https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644)
+
+Coffee and Tea sounds: 
+https://assetstore.unity.com/packages/audio/sound-fx/free-pop-sound-effects-pack-263821
+https://assetstore.unity.com/packages/audio/ambient/nature/free-water-stream-sounds-226371
+
+Cafe Music: 
+https://assetstore.unity.com/packages/audio/music/tabletop-jazz-cafe-free-music-224462
 
 ### Project Part 4: Finishing Touches
 * Improved player and customer models
@@ -350,8 +354,11 @@ Button click sound effects:
    * Our pause menu and pause button have been created as prefabs and are set to be integrated with the cafe and kitchen scenes
 <img width="500" alt="Pause Menu" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/pause_menu.png" />
 
-* Charcater models
+* Character models
    * We chose to update our character models mid-project to allow for more dynamic interaction. Our new characters include walk cycles, facial expressions, and more animation flexibility. This enhances immersion and gives us greater creative freedom to express mood, emotion, and interaction in the scene—making the game world feel more alive.
+   * <img width="500" alt="Player" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/player_model.jpg" />
+   * <img width="500" alt="New Character" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/new_character.jpg" />
+   * <img width="500" alt="Customization" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/character_customization.jpg" />
 
 #### Links to Assets Used
 Icons for customer reactions:
@@ -373,7 +380,15 @@ New player/customer models:
 
 - **Customer scene persistence and interactions** have been enhanced so that their state remains consistent when transitioning between scenes.
 - **Fixed the music restart issue** that was occurring due to the volume slider in the pause menu. We chose to remove the slider entirely, as it did not significantly improve the user experience.
+
+     * <img width="500" alt="Pause" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/new_pause.jpg" />
+  
+
 - Replaced Unity’s default **gray background** with a custom **city landscape** to create a more immersive and polished visual environment.
+
+  * <img width="500" alt="CityBackground" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/CityBackground.png" />
+  * <img width="500" alt="GameTopView" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/GameTopView.png" />
+
 
 #### Links to Assets Used
 City Background for the Cafe, elimantes the Unity Gray default background:
@@ -514,6 +529,7 @@ There are several features we hope to implement in future iterations:
 - Implemented:
   - **Advanced movement** for characters (walk-in, exit, idle)
   - **Customer spawning** and **basic order request system**
+  - ** Partical System** for food items.
 - Added:
   - **Background music** for café
   - Dynamic volume change when transitioning to the kitchen
