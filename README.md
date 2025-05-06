@@ -7,7 +7,7 @@
 
 ## Game Summary
 
-A relaxing cooking game where up to two players run a cafe together. Players recieve orders from customers and prepare meals in a kitchen. The goal is to complete each recipe with speed and quality to keep customers happy, allowing the player to upgrade appliances and unlock new recipes. 
+A cozy, single-player game that allows you to step into the role of a barista. Players receive customer orders and prepare meals in a connected kitchen space. The goal is to fulfill each recipe with accuracy and care to keep customers happy and earn points. The overall experience focuses on relaxed, rewarding gameplay.
 
 ## Genres
 
