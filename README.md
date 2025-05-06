@@ -1,4 +1,7 @@
-# PlaceHolder - Grounds for Catastrophe
+# Grounds for Catastrophe
+
+<img width="500" alt="CoverImg" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Grounds.png" />
+
 
 ## Team Members
 - [Kalia2538](https://github.com/Kalia2538)
@@ -17,7 +20,7 @@ Cooking Simulation, Co-op, Casual, Time Management
 
 ### Good Pizza, Great Pizza
 
-A cozy, single-player game that allows you to step into the role of a barista. Players receive customer orders and prepare meals in a connected kitchen space. The goal is to fulfill each recipe with accuracy and care to keep customers happy and earn points. The overall experience focuses on relaxed, rewarding gameplay.
+A cozy cooking game where players complete orders and grow their restaurant. The core mechanics of the game include task-based gameplay and a simple progression system, as well as fun storylines and side tasks the player can choose to engage with. The a focus on serving customers and upgrading the pizza shop are influences to our game design.
 
 
 <img src = "https://www.nintendo-insider.com/wp-content/uploads/2020/09/good_pizza_great_pizza_review_screenshot_1.jpg" alt="Good Pizza Great Pizza Order w/ Customer" width="500"/>
