@@ -17,7 +17,7 @@ Cooking Simulation, Co-op, Casual, Time Management
 
 ### Good Pizza, Great Pizza
 
-A cozy cooking game where players complete orders and grow their restaurant. The core mechanics of the game include task-based gameplay and a simple progression system, as well as fun storylines and side tasks the player can choose to engage with. The a focus on serving customers and upgrading the pizza shop are influences to our game design.
+A cozy, single-player game that allows you to step into the role of a barista. Players receive customer orders and prepare meals in a connected kitchen space. The goal is to fulfill each recipe with accuracy and care to keep customers happy and earn points. The overall experience focuses on relaxed, rewarding gameplay.
 
 
 <img src = "https://www.nintendo-insider.com/wp-content/uploads/2020/09/good_pizza_great_pizza_review_screenshot_1.jpg" alt="Good Pizza Great Pizza Order w/ Customer" width="500"/>
@@ -44,37 +44,44 @@ A game that focuses on brewing and serving coffee with various machine interacti
 
 ## Gameplay
 
-### Player Interactions: 
+### Player Interactions
 
-Counter Interaction & Order Mechanism:
-* Customer Interaction: Customers walk up to the counter and place their orders. Players interact with the customers by clicking on them to receive and verify the order. Customers will state their order, and the player will confirm.
-* Order Taking: Players write down the customer’s order using a notepad system. They can either click items from a menu or type in the request to ensure accuracy.
+- **Order Taking & Memory Challenge**  
+  - At the start of the day (or when resuming), the player begins in the main café. When a customer arrives, the player interacts with them to take their order.  
+  - Players can choose to write down the order using a notepad UI for reference — or skip writing it down for an added memory challenge.
 
-Food Prep:
-* Task-Based Cooking: Players complete cooking tasks like picking up the cup, grinding the coffee beans, add milk, syrup, or ice. Each task is connected to a specific appliance where the person will move to the station and interact with the machine.
-* Appliance Upgrades: As players progress, they can purchase upgrades for their appliances, improving either speed (how quickly food is prepared) or quality (how visually appealing drinks are).
-* Time-Related Upgrades: Appliances like coffee machines can be upgraded to dispense the coffee faster
-* Quality Upgrades: Appliances like espresso machines can be upgraded to improve the visual presentation of food and drinks (e.g., latte art).
+- **Kitchen Prep**  
+  - After taking the order, the player enters the kitchen to prepare the requested items. Orders may include:
+    - **Espresso**, **stovetop coffee**, or **tea**
+    - **Baked goods** like pastries or muffins  
+  - The kitchen contains interactive appliances linked to specific drink or food types. Players must perform these tasks in the correct sequence to fulfill the order accurately.
 
-Different Ranks of Customers:
-* Regular Customers: Familiar faces who tend to order the same meals and expect consistent quality.
-* Guest Customers: e.g., food critics who require quality heavily, customers who require speed over quality, etc. These are high-paying customers.
-
-Progression & Cafe Growth:
-* New recipes: Unlocking new, more complex recipes as the cafe expands.
-* Cafe upgrades: Players can use their earnings to buy new appliances, decor, and kitchen tools to enhance both functionality and appearance.
+- **Day Progression**
+   - Each in-game day consists of helping **8 customers**. As the player completes orders, a visual clock on the screen tracks their progress. When the player reaches the halfway mark (after serving **4 customers**), the clock begins to **shake** as a subtle signal that the day is more than halfway complete. Once 8 customers are served, the day ends and can reset or continue via the **DayTransition** scene. This structure gives the player a clear gameplay loop while adding visual feedback to encourage pacing.
 
 ### Expected UI
-* A semi-realistic 3D cafe environment that allows players to move around the closed space. The cafe environment will appear with the camera positioned above and angled downwards. 
-* A door leads the player to the kitchen, from the counter, and vice versa. When the player enters the door to the kitchen, the scene will switch to a first-person POV 
-* Proximity can trigger a subtle visual cue, like an outline or glow around the object, to make interactions intuitive.
+
+- A **semi-realistic 3D café environment**, viewed from a top down perspective, allowing the player to navigate the closed space.
+- A **scene transition button** enables the player to move between the café and the kitchen.
+  - Pressing the button transitions to a **first-person view** inside the kitchen to allow for immersive preparation of orders.
+
 
 ### Game Controls
-Movement:
-* Mouse or use of keys (e.g, WASD or Arrow Keys): Move the character around the cafe and kitchen. The player will use these to navigate through the cafe environment.
-* Proximity-Based Interactions when a player approaches an interaction object: so when the player moves near certain objects or stations (e.g., a drink counter, milk fridge), the game detects their proximity to the item.
-  * The player would then press Space (or another button) to activate the station's function, such as dispensing a drink from the counter.
-  * When approaching an object, a prompt is displayed like "Click to Dispense Drink" to let the player know which action can be taken.
+
+**Movement:**
+- Use the **WASD** or **Arrow Keys** to move your character around the café and kitchen environments.
+
+**Interactions:**
+- The player interacts with appliances and items using **mouse clicks and drag mechanics**:
+  - In the kitchen, clicking specific parts of drink machines (e.g., the top of the espresso machine, the tea kettle, or the coffee pot) will initiate drink creation.
+  - Clicking on a requested baked good will automatically place it on a plate.
+  - Once prepared, drinks must be **dragged and snapped** into the designated serving area. This allows the player to complete and deliver the order.
+
+- You can use the **left and right arrow buttons** on the screen to scroll across the kitchen counter for easier access to machines and items.
+
+**Pause Menu:**
+- Press the **Escape key** or click the **pause button** in the top corner of the screen to open the pause menu.
+- From the pause menu, players can adjust volume settings or return to the home screen.
 
 ## Development Plan
 
@@ -104,7 +111,7 @@ Visual effects and Scene Management
 * ~~Lighting and shaders are implemented~~
 
 #### Additions
-* created prefabs for customers and player
+* Created prefabs for customers and player
 
 #### Justificaitons
 * We did not do the scene transitioning (outside the scope of the assigned chapters)
@@ -160,7 +167,6 @@ Visual effects and Scene Management
 
 
 ### Project Part 4: Finishing Touches (Ch 18 & 19)
-
 In our final iteration, we plan to implement performance optimization and build polishing as mentioned in HCChapters 18 and 19.
 
 #### Planned Optimization (Ch 18)
@@ -325,7 +331,6 @@ Button click sound effects:
    * Points for accuracy and timing of order (50 points per accurate item)
    * We have set up a way to monitor the precision for brewing of espresso
 
-
 * Customer reactions with sound effects
    * Heart + celebration sound effects for perfect order
    * Exclamation mark + fail sound effects for inaccurate order
@@ -341,9 +346,12 @@ Button click sound effects:
 <img width="500" alt="Start Menu" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/start_menu.png" />
 
 * Pause menu
-   * Includes music slider to adjust volume, and a button to return to the game
+   * Includes a button to return to the game
    * Our pause menu and pause button have been created as prefabs and are set to be integrated with the cafe and kitchen scenes
 <img width="500" alt="Pause Menu" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/pause_menu.png" />
+
+* Charcater models
+   * We chose to update our character models mid-project to allow for more dynamic interaction. Our new characters include walk cycles, facial expressions, and more animation flexibility. This enhances immersion and gives us greater creative freedom to express mood, emotion, and interaction in the scene—making the game world feel more alive.
 
 #### Links to Assets Used
 Icons for customer reactions:
@@ -361,6 +369,16 @@ Failed order sound effect:
 New player/customer models:
 [https://assetstore.unity.com/packages/3d/characters/humanoids/creative-characters-free-animated-low-poly-3d-models-304841#version-original)
 
+### Final Project Submission
+
+- **Customer scene persistence and interactions** have been enhanced so that their state remains consistent when transitioning between scenes.
+- **Fixed the music restart issue** that was occurring due to the volume slider in the pause menu. We chose to remove the slider entirely, as it did not significantly improve the user experience.
+- Replaced Unity’s default **gray background** with a custom **city landscape** to create a more immersive and polished visual environment.
+
+#### Links to Assets Used
+City Background for the Cafe, elimantes the Unity Gray default background:
+https://assetstore.unity.com/packages/3d/environments/urban/toon-city-pack-234785
+
 ### How to Play
 * You can move the player around using WASD/input - (you have to use this function with the "Updated Player" prefab)
 * You can use the customer spawning by clicking the screen when the customer gets to the counter to leave the counter.
@@ -371,8 +389,6 @@ New player/customer models:
 - The `camera slider` has also been enhanced:
   - You can now use the **Left and Right arrow keys** to scroll the camera across the cafe.
   - Pointer input on the slider has been **disabled**, preventing click/drag interaction.
-
-
 
 Note: As we work on this functionality, we will also work to address a more intuitive mechanism for player movement, which, combined with animation, will be robust enough for the user to control. This will also coincide with UI elements to help navigate the player through the initial gameplay, including prompts to signal for the user to move behind the counter to take an order or toggle the ‘coffee dispense button’ to dispense coffee. Finally, we will work to add a way for the game to switch between the cafe scene and the kitchen prep scene.
 
@@ -385,3 +401,137 @@ In response to the notes:
 *  We've implemented a **notepad system with persistent text**, which saves order details and redisplays them in the kitchen after switching scenes.
 * The **core gameplay loop** (customer walking, seating, multi-order handling, etc.) is still in development, and will be the **main focus of the next submission** now that our foundational systems are in place.
 *  We're planning to add more **scenic elements and UI enhancements** based on **Chapters 18 and 19** of the textbook.
+
+### Instructions for Testing the Project
+
+To test the project locally, follow these steps after cloning and opening the repository in the Unity Editor:
+
+#### Scenes to Test:
+
+1. **DayTransition Scene**
+   - This is the **start menu**.
+   - Allows the player to start a new day or **reset their progress** back to the beginning.
+
+2. **Cafe Scene**
+   - This is where players can:
+     - Take a customer's order
+     - Move the character around the café using the movement controls
+     - Use the **notebook** to write down orders (optional memory challenge)
+     - Navigate to the **kitchen** scene via button interaction
+     - Monitor the **day timer** and customer progress
+   - The **pause menu** is accessible in this scene.
+
+3. **Kitchen Scene**
+   - This is where players **prepare drinks and baked goods**, following the gameplay mechanics.
+   - The player can:
+     - Use interactive appliances (espresso machine, tea pot, stovetop, etc.)
+     - Drag items to the serving zone
+     - Navigate back to the café scene
+     - Access the **notepad** (it persists across scenes)
+   - The **pause menu** is also accessible in this scene.
+
+Arrow keys can be used to scroll the kitchen counter.
+
+#### Developer Tips
+
+For those testing or debugging the project, here are a few helpful commands and behaviors to be aware of:
+
+#### In the Cafe Scene:
+- **Spawn a customer**: A customer will appear automatically. Click on them to start the order interaction.
+- **Order taking**: Use the **notepad UI** to write down the order, or skip it for a memory challenge.
+- **Navigate to Kitchen**: Click the button near the counter labeled “Go to Kitchen” to transition scenes.
+- **Pause Menu**: Press `ESC` or click the pause icon in the corner to access volume control or return to the main menu.
+
+#### In the Kitchen Scene:
+- **Espresso machine**:
+  - Click the top of the espresso machine to **spawn a cup**.
+  - Click the red button to **dispense coffee**.
+  - Hold and drag the cup to the serving spot (white circle on the counter).
+- **Tea and Stovetop Coffee**:
+  - Click the kettle or pot to spawn the drink.
+- **Baked goods**:
+  - Click the pastry of choice to spawn a plated item.
+- **Scene Navigation**: Use the on-screen button to return to the **Cafe**.
+- **Camera Slider**: Use the **left/right arrow keys** to scroll across the kitchen counter.
+- **Pause Menu**: Press `ESC` or click the pause icon.
+
+#### General Notes:
+- The **notepad persists** between scenes—test this by writing an order in the café and checking for it in the kitchen.
+- Day progress is tracked through a **day transition screen**, with visual cues and a shake animation on the clock after 4+ customers are served.
+- You can test **scene transitions and core game flow** by starting at `DayTransition`, moving into `Cafe`, then into `Kitchen`, and back.
+
+### Demo
+
+Watch a playthrough of our game, showcasing key gameplay elements such as order taking, kitchen mechanics, and scene transitions:
+
+[![Watch the demo]()]
+
+---
+
+### Download
+
+Play the WebGL version of our game here:  
+[**Grounds for Catastrophe on Itch.io**] ()
+
+If you'd like to download and play the desktop version:
+- [Download for Windows (.zip)]()
+- [Download for Mac (.zip)]()
+
+### Future Work
+
+There are several features we hope to implement in future iterations:
+
+- **Appliance Upgrade System**  
+  While we originally planned a robust system for upgrading appliances (increasing speed, drink quality, and visual aesthetics), this feature is currently not functional. However, our appliance prefabs were designed with modularity in mind to support upgrades in the future.
+
+- **Order Complexity & Timing**  
+  We'd like to flesh out the order system further by adding:
+  - More detailed multi-step orders (e.g., double shots, specific milk types)
+  - Ratings that factor in **timing**, not just accuracy
+
+- **Expanded Customer Logic & Queueing**  
+  Customers would queue up and be penalized for long wait times, and we’d include special customer types (critics, speed-focused guests, etc.).
+
+- **Technical Challenges / Known Issues**  
+  Unity-specific challenges, particularly **scene persistence** and managing object states between transitions, delayed many of our “nice-to-have” features. These complications made us prioritize a fully working MVP over more ambitious mechanics, but we’ve laid strong groundwork for their addition.
+
+### Member Contributions
+
+**Elysa**
+- Designed the **background and café interior**
+- Created the **pause screen** and scene transitions
+- Implemented **kitchen mechanics** including logic for successful orders (matches request, score system)
+- Developed:
+  - Basic **player movement**
+  - **Drag-and-snap** interactions for cups
+  - **Camera scrollbar** navigation
+- Added:
+  - Sound effects for kitchen appliances (e.g., coffee pouring)
+  - Animations for mocha pot and tea pot interactions
+
+**Kalia**
+- Created and rigged **player and customer character models**
+- Implemented:
+  - **Advanced movement** for characters (walk-in, exit, idle)
+  - **Customer spawning** and **basic order request system**
+- Added:
+  - **Background music** for café
+  - Dynamic volume change when transitioning to the kitchen
+
+**Hana**
+- Designed the **home/start menu**
+- Built the **kitchen environment layout**
+- Implemented:
+  - Initial food and drink mechanics (click to spawn)
+  - **Lighting and shadows**
+  - **Basic kitchen layout**
+- Polished UI:
+  - Integrated Unity Store assets
+  - Designed **speech bubbles**, **buttons**, and **notepad UI**
+- Expanded:
+  - **Advanced order system** (randomized drink + food pairings)
+  - **Point system** (built on Elysa’s matching logic)
+  - **Customer feedback sounds** (success/fail cues)
+  - **Day progression logic** (8-customer system, clock animation)
+
+Many elements (such as customer reactions, kitchen layout tweaks, and UI cohesion) were developed collaboratively during group sessions, with each member contributing both design feedback and code debugging. 
