@@ -1,9 +1,10 @@
 # Grounds for Catastrophe
 
-<img width="500" alt="CoverImg" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/Grounds.png" />
+<img width="300" alt="CoverImg" src="https://github.com/user-attachments/assets/f8ce35c3-166f-4002-aa95-e3d85df061fb" />
 
 
 ## Team Members
+
 - [Kalia2538](https://github.com/Kalia2538)
 - [hana-ismaiel](https://github.com/hana-ismaiel)
 - [ely-hi](https://github.com/ely-hi)
