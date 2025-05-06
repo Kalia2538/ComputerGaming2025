@@ -173,7 +173,7 @@ In our final iteration, we plan to implement performance optimization and build 
 - Use Unity's Frame Debugger to analyze draw calls and identify performance bottlenecks
 - Use the Profiler to determine whether the game is CPU-bound or GPU-bound
 -  ~~Apply batching for static GameObjects that share materials to reduce draw calls~~
-(which was attempted with the customer instantation when each scene are in 1 view. however, not present in current, where we use scene management.)
+(which was attempted with the customer instantiation when each scene are in 1 view. however, not present in current, where we use scene management.)
 - Begin testing occlusion culling for walls and static props to improve rendering performance
 - ~~Review and limit `Debug.Log` statements to prevent runtime performance issues, especially during pouring interactions~~
 
@@ -187,7 +187,7 @@ In our final iteration, we plan to implement performance optimization and build 
 #### Additional Planned Features
 ~~- Complete and test full customer order flow (arrival → order → kitchen prep → serve)~~
 ~~- Display the written order note in the kitchen when switching scenes~~
-- Finalize UI polish including tooltips, prompts, feedback indicators, as well as final scenery additions
+- Finalize UI polish, including tooltips, prompts, feedback indicators, as well as final scenery additions
 
 #### Justifications
 While we initially planned to implement optimization and advanced build settings, we decided to prioritize our core game loop mechanics and UI polish in this final iteration. We focused on solidifying the customer order flow (order --> preparation --> serving) and visual feedback systems, as we believed that having a working game with engaging player feedback was more critical to address first. This focus on the mechanics ensures that our game is now fully playable.
@@ -486,7 +486,7 @@ Watch a playthrough of our game, showcasing key gameplay elements such as order 
 ### Download
 
 Play the WebGL version of our game here:  
-[**Grounds for Catastrophe on Itch.io**] ()
+[**Grounds for Catastrophe on Itch.io**] (https://hana-ismaiel.itch.io/grounds-for-catastrophe)
 
 If you'd like to download and play the desktop version:
 - [Download for Windows (.zip)]()
@@ -529,7 +529,7 @@ There are several features we hope to implement in future iterations:
 - Implemented:
   - **Advanced movement** for characters (walk-in, exit, idle)
   - **Customer spawning** and **basic order request system**
-  - ** Partical System** for food items.
+  - **Partical System** for food items.
 - Added:
   - **Background music** for café
   - Dynamic volume change when transitioning to the kitchen
