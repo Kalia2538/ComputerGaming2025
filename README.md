@@ -339,9 +339,8 @@ https://assetstore.unity.com/packages/audio/music/tabletop-jazz-cafe-free-music-
    * Heart + celebration sound effects for perfect order
    * Exclamation mark + fail sound effects for inaccurate order
    * Money icon + cash register sound when order is placed
-<img width="100" alt="Heart Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/heart_icon.png" />
-<img width="100" alt="Bad Order" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/bad_order_reaction.png" />
-<img width="100" alt="Money Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/money_icon.png" />
+
+<img width="100" alt="Heart Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/heart_icon.png" /> <img width="100" alt="Bad Order" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/bad_order_reaction.png" /> <img width="100" alt="Money Icon" src="https://github.com/Kalia2538/ComputerGaming2025/blob/main/Readme_pics/money_icon.png" />
 
 * Day progression
    * A transition scene appears at the start of each day, displaying the current day number
