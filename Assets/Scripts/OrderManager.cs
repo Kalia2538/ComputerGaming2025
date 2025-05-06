@@ -9,6 +9,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class OrderManager : MonoBehaviour  {
     [Header("UI Elements")]
@@ -146,24 +148,41 @@ public class OrderManager : MonoBehaviour  {
         GameManager.timeStarted = Time.time;
     }
 
-    void ServeOrder()  {
+    void ServeOrder()  
+    {
         serveButton.gameObject.SetActive(false);
         GameManager.orderServed = true;
         GameManager.customersServedToday += 1;
         GameManager.CalculateAndAddScore();
         UpdateScoreDisplay();
 
-        // Show appropriate reaction effect depending on order accuracy
+        // Show reaction first
         if (GameManager.perfectOrder) {
             ShowReactionEffect(heartEffect, successSound);
         } else {
             ShowReactionEffect(badOrderEffect, failureSound);
         }
-        //Debug.Log(GameManager.customersServedToday);
+
+        // Start the customer exit sequence after a delay
+        StartCoroutine(CompleteOrderSequence());
 
         if (GameManager.ShouldEndDay()) {
             GameManager.StartNewDay();
             SceneManager.LoadScene("DayTransition");
+        }
+    }
+
+    IEnumerator CompleteOrderSequence() {
+        yield return new WaitForSeconds(1.5f);
+    
+        // Reset order states
+        GameManager.orderPrepared = false;
+        GameManager.orderServed = false;
+        
+        // Trigger customer exit
+        CustomerInteraction customerInteraction = FindObjectOfType<CustomerInteraction>();
+        if (customerInteraction != null) {
+            customerInteraction.TriggerCustomerExit();
         }
     }
 
